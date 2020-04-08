@@ -16,3 +16,4 @@ AllCops:
     - 'config/deploy.rb'
     - 'Capfile'
     - 'node_modules/**/*'
+    
