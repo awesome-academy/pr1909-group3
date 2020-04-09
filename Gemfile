@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'bootstrap-sass'
+gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'devise'
 gem 'simple_form'
