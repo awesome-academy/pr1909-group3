@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   # Validates
   validates :email, presence: true
-  validates :permission, presence: true, inclusion: { in: %w(0 1) }
+  validates :permission, presence: true
 end
