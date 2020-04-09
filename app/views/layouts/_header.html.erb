@@ -13,16 +13,20 @@
             <div class="headerlinkmenu col-lg-8 col-md-7 col-sm-8 col-xs-12">
               <div class="links">
                 <div class="myaccount"><a title="My Account" href="account_page.html"><i class="fa fa-user"></i><span class="hidden-xs">My Account</span></a></div>
+                <% if current_user %>
+                <div class="login"><a href="account_page.html"></i><span class="hidden-xs"><%= link_to  "Log out", destroy_user_session_path %></span></a></div>
+                <% else %>
+                <div class="login"><a href="account_page.html"></i><span class="hidden-xs"><%= link_to  "Signup", new_user_registration_path %></span></a></div>
+                <% end %>
                 <div class="login"><a href="account_page.html"><i class="fa fa-unlock-alt"></i><span class="hidden-xs"><%= link_to  "Login", user_session_path %></span></a></div>
               </div>
               <div class="language-currency-wrapper">
                 <div class="inner-cl">
                   <div class="block block-language form-language">
-                    <div class="lg-cur"> <span> <img src="images/flag-default.jpg" alt="French"> <span class="lg-fr">French</span> <i class="fa fa-angle-down"></i> </span> </div>
+                    <div class="lg-cur"> <span><%= image_tag("flag-default.jpg", alt: "French") %><span class="lg-fr">French</span> <i class="fa fa-angle-down"></i> </span> </div>
                     <ul>
-                      <li> <a class="selected" href="#"> <img src="images/flag-english.jpg" alt="flag"> <span>English</span> </a> </li>
-                      <li> <a href="#"> <img src="images/flag-default.jpg" alt="flag"> <span>French</span> </a> </li>
-                      <li> <a href="#"> <img src="images/flag-german.jpg" alt="flag"> <span>German</span> </a> </li>
+                      <li> <a class="selected" href="#"> <%= image_tag("flag-english.jpg", alt: "English") %><span>English</span> </a> </li>
+                      <li> <a href="#"><%= image_tag("flag-default.jpg", alt: "French") %> </a> </li>
                     </ul>
                   </div>
                   <div class="block block-currency">
@@ -83,17 +87,17 @@
                   <div class="top-cart-content">
                     <div class="block-subtitle hidden-xs">Recently added item(s)</div>
                     <ul id="cart-sidebar" class="mini-products-list">
-                      <li class="item odd"> <a href="shopping_cart.html" title="Ipsums Dolors Untra" class="product-image"><img src="images/products/img07.jpg" alt="html template" width="65"></a>
+                      <li class="item odd"> <a href="shopping_cart.html" title="Ipsums Dolors Untra" class="product-image"><%= image_tag("products/img07.jpg", alt: "template", :style => "width: 65") %></a>
                         <div class="product-details"> <a href="#" title="Remove This Item" class="remove-cart"><i class="icon-close"></i></a>
                           <p class="product-name"><a href="shopping_cart.html">Lorem ipsum dolor sit amet Consectetur</a> </p>
                           <strong>1</strong> x <span class="price">$20.00</span> </div>
                       </li>
-                      <li class="item even"> <a href="shopping_cart.html" title="Ipsums Dolors Untra" class="product-image"><img src="images/products/img11.jpg" alt="html template" width="65"></a>
+                      <li class="item even"> <a href="shopping_cart.html" title="Ipsums Dolors Untra" class="product-image"><%= image_tag("products/img11.jpg", alt: "template", :style => "width: 65") %></a>
                         <div class="product-details"> <a href="#" title="Remove This Item" class="remove-cart"><i class="icon-close"></i></a>
                           <p class="product-name"><a href="shopping_cart.html">Consectetur utes anet adipisicing elit</a> </p>
                           <strong>1</strong> x <span class="price">$230.00</span> </div>
                       </li>
-                      <li class="item last odd"> <a href="shopping_cart.html" title="Ipsums Dolors Untra" class="product-image"><img src="images/products/img10.jpg" alt="html template" width="65"></a>
+                      <li class="item last odd"> <a href="shopping_cart.html" title="Ipsums Dolors Untra" class="product-image"><%= image_tag("products/img10.jpg", alt: "template", :style => "width: 65") %></a>
                         <div class="product-details"> <a href="#" title="Remove This Item" class="remove-cart"><i class="icon-close"></i></a>
                           <p class="product-name"><a href="shopping_cart.html">Sed do eiusmod tempor incidist</a> </p>
                           <strong>2</strong> x <span class="price">$420.00</span> </div>
