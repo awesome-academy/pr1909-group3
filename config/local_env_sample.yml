@@ -1,3 +1,3 @@
-GMAIL_USERNAME: 'abc@gmail.com'
-SQL_PASSWORD: '123'
-GMAIL_PASSWORD: 'abc'
+GMAIL_USERNAME: "abc@gmail.com"
+SQL_PASSWORD: "123"
+GMAIL_PASSWORD: "abc"
