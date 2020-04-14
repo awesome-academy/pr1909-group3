@@ -13,5 +13,9 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap-sprockets";
+
 @import "bootstrap";
+@import "font-awesome";
+@import "theme";
+@import "vs2015.scss";
+@import "flickity-fade";
