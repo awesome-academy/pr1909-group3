@@ -237,13 +237,16 @@
             </a>
         </li>
         <li class="nav-item ml-lg-n4">
-            <a class="nav-link" href="./account-orders.html">
-            <i class="fa fa-user"></i>
-            </a>
-        </li>
-        <li class="nav-item ml-lg-n4">
-            <a class="nav-link" href="./account-wishlist.html">
-            <i class="fa fa-heart"></i>
+            <a class="nav-link">
+              <% if current_user %>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out"></i>
+                <% end %>
+              <% else %>
+                <%= link_to new_user_session_path do %>
+                  <i class="fa fa-user"></i>
+                <% end %>
+              <% end %>
             </a>
         </li>
         <li class="nav-item ml-lg-n4">
