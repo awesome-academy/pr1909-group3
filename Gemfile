@@ -35,6 +35,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'simple_form'
 gem 'font-awesome-rails'
+gem 'rails_admin'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
