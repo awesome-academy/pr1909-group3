@@ -4,8 +4,8 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.string :product_name, null: false, default: ""
       t.text :detail, null: false, default: ""
       t.integer :price, null: false
-      t.integer :quantity
-      t.integer :category_id
+      t.integer :quantity, null: false, default: 1
+      t.integer :category_id, nul: false
       t.string :slug
 
       t.timestamps
