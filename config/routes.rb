@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'products/index'
   get 'products/show'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  root to: 'pages#home'
+  root to: 'pages#index'
   devise_for :users
 
   devise_scope :user do
