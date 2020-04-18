@@ -1,0 +1,6 @@
+user:
+  name:
+    max_length: 20
+
+  email:
+    max_length: 255
