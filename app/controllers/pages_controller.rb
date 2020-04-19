@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def index
-    @product = Product.all.lates
+    @product = Product.all.latest
   end
 end
