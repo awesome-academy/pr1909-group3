@@ -6,5 +6,8 @@ class Product < ApplicationRecord
   validates :detail, length: { minimum: 14, maximum: 300 }
 
   # Method
-  scope :latest, lambda { where('created_at >= ? or updated_at >= ?', Time.now - 15.days, Time.now - 3.days) }
+  scope :latest, -> {
+                   where('created_at >= created_at or updated_at >= updated_at',
+                         created_at: Time.zone.now - 15.days, updated_at: Time.zone.now - 3.days)
+                 }
 end
