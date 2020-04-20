@@ -2,8 +2,11 @@ class Product < ApplicationRecord
   belongs_to :category, dependent: :destroy
 
   # Validates
-  validates :product_name, presence: true, length: { maximum: 35 }
-  validates :detail, length: { minimum: 14, maximum: 300 }
+  validates :product_name, presence: true, length: { maximum: Settings.product.product_name.max_length }
+  validates :detail, length: {
+    minimum: Settings.product.detail.min_length,
+    maximum: Settings.product.detail.max_length,
+  }
 
   # Method
   scope :latest, lambda {

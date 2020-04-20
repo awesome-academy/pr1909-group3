@@ -4,3 +4,15 @@ user:
 
   email:
     max_length: 255
+
+product:
+  product_name:
+    max_length: 35
+
+  detail:
+    min_length: 14
+    max_length: 300
+
+category:
+  category_name:
+    max_length: 16
