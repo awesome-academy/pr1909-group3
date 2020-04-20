@@ -1,5 +1,301 @@
 <%= render 'layouts/header' %>
 
+<!-- Search -->
+<div class="modal fixed-right fade" id="modalSearch" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-vertical" role="document">
+    <div class="modal-content">
+
+      <!-- Close -->
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <i class="fa fa-x" aria-hidden="true"></i>
+      </button>
+
+      <!-- Header-->
+      <div class="modal-header line-height-fixed font-size-lg">
+        <strong class="mx-auto">Search Products</strong>
+      </div>
+
+      <!-- Body: Form -->
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label class="sr-only" for="modalSearchCategories">Categories:</label>
+            <select class="custom-select" id="modalSearchCategories">
+              <option selected>All Categories</option>
+              <option>Women</option>
+              <option>Men</option>
+              <option>Kids</option>
+            </select>
+          </div>
+          <div class="input-group input-group-merge">
+            <input class="form-control" type="search" placeholder="Search">
+            <div class="input-group-append">
+              <button class="btn btn-outline-border" type="submit">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Body: Results (add `.d-none` to disable it) -->
+      <div class="modal-body border-top font-size-sm">
+
+        <!-- Heading -->
+        <p>Search Results:</p>
+
+        <!-- Items -->
+        <div class="row align-items-center position-relative mb-5">
+          <div class="col-4 col-md-3">
+
+            <!-- Image -->
+            <img class="img-fluid" src="./assets/img/products/product-5.jpg" alt="...">
+
+          </div>
+          <div class="col position-static">
+
+            <!-- Text -->
+            <p class="mb-0 font-weight-bold">
+              <a class="stretched-link text-body" href="./product.html">Leather mid-heel Sandals</a> <br>
+              <span class="text-muted">$129.00</span>
+            </p>
+
+          </div>
+        </div>
+        <div class="row align-items-center position-relative mb-5">
+          <div class="col-4 col-md-3">
+
+            <!-- Image -->
+            <img class="img-fluid" src="./assets/img/products/product-6.jpg" alt="...">
+
+          </div>
+          <div class="col position-static">
+
+            <!-- Text -->
+            <p class="mb-0 font-weight-bold">
+              <a class="stretched-link text-body" href="./product.html">Cotton floral print Dress</a> <br>
+              <span class="text-muted">$40.00</span>
+            </p>
+
+          </div>
+        </div>
+        <div class="row align-items-center position-relative mb-5">
+          <div class="col-4 col-md-3">
+
+            <!-- Image -->
+            <img class="img-fluid" src="./assets/img/products/product-7.jpg" alt="...">
+
+          </div>
+          <div class="col position-static">
+
+            <!-- Text -->
+            <p class="mb-0 font-weight-bold">
+              <a class="stretched-link text-body" href="./product.html">Leather Sneakers</a> <br>
+              <span class="text-primary">$85.00</span>
+            </p>
+
+          </div>
+        </div>
+        <div class="row align-items-center position-relative mb-5">
+          <div class="col-4 col-md-3">
+
+            <!-- Image -->
+            <img class="img-fluid" src="./assets/img/products/product-8.jpg" alt="...">
+
+          </div>
+          <div class="col position-static">
+
+            <!-- Text -->
+            <p class="mb-0 font-weight-bold">
+              <a class="stretched-link text-body" href="./product.html">Cropped cotton Top</a> <br>
+              <span class="text-muted">$29.00</span>
+            </p>
+
+          </div>
+        </div>
+        <div class="row align-items-center position-relative mb-5">
+          <div class="col-4 col-md-3">
+
+            <!-- Image -->
+            <img class="img-fluid" src="./assets/img/products/product-9.jpg" alt="...">
+
+          </div>
+          <div class="col position-static">
+
+            <!-- Text -->
+            <p class="mb-0 font-weight-bold">
+              <a class="stretched-link text-body" href="./product.html">Floral print midi Dress</a> <br>
+              <span class="text-muted">$50.00</span>
+            </p>
+
+          </div>
+        </div>
+
+        <!-- Button -->
+        <a class="btn btn-link px-0 text-reset" href="./shop.html">
+          View All <i class="fa fa-arrow-right ml-2"></i>
+        </a>
+
+      </div>
+
+      <!-- Body: Empty (remove `.d-none` to disable it) -->
+      <div class="d-none modal-body">
+
+        <!-- Text -->
+        <p class="mb-3 font-size-sm text-center">
+          Nothing matches your search
+        </p>
+        <p class="mb-0 font-size-sm text-center">
+          😞
+        </p>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Shopping Cart -->
+<div class="modal fixed-right fade" id="modalShoppingCart" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-vertical" role="document">
+
+    <!-- Full cart (add `.d-none` to disable it) -->
+    <div class="modal-content">
+
+      <!-- Close -->
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <i class="fa fa-x" aria-hidden="true"></i>
+      </button>
+
+      <!-- Header-->
+      <div class="modal-header line-height-fixed font-size-lg">
+        <strong class="mx-auto">Your Cart (2)</strong>
+      </div>
+
+      <!-- List group -->
+      <ul class="list-group list-group-lg list-group-flush">
+        <li class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-4">
+
+              <!-- Image -->
+              <a href="./product.html">
+                <img class="img-fluid" src="./assets/img/products/product-6.jpg" alt="...">
+              </a>
+
+            </div>
+            <div class="col-8">
+
+              <!-- Title -->
+              <p class="font-size-sm font-weight-bold mb-6">
+                <a class="text-body" href="./product.html">Cotton floral print Dress</a> <br>
+                <span class="text-muted">$40.00</span>
+              </p>
+
+              <!--Footer -->
+              <div class="d-flex align-items-center">
+
+                <!-- Select -->
+                <select class="custom-select custom-select-xxs w-auto">
+                  <option value="1">1</option>
+                  <option value="1">2</option>
+                  <option value="1">3</option>
+                </select>
+
+                <!-- Remove -->
+                <a class="font-size-xs text-gray-400 ml-auto" href="#!">
+                  <i class="fa fa-x"></i> Remove
+                </a>
+
+              </div>
+
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-4">
+
+              <!-- Image -->
+              <a href="./product.html">
+                <img class="img-fluid" src="./assets/img/products/product-10.jpg" alt="...">
+              </a>
+
+            </div>
+            <div class="col-8">
+
+              <!-- Title -->
+              <p class="font-size-sm font-weight-bold mb-6">
+                <a class="text-body" href="./product.html">Suede cross body Bag</a> <br>
+                <span class="text-muted">$49.00</span>
+              </p>
+
+              <!--Footer -->
+              <div class="d-flex align-items-center">
+
+                <!-- Select -->
+                <select class="custom-select custom-select-xxs w-auto">
+                  <option value="1">1</option>
+                  <option value="1">2</option>
+                  <option value="1">3</option>
+                </select>
+
+                <!-- Remove -->
+                <a class="font-size-xs text-gray-400 ml-auto" href="#!">
+                  <i class="fa fa-x"></i> Remove
+                </a>
+
+              </div>
+
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <!-- Footer -->
+      <div class="modal-footer line-height-fixed font-size-sm bg-light mt-auto">
+        <strong>Subtotal</strong> <strong class="ml-auto">$89.00</strong>
+      </div>
+
+      <!-- Buttons -->
+      <div class="modal-body">
+        <a class="btn btn-block btn-dark" href="./checkout.html">Continue to Checkout</a>
+        <a class="btn btn-block btn-outline-dark" href="./shopping-cart.html">View Cart</a>
+      </div>
+
+    </div>
+
+    <!-- Empty cart (remove `.d-none` to enable it) -->
+    <div class="modal-content d-none">
+
+      <!-- Close -->
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <i class="fa fa-x" aria-hidden="true"></i>
+      </button>
+
+      <!-- Header-->
+      <div class="modal-header line-height-fixed font-size-lg">
+        <strong class="mx-auto">Your Cart (0)</strong>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body flex-grow-0 my-auto">
+
+        <!-- Heading -->
+        <h6 class="mb-7 text-center">Your cart is empty 😞</h6>
+
+        <!-- Button -->
+        <a class="btn btn-block btn-outline-dark" href="#!">
+          Continue Shopping
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
 <section class="pt-12">
   <div class="container">
     <div class="row">
