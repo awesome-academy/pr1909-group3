@@ -30,4 +30,77 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  layout:
+    footer:
+      contact_us: "Contact Us"
+      size_guide: "Size Guide"
+      shipping_return: "Shipping & Returns"
+      our_story: "Our Story"
+      design: " © 2020 All rights reserved. Designed by D&L"
+    header:
+      name_shop: "Shopper."
+      home: "Home"
+      product: "Product"
+      about: "About"
+      contact: "Contact"
+      category: "Browse Categories"
+      placeholder: "Search for items and brands"
+      all_category: "All Categories"
+      branch:
+        apple: "Apple"
+        samsung: "Samsung"
+        dell: "Dell"
+        huawei: "Huawei"
+      phone: "Phone"
+      latop: "Laptop"
+      ipad: "Tablet"
+      watch: "Watch"
+      language: "English"
+      currency_unit: "USD"
+      language_syntax: "EN"
+      notify: "This category is empty"
+    search:
+      name: "Search Products"
+      result: "Search Result"
+      explore: "View All"
+    cart:
+      name: "Your Cart"
+      remove: "Remove"
+      subtotal: "Subtotal"
+      continue: "Continue to Checkout"
+      view_cart: "View Cart"
+  content:
+    account:
+      name_account: "My Account"
+      list: "Personal Info"
+      name: "Email *"
+      phone: "Phone *"
+      email: "Email *"
+      curent_password: "Current Password *"
+      new_password: "New Password *"
+      pla_name: "Name"
+      pla_phone: "Phone"
+      pla_email: "Email"
+      pla_current_pw: "Current password"
+      pla_new_pw: "New password"
+      save: "Save changes"
+    order:
+      list: "Orders"
+    product:
+      new_product: "New Product"
+      discover: "Discover More"
+  login:
+    title: "Log in"
+  signup:
+    title: "Sign up"
+  forgot_password:
+    title: "Forgot Password ?"
+  confirmation:
+    title: "Resend confirmation instructions"
+  form:
+    name: "Name"
+    pasword: "Password"
+    pasword_comfirmation: "Password Comfirmation"
+  devise:
+    failure:
+      already_authenticated: "Log in successfully"

@@ -1,0 +1,93 @@
+vi:
+  layout:
+    footer:
+      contact_us: "Liên hệ"
+      size_guide: "Hướng dẫn"
+      shipping_return: "Giao hàng và trả hàng"
+      our_story: "Câu chuyện của chúng tôi"
+      design: "© Đã đăng kí bản quyền năm 2020. Được thiết kế bởi D&L"
+    header:
+      name_shop: "Shopper."
+      home: "Trang Chủ"
+      product: "Sản phẩm"
+      about: "Thông tin"
+      contact: "Liên hệ"
+      category: "Danh Mục"
+      placeholder: "Tìm kiếm sản phẩm và thương hiệu"
+      all_category: "Tất cả danh mục"
+      branch:
+        apple: "Apple"
+        samsung: "Samsung"
+        dell: "Dell"
+        huawei: "Huawei"
+      phone: "Điện thoại"
+      latop: "Máy tính xác tay"
+      ipad: "Máy tính bảng"
+      watch: "Đồng hồ thông minh"
+      language: "Việt Nam"
+      currency_unit: "VNĐ"
+      language_syntax: "VN"
+      notify: "Không có sản phẩm"
+    search:
+      name: "Tìm kiếm"
+      result: "Kêt quả tìm kiếm"
+      explore: "Mở rộng"
+    cart:
+      name: "Giỏ hàng của bạn"
+      remove: "Xóa"
+      subtotal: "Tổng tiền"
+      continue: "Tiếp tục thanh toán"
+      view_cart: "Xem giỏ hàng"
+  content:
+    account:
+      name_account: "Tài khoản của tôi"
+      list: "Thông tin cá nhân"
+      name: "Tên *"
+      phone: "Số điện thoại *"
+      email: "Email *"
+      curent_password: "Mật khẩu hiện tại *"
+      new_password: "Mật khẩu mới *"
+      pla_name: "Tên"
+      pla_phone: "Số điện thoại"
+      pla_email: "Email"
+      pla_current_pw: "Mật khẩu cũ"
+      pla_new_pw: "Mật khẩu mới"
+      save: "Lưu"
+    order:
+      list: "Đơn hàng"
+    product:
+      new_product: "Sản phẩm mới"
+      discover: "Khám phá"
+  login:
+    title: "Đăng nhập"
+  signup:
+    title: "Đăng kí"
+  forgot_password:
+    title: "Quên mật khẩu ?"
+  change_password:
+    title: "Thay đổi mật khẩu"
+    new_password: "Mật khẩu mới"
+  confirmation:
+    title: "Xác thực tài khoản"
+  form:
+    name: "Tên"
+    pasword: "Mật khẩu"
+    pasword_comfirmation: "Nhập lại mật khẩu"
+  devise:
+    failure:
+      already_authenticated: "Đăng nhập thành công"
+      invalid: "Thông tin đăng nhập không đúng"
+    sessions:
+      user:
+        signed_in: "Đăng nhập thành công"
+        signed_out: "Đăng xuất thành công"
+    registrations:
+      user:
+        signed_up_but_unconfirmed: "Vui lòng vào mail để xác thực"
+    confirmations:
+      user:
+        confirmed: "Tài khoản đã được xác thực thành công"
+    passwords:
+      user:
+        send_instructions: "Vui lòng vào mail để reset mật khẩu"
+        updated: "Thay đổi mật khẩu thành công"
