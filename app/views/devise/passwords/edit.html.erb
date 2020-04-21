@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col section-1 section-description">
-                <h2>Change your password</h2>
+                <h2><%= t "change_password.title" %></h2>
 
                 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
                   <%= f.error_notification %>
@@ -26,7 +26,7 @@
                   </div>
 
                   <div class="form-actions">
-                    <%= f.button :button, "Change my password", class: "btn btn-primary"%>
+                    <%= f.button :button, class: "btn btn-primary"%>
                   </div>
                 <% end %>
 
