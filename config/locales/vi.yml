@@ -56,6 +56,7 @@ vi:
     order:
       list: "Đơn hàng"
     product:
+      name_product: Thông tin sản phẩm chi tiết
       new_product: "Sản phẩm mới"
       discover: "Khám phá"
   login:
@@ -94,3 +95,52 @@ vi:
   simple_form:
     options:
       re_comfirmation: "Đã gửi lại xác nhận"
+  product_detail:
+    description: "Miêu tả"
+    shipping: "Giao hàng & trả hàng"
+    quantity: "Số lượng còn lại :"
+    submit: "Thêm vào giỏ hàng"
+    share: "Chia sẻ: "
+    status:
+      sale: "Đang bán"
+      unsale: "Hết hàng"
+    detail: "Xem chi tiết"
+  shipping:
+    options:
+      name: "Loại giao hàng"
+      stand: "Giao hàng cơ bản"
+      express: "Giao hàng nhanh"
+      free: "Miễn phí giao hàng"
+    deliverytime:
+      name: "Thời gian giao hàng"
+      stand: "Từ 5-7 ngày"
+      express: "Từ 3-5 ngày"
+      free: "Sống ở trung tâm Hà Nội"
+    price: "Giá"
+  feauture:
+    shipping:
+      name: "Miễn phí vận chuyển"
+      detail: "Đơn hàng từ $100"
+    returns:
+      name: "Miễn phí hoàn trả"
+      detail: "Trả tiền trong 30 ngày"
+    secure:
+      name: "Chất lượng"
+      detail: "Bạn có thể sờ tận tay"
+    style:
+      name: "Có hơn 10000 kiểu"
+      detail: "Chúng tôi luôn có những thứ bạn cần"
+  review:
+    name: "Nhận xét của khách hàng"
+    sortby:
+      name: "Sắp xếp"
+      new: "Mới nhất"
+      old: "Cũ nhất"
+    write:
+      name: "Viết nhận xét"
+      score: "Điểm: "
+      yourname: "Tên của bạn *"
+      email: "Email của bạn *"
+      title: "Tiêu đề *"
+      review: "Nhận xét *"
+      post: "Gửi nhận xét"

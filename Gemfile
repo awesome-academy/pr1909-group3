@@ -34,10 +34,12 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
 gem 'devise'
+gem 'devise-i18n'
 gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'rails_admin'
 gem 'rails-i18n', '~> 6.0.0'
+gem 'rails_admin-i18n'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

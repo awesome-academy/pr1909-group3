@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :get_product, only: [:index, :show]
 
   def index
-    @product = Product.all
+    @product = Product.all.latest
   end
 
   def show
