@@ -1,5 +1,3 @@
-<%= render 'layouts/header' %>
-
 <!-- Search -->
 <div class="modal fixed-right fade" id="modalSearch" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-vertical" role="document">
@@ -255,7 +253,7 @@
 
       <!-- Footer -->
       <div class="modal-footer line-height-fixed font-size-sm bg-light mt-auto">
-        <strong><%= t "layout.cart.subtotal" %></strong> <strong class="ml-auto">$89.00</strong>
+        <strong>Subtotal</strong> <strong class="ml-auto">$89.00</strong>
       </div>
 
       <!-- Buttons -->
@@ -297,92 +295,244 @@
   </div>
 </div>
 
-<section class="pt-12">
-  <div class="container">
-    <div class="row">
-        <div class="col-12">
-          <!-- Heading -->
-          <h2 class="mb-10 text-center"><%= t "content.product.new_product"%></h2>
-        </div>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-xl navbar-light zindex-fixed">
+    <div class="container">
+
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">
+        <%= t "layout.header.name_shop" %>
+    </a>
+
+    <!-- Toggler -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarBoxedTopCollapse" aria-controls="navbarBoxedTopCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapse -->
+    <div class="collapse navbar-collapse" id="navbarBoxedTopCollapse">
+
+        <!-- Nav -->
+        <ul class="navbar-nav mx-auto">
+        <li class="nav-item dropdown">
+            <!-- Toggle -->
+            <a class="nav-link" data-toggle="dropdown" href="#"><%= t "layout.header.home" %></a>
+        </li>
+        <li class="nav-item dropdown">
+
+            <!-- Toggle -->
+            <a class="nav-link" data-toggle="dropdown" href="#"><%= t "layout.header.product" %></a>
+
+            <!-- Menu -->
+            <div class="dropdown-menu" style="min-width: 650px;">
+            <div class="card card-lg">
+                <div class="card-body">
+                <div class="row">
+                    <div class="col">
+
+                    <!-- Heading -->
+                    <div class="mb-5 font-weight-bold"><%= t "layout.header.branch.apple" %></div>
+
+                    <!-- Links -->
+                    <ul class="list-styled font-size-sm">
+                        <li class="list-styled-item">
+                        <li class="list-styled-item">
+                        <a class="list-styled-link" href="./product-images-left.html"><%= t "layout.header.phone" %></a>
+                        </li>
+                        <li class="list-styled-item">
+                        <a class="list-styled-link" href="./product-image-grid.html"><%= t "layout.header.laptop" %></a>
+                        </li>
+                        <li class="list-styled-item">
+                        <a class="list-styled-link" href="./product-image-slider.html"><%= t "layout.header.watch" %></a>
+                        </li>
+                        <li class="list-styled-item">
+                        <a class="list-styled-link" href="./product-images-stacked.html"><%= t "layout.header.ipad" %></a>
+                        </li>
+                    </ul>
+
+                    </div>
+                    <div class="col">
+
+                    <!-- Heading -->
+                    <div class="mb-5 font-weight-bold"><%= t "layout.header.branch.samsung" %></div>
+
+                    <!-- Links -->
+                    <ul class="list-styled mb-7 font-size-sm">
+                        <li class="list-styled-item">
+                        <li class="list-styled-item">
+                        <a class="list-styled-link" href="./product-images-left.html"><%= t "layout.header.phone" %></a>
+                        </li>
+                        <li class="list-styled-item">
+                        <a class="list-styled-link" href="./product-image-grid.html"><%= t "layout.header.laptop" %></a>
+                        </li>
+                        <li class="list-styled-item">
+                        <a class="list-styled-link" href="./product-images-stacked.html"><%= t "layout.header.ipad" %></a>
+                        </li>
+                    </ul>
+
+                    <!-- Heading -->
+                    <div class="mb-5 font-weight-bold"><%= t "layout.header.branch.dell" %></div>
+
+                    <!-- Links -->
+                    <ul class="list-styled font-size-sm">
+                        <li class="list-styled-item">
+                        <li class="list-styled-item">
+                        <a class="list-styled-link" href="./product-images-left.html"><%= t "layout.header.phone" %></a>
+                        </li>
+                        <li class="list-styled-item">
+                        <a class="list-styled-link" href="./product-image-grid.html"><%= t "layout.header.laptop" %></a>
+                        </li>
+                    </ul>
+
+                    </div>
+                    <div class="col">
+
+                    <!-- Heading -->
+                    <div class="mb-5 font-weight-bold"><%= t "layout.header.branch.huawei" %></div>
+
+                    <!-- Links -->
+                    <ul class="list-styled font-size-sm">
+                        <li class="list-styled-item">
+                        <li class="list-styled-item">
+                        <a class="list-styled-link" href="./product-images-left.html"><%= t "layout.header.phone" %></a>
+                        </li>
+                        <li class="list-styled-item">
+                        <a class="list-styled-link" href="./product-image-grid.html"><%= t "layout.header.laptop" %></a>
+                        </li>
+                        <li class="list-styled-item">
+                        <a class="list-styled-link" href="./product-image-slider.html"><%= t "layout.header.watch" %></a>
+                        </li>
+                        <li class="list-styled-item">
+                        <a class="list-styled-link" href="./product-images-stacked.html"><%= t "layout.header.ipad" %></a>
+                        </li>
+                    </ul>
+
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <!-- Toggle -->
+            <a class="nav-link" href="#"><%= t "layout.header.about" %></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><%= t "layout.header.contact" %></a>
+        </li>
+        </ul>
+
+        <!-- Nav -->
+        <ul class="navbar-nav nav-divided">
+        <li class="nav-item dropdown">
+
+            <!-- Toggle -->
+            <a class="nav-link text-body" data-toggle="dropdown" href="#"><%= t "layout.header.language" %></a>
+
+            <!-- Menu -->
+            <div class="dropdown-menu">
+            <div class="card card-lg">
+                <div class="card-body">
+                <ul class="list-styled font-size-sm">
+                    <li class="list-styled-item">
+                    <a class="list-styled-link" href="#!">United States</a>
+                    </li>
+                    <li class="list-styled-item">
+                    <a class="list-styled-link" href="#!">Viet Nam</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            </div>
+
+        </li>
+        <li class="nav-item dropdown">
+
+            <!-- Toggle -->
+            <a class="nav-link text-body" data-toggle="dropdown" href="#"><%= t "layout.header.currency_unit" %></a>
+
+            <!-- Menu -->
+            <div class="dropdown-menu">
+            <div class="card card-lg">
+                <div class="card-body">
+                <ul class="list-styled font-size-sm">
+                    <li class="list-styled-item">
+                    <a class="list-styled-link" href="#!">USD</a>
+                    </li>
+                    <li class="list-styled-item">
+                    <a class="list-styled-link" href="#!">VNĐ</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            </div>
+
+        </li>
+        <li class="nav-item dropdown">
+
+            <!-- Toggle -->
+            <a class="nav-link text-body" data-toggle="dropdown" href="#"><%= t "layout.header.language_syntax" %></a>
+
+            <!-- Menu -->
+            <div class="dropdown-menu">
+            <div class="card card-lg">
+                <div class="card-body">
+                <ul class="list-styled font-size-sm">
+                    <li class="list-styled-item">
+                    <a class="list-styled-link"><%= link_to "EN", locale:"en" %></a>
+                    </li>
+                    <li class="list-styled-item">
+                    <a class="list-styled-link"><%= link_to "VN", locale:"vi" %></a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            </div>
+
+        </li>
+        </ul>
+
+        <!-- Nav -->
+        <ul class="navbar-nav flex-row">
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="modal" href="#modalSearch">
+            <i class="fa fa-search"></i>
+            </a>
+        </li>
+
+        <li class="nav-item ml-lg-n4">
+            <a class="nav-link">
+              <% if current_user %>
+                <%= link_to edit_customer_path(current_user.id) do %>
+                  <i class="fa fa-user"></i>
+                <% end %>
+              <%end%>
+            </a>
+        </li>
+
+        <li class="nav-item ml-lg-n4">
+          <% if current_user %>
+            <a class="nav-link">
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i>
+              <% end %>
+            </a>
+          <% end %>
+        </li>
+        
+        <li class="nav-item ml-lg-n4">
+            <a class="nav-link" data-toggle="modal" href="#modalShoppingCart">
+            <span data-cart-items="2">
+                <i class="fa fa-shopping-cart"></i>
+            </span>
+            </a>
+        </li>
+        </ul>
+
     </div>
-  
-  <div class="row">
-    <% @product.each do |product|%>
-      <div class="col-6 col-md-3 col-lg">
-      <!-- Card -->
-        <div class="card mb-7" data-toggle="card-collapse">
-          <!-- Image -->
-          <a href="product.html">
-          <%# <img src="assets/img/products/product-5.jpg" alt="..." class="card-img-top"> %>
-          </a>
-          <!-- Collapse -->
-          <div class="card-collapse-parent">
-          <!-- Body -->
-          <div class="card-body px-0 bg-white text-center">
-              <!-- Heading -->
-                <div class="mb-1 font-weight-bold">
-                <a class="text-body"><%= product.product_name %></a><br>
-                <%= link_to I18n.t("product_detail.detail"), product_path(product) %>
-                </div>
-              <!-- Price -->
-                <div class="mb-1 font-weight-bold text-muted">
-                  $<%= product.price%>
-                </div>
-              <!-- Rating -->
-              <div class="rating font-size-xxs text-dark justify-content-center" data-value="3">
-                <div class="rating-item">
-                    <i class="fa fa-star"></i>
-                </div>
-                <div class="rating-item">
-                    <i class="fa fa-star"></i>
-                </div>
-                <div class="rating-item">
-                    <i class="fa fa-star"></i>
-                </div>
-                <div class="rating-item">
-                    <i class="fa fa-star"></i>
-                </div>
-                <div class="rating-item">
-                    <i class="fa fa-star"></i>
-                </div>
-              </div>
-              
-          </div>
 
-          <!-- Footer -->
-          <div class="card-collapse collapse">
-              <div class="card-footer px-0 pt-0 bg-white text-center">
-              <button class="btn btn-xs btn-link btn-circle" data-toggle="modal" data-target="#modalProduct">
-                  <i class="fa fa-eye"></i>
-              </button>
-              <button class="btn btn-xs btn-link btn-circle" data-toggle="button">
-                  <i class="fa fa-shopping-cart"></i>
-              </button>
-              <button class="btn btn-xs btn-link btn-circle" data-toggle="button">
-                  <i class="fa fa-heart"></i>
-              </button>
-              </div>
-          </div>
-
-          </div>
-
-        </div>
-      </div>
-    <% end %>
-      <div class="col-6 col-md-3 col-lg">
-      </div>
-    <!-- Divider -->
-      <div class="w-100 d-none d-lg-block"></div>
-    
-  </div>
-
-  <div class="row">
-      <div class="col-12">
-        <!-- Link  -->
-        <div class="mt-7 text-center">
-          <a class="link-underline" href="shop.html"><%= t "content.product.discover" %></a>
-        </div>
-      </div>
     </div>
-  </div>
-</section>
+</nav>
+<hr>
+
+<%= render 'layouts/breadcrumb' %>

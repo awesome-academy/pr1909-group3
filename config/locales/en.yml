@@ -136,3 +136,52 @@ en:
       defaults:
         username: "Your username"
         password: "****"
+  product_detail:
+    description: "Description"
+    shipping: "Shipping & Return"
+    quantity: "Quantity :"
+    submit: "Add to Cart"
+    share: "Share: "
+    status:
+      sale: "Sale"
+      unsale: "Out of stock"
+    detail: "Detail"
+  shipping:
+    options:
+      name: "Type Delivery"
+      stand: "Delivery Stand"
+      express: "Delivery express"
+      free: "Free"
+    deliverytime:
+      name: "Time"
+      stand: "5-7 Days"
+      express: "3-5 Days"
+      free: "Live in Ha Noi"
+    price: "Price"
+  feauture:
+    shipping:
+      name: "FREE SHIPPING"
+      detail: "From all orders over $100"
+    returns:
+      name: "FREE RETURNS"
+      detail: "Return money within 30 days"
+    secure:
+      name: "SECURE SHOPPING"
+      detail: "You're in safa hands"
+    style:
+      name: "OVER 10,000 STYLES"
+      detail: "We have everything you need"
+  review:
+    name: "Customer Review"
+    sortby:
+      name: "Sort by"
+      new: "Newest"
+      old: "Oldest"
+    write:
+      name: "Write review"
+      score: "Score: "
+      yourname: "Your name *"
+      email: "Your mail *"
+      title: "Title review *"
+      review: "Review *"
+      post: "Post Review"
