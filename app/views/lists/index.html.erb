@@ -1,0 +1,290 @@
+<%= render 'layouts/headersecond' %>
+
+<!-- BREADCRUMB -->
+<nav class="my-5">
+    <div class="container">
+    <div class="row">
+        <div class="col-12">
+
+        <!-- Breadcrumb -->
+        <ol class="breadcrumb mb-0 font-size-xs text-gray-400">
+            <li class="breadcrumb-item">
+            <a class="text-reset" href="<%= root_path %>"><%= t("layout.header.home")%></a>
+            </li>
+            <li class="breadcrumb-item active">
+            <%= t("content.product.new_product") %>
+            </li>
+        </ol>
+
+        </div>
+    </div>
+    </div>
+</nav>
+
+<!-- CONTENT -->
+<section class="pt-7 pb-12">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- Heading -->
+                <h3 class="mb-10 text-center"><%= t("content.product.new_product") %></h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+
+            <!-- Filters -->
+            <div class="btn-group-justified btn-group-expand-lg mb-10" role="group">
+                <div class="btn-group dropdown">
+
+                <!-- Toggle -->
+                <button class="btn btn-sm btn-block btn-outline-border" data-toggle="dropdown" data-display="static">
+                    <%= t("filter.name.sort_by") %>
+                </button>
+
+                <!-- Menu -->
+                <form class="dropdown-menu">
+                    <div class="card">
+                    <div class="card-body">
+
+                        <!-- Form group -->
+                        <div class="form-group-overflow">
+                        <div class="custom-control custom-control-text mb-3">
+                            <input class="custom-control-input" id="sortOne" name="sort" type="radio" value="Default">
+                            <label class="custom-control-label" for="sortOne"><%= t("filter.sort_by.default") %></label>
+                        </div>
+                        <div class="custom-control custom-control-text mb-3">
+                            <input class="custom-control-input" id="sortTwo" name="sort" type="radio" value="Newest">
+                            <label class="custom-control-label" for="sortTwo"><%= t("filter.sort_by.newest") %></label>
+                        </div>
+                        <div class="custom-control custom-control-text mb-3">
+                            <input class="custom-control-input" id="sortFour" name="sort" type="radio" value="Default Price">
+                            <label class="custom-control-label" for="sortFour"><%= t("filter.sort_by.default_price") %></label>
+                        </div>
+                        <div class="custom-control custom-control-text">
+                            <input class="custom-control-input" id="sortFive" name="sort" type="radio" value="Highest Price">
+                            <label class="custom-control-label" for="sortFive"><%= t("filter.sort_by.hight_price") %></label>
+                        </div>
+                        </div>
+
+                    </div>
+                    </div>
+                </form>
+
+                </div>
+                <div class="btn-group dropdown">
+
+                <!-- Toggle -->
+                <button class="btn btn-sm btn-block btn-outline-border" data-toggle="dropdown" data-display="static">
+                    <%= t("filter.name.category") %>
+                </button>
+
+                <!-- Menu -->
+                <form class="dropdown-menu">
+                    <div class="card">
+                    <div class="card-body">
+
+                        <!-- Form group -->
+                        <div class="form-group-overflow">
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input class="custom-control-input" id="categoryOne" name="category" type="checkbox" value="All Products">
+                            <label class="custom-control-label" for="categoryOne"><%= t("filter.category.all_product") %></label>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input class="custom-control-input" id="categorySix" name="category" type="checkbox" value="Denim">
+                            <label class="custom-control-label" for="categorySix"><%= t("filter.category.phone") %></label>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input class="custom-control-input" id="categorySeven" name="category" type="checkbox" value="Hoodies and Sweats">
+                            <label class="custom-control-label" for="categorySeven"><%= t("filter.category.laptop") %></label>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input class="custom-control-input" id="categoryEight" name="category" type="checkbox" value="Jeans">
+                            <label class="custom-control-label" for="categoryEight"><%= t("filter.category.ipad") %></label>
+                        </div>
+                        </div>
+
+                    </div>
+                    <div class="card-footer d-flex flex-nowrap border-top">
+
+                        <!-- Buttons -->
+                        <button class="btn btn-outline-dark btn-sm" type="reset">
+                        <%= t("filter.clear") %>
+                        </button>
+                        <button class="btn btn-dark btn-sm ml-2" type="submit">
+                        <%= t("filter.show") %>
+                        </button>
+
+                    </div>
+                    </div>
+                </form>
+
+                </div>
+
+                <div class="btn-group dropdown">
+
+                <!-- Toggle -->
+                <button class="btn btn-sm btn-block btn-outline-border" data-toggle="dropdown" data-display="static">
+                    <%= t("filter.name.brand") %>
+                </button>
+
+                <!-- Menu -->
+                <form class="dropdown-menu">
+                    <div class="card">
+                    <div class="card-body">
+
+                        <!-- Search -->
+                        <div data-toggle="lists" data-options='{"valueNames": ["name"]}'>
+
+                        <!-- Input group -->
+                        <div class="input-group input-group-merge mb-6">
+                            <input class="form-control form-control-xs search" type="search" placeholder="<%= t("filter.brand.search") %>">
+
+                            <!-- Button -->
+                            <div class="input-group-append">
+                            <button class="btn btn-outline-border btn-xs">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            </div>
+
+                        </div>
+
+                        <!-- Form group -->
+                        <div class="form-group-overflow" id="brandGroup">
+                            <div class="list">
+                            <div class="custom-control custom-checkbox mb-3">
+                                <input class="custom-control-input" id="brandSix" type="checkbox">
+                                <label class="custom-control-label name" for="brandSix">
+                                <%= t("filter.brand.apple") %>
+                                </label>
+                            </div>
+                            <div class="custom-control custom-checkbox mb-3">
+                                <input class="custom-control-input" id="brandSeven" type="checkbox">
+                                <label class="custom-control-label name" for="brandSeven">
+                                <%= t("filter.brand.samsung") %>
+                                </label>
+                            </div>
+                            <div class="custom-control custom-checkbox mb-3">
+                                <input class="custom-control-input" id="brandEight" type="checkbox">
+                                <label class="custom-control-label name" for="brandEight">
+                                <%= t("filter.brand.dell") %>
+                                </label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" id="brandNine" type="checkbox">
+                                <label class="custom-control-label name" for="brandNine">
+                                <%= t("filter.brand.huawei") %>
+                                </label>
+                            </div>
+                            </div>
+                        </div>
+
+                        </div>
+
+                    </div>
+                    <div class="card-footer d-flex flex-nowrap border-top">
+
+                        <!-- Buttons -->
+                        <button class="btn btn-outline-dark btn-sm" type="reset">
+                        <%= t("filter.clear") %>
+                        </button>
+                        <button class="btn btn-dark btn-sm ml-2" type="submit">
+                        <%= t("filter.show") %>
+                        </button>
+
+                    </div>
+                    </div>
+                </form>
+
+                </div>
+                <div class="btn-group dropdown">
+
+                <!-- Toggle -->
+                <button class="btn btn-sm btn-block btn-outline-border" data-toggle="dropdown" data-display="static">
+                    <%= t("filter.name.price") %>
+                </button>
+
+                <!-- Menu -->
+                <form class="dropdown-menu">
+                    <div class="card">
+                    <div class="card-body">
+
+                        <!-- Form group -->
+                        <div class="form-group-overflow">
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input class="custom-control-input" id="priceOne" type="checkbox">
+                            <label class="custom-control-label" for="priceOne">
+                            $10.00 - $49.00
+                            </label>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input class="custom-control-input" id="priceTwo" type="checkbox">
+                            <label class="custom-control-label" for="priceTwo">
+                            $50.00 - $99.00
+                            </label>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input class="custom-control-input" id="priceThree" type="checkbox">
+                            <label class="custom-control-label" for="priceThree">
+                            $100.00 - $199.00
+                            </label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input class="custom-control-input" id="priceFour" type="checkbox">
+                            <label class="custom-control-label" for="priceFour">
+                            $200.00 and Up
+                            </label>
+                        </div>
+                        </div>
+
+                    </div>
+                    <div class="card-footer d-flex flex-nowrap border-top">
+
+                        <!-- Buttons -->
+                        <button class="btn btn-outline-dark btn-sm" type="reset">
+                        <%= t("filter.clear") %>
+                        </button>
+                        <button class="btn btn-dark btn-sm ml-2" type="submit">
+                        <%= t("filter.show") %>
+                        </button>
+
+                    </div>
+                    </div>
+                </form>
+
+                </div>
+            </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+
+            <!-- Progress -->
+            <div class="row justify-content-center mt-7">
+                <div class="col-12 text-center">
+
+                <!-- Caption -->
+                <p class="font-size-sm text-muted">
+                    <!-- Them so san pham-->
+                </p>
+
+                <!-- Progress -->
+                <div class="progress mx-auto mb-7" style="max-width: 250px;">
+                    <div class="progress-bar bg-dark" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+
+                <!-- Button -->
+                <a class="btn btn-sm btn-outline-dark" href="#!">
+                    <%= t ("filter.load") %>
+                </a>
+
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </div>
+</section>

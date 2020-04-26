@@ -300,7 +300,7 @@
     <div class="container">
 
     <!-- Brand -->
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="<%= root_path %>">
         <%= t "layout.header.name_shop" %>
     </a>
 
@@ -316,7 +316,7 @@
         <ul class="navbar-nav mx-auto">
         <li class="nav-item dropdown">
             <!-- Toggle -->
-            <a class="nav-link" data-toggle="dropdown" href="#"><%= t "layout.header.home" %></a>
+            <a class="nav-link" href="<%= root_path %>"><%= t "layout.header.home" %></a>
         </li>
         <li class="nav-item dropdown">
 
@@ -534,5 +534,3 @@
     </div>
 </nav>
 <hr>
-
-<%= render 'layouts/breadcrumb' %>

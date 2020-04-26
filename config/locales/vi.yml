@@ -57,7 +57,7 @@ vi:
       list: "Đơn hàng"
     product:
       name_product: Thông tin sản phẩm chi tiết
-      new_product: "Sản phẩm mới"
+      new_product: "Sản phẩm"
       discover: "Khám phá"
   login:
     title: "Đăng nhập"
@@ -144,3 +144,29 @@ vi:
       title: "Tiêu đề *"
       review: "Nhận xét *"
       post: "Gửi nhận xét"
+  filter:
+    name:
+      sort_by: "Sắp xếp"
+      category: "Thể loại"
+      brand: "Nhãn hiệu"
+      price: "Giá"
+    sort_by:
+      default: "Mặc định"
+      newest: "Mới nhất"
+      default_price: "Giá gốc"
+      hight_price: "Giá cao"
+    category:
+      all_product: "Tất cả sản phẩm"
+      phone: "Điện thoại"
+      laptop: "Laptop"
+      ipad: "Máy tính bảng"
+    brand:
+      search: "Tìm kiếm nhãn hàng"
+      apple: "Apple"
+      samsung: "Samsung"
+      dell: "Dell"
+      huawei: "Huawei"
+    price:
+    load: "Xem thêm"
+    clear: "Xóa"
+    show: "Xem kết quả"

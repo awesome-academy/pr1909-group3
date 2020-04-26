@@ -1,4 +1,5 @@
 <%= render 'layouts/headersecond' %>
+<%= render 'layouts/breadcrumb' %>
 
 <!-- PRODUCT -->
 <section>
@@ -13,7 +14,7 @@
 
               <!-- Badge -->
               <div class="badge badge-primary card-badge text-uppercase">
-                <% if @product.quantity > 0%>
+                <% if @product.quantity > 0 %>
                   <%= t ("product_detail.status.sale") %>
                 <% else %>
                   <%= t ("product_detail.status.unsale") %>

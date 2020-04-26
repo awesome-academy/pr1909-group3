@@ -1,8 +1,9 @@
 class ProductsController < ApplicationController
-  before_action :get_product, only: [:index, :show]
+  before_action :get_product, only: [:show]
 
   def index
-    @product = Product.all.latest
+    @q = Product.ransack params[:q]
+    @products = @q.result(distinct: true).page(params[:page])
   end
 
   def show
