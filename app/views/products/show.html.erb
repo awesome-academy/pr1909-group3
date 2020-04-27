@@ -1,4 +1,5 @@
 <%= render 'layouts/headersecond' %>
+<%= render 'layouts/breadcrumb' %>
 
 <!-- PRODUCT -->
 <section>
@@ -13,7 +14,7 @@
 
               <!-- Badge -->
               <div class="badge badge-primary card-badge text-uppercase">
-                <% if @product.quantity > 0%>
+                <% if @product.quantity > 0 %>
                   <%= t ("product_detail.status.sale") %>
                 <% else %>
                   <%= t ("product_detail.status.unsale") %>
@@ -37,7 +38,7 @@
               <div class="col">
 
               <!-- Preheading -->
-              <a class="text-muted" href="shop.html"><%= @product.slug %></a>
+              <%= link_to  @product.slug, "#", class:"text-muted" %>
 
               </div>
               <div class="col-auto">
@@ -61,9 +62,7 @@
                   </div>
               </div>
 
-              <a class="font-size-sm text-reset ml-2" href="#reviews">
-                  <%# Reviews (6) %>
-              </a>
+              <%= link_to  "", "#", class:"font-size-sm text-reset ml-2" %>
 
               </div>
           </div>
@@ -159,12 +158,8 @@
 
         <!-- Nav -->
         <div class="nav nav-tabs nav-overflow justify-content-start justify-content-md-center border-bottom">
-            <a class="nav-link active" data-toggle="tab" href="#descriptionTab">
-            <%= t ("product_detail.description") %>
-            </a>
-            <a class="nav-link" data-toggle="tab" href="#shippingTab">
-            <%= t ("product_detail.shipping") %>
-            </a>
+            <%= link_to  I18n.t("product_detail.description"), "#descriptionTab", data: {toggle: "tab"} ,class:"nav-link active" %>
+            <%= link_to  I18n.t("product_detail.shipping"), "#shippingTab", data: {toggle: "tab"} ,class:"nav-link" %>
         </div>
 
         <!-- Content -->

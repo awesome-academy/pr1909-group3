@@ -21,8 +21,8 @@
 
               <!-- Menu -->
               <div class="dropdown-menu mt-3">
-              <a class="dropdown-item" href="#!"><%= t("review.sortby.new") %></a>
-              <a class="dropdown-item" href="#!"><%= t("review.sortby.old") %></a>
+              <%= link_to  I18n.t("review.sortby.new"), "#", class:"dropdown-item" %>
+              <%= link_to  I18n.t("review.sortby.old"), "#", class:"dropdown-item" %>
               </div>
 
           </div>
@@ -56,9 +56,7 @@
           <div class="col-12 col-md-auto">
 
           <!-- Button -->
-          <a class="btn btn-sm btn-dark" data-toggle="collapse" href="#reviewForm">
-              <%= t ("review.write.name") %>
-          </a>
+          <%= link_to  I18n.t("review.write.name"), "#reviewForm", data: { toggle: "collapse" } ,class:"btn btn-sm btn-dark" %>
 
           </div>
       </div>
@@ -246,9 +244,7 @@
                     <div class="col-auto">
 
                         <!-- Button -->
-                        <a class="btn btn-xs btn-outline-border" href="#!">
-                        Comment
-                        </a>
+                        <%= link_to  "Comment", "#", class:"btn btn-xs btn-outline-border" %>
 
                     </div>
                     </div>
@@ -349,9 +345,7 @@
                         <div class="col-auto">
 
                         <!-- Button -->
-                        <a class="btn btn-xs btn-outline-border" href="#!">
-                            Comment
-                        </a>
+                        <%= link_to  "Comment", "#", class:"btn btn-xs btn-outline-border" %>
 
                         </div>
                     </div>
@@ -375,13 +369,13 @@
               </a>
           </li>
           <li class="page-item active">
-              <a class="page-link" href="#">1</a>
+            <%= link_to  "1", "#", class:"page-link" %>
           </li>
           <li class="page-item">
-              <a class="page-link" href="#">2</a>
+            <%= link_to  "2", "#", class:"page-link" %>
           </li>
           <li class="page-item">
-              <a class="page-link" href="#">3</a>
+            <%= link_to  "3", "#", class:"page-link" %>
           </li>
           <li class="page-item">
               <a class="page-link page-link-arrow" href="#">
