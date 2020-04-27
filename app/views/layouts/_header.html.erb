@@ -206,7 +206,7 @@
       <li class="nav-item ml-lg-n4">
           <a class="nav-link">
           <% if current_user %>
-              <%= link_to customer_path(current_user.id) do %>
+              <%= link_to edit_customer_path(current_user.id) do %>
                 <i class="fa fa-user"></i>
               <% end %>
           <%end%>

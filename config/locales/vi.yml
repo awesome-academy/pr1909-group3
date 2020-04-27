@@ -45,11 +45,13 @@ vi:
       name: "Tên *"
       phone: "Số điện thoại *"
       email: "Email *"
+      address: "Địa chỉ *"
       curent_password: "Mật khẩu hiện tại *"
       new_password: "Mật khẩu mới *"
       pla_name: "Tên"
       pla_phone: "Số điện thoại"
       pla_email: "Email"
+      pla_address: "Địa chỉ"
       pla_current_pw: "Mật khẩu cũ"
       pla_new_pw: "Mật khẩu mới"
       save: "Lưu"
@@ -93,6 +95,9 @@ vi:
         send_instructions: "Vui lòng vào mail để reset mật khẩu"
         updated: "Thay đổi mật khẩu thành công"
   simple_form:
+    labels:
+      defaults:
+        name: "Tên *"
     options:
       re_comfirmation: "Đã gửi lại xác nhận"
   product_detail:
