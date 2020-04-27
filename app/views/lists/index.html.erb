@@ -9,10 +9,10 @@
         <!-- Breadcrumb -->
         <ol class="breadcrumb mb-0 font-size-xs text-gray-400">
             <li class="breadcrumb-item">
-            <a class="text-reset" href="<%= root_path %>"><%= t("layout.header.home")%></a>
+                <%= link_to  I18n.t("layout.header.home"), root_path, class:"text-reset" %>
             </li>
             <li class="breadcrumb-item active">
-            <%= t("content.product.new_product") %>
+                <%= t("content.product.new_product") %>
             </li>
         </ol>
 
@@ -277,9 +277,7 @@
                 </div>
 
                 <!-- Button -->
-                <a class="btn btn-sm btn-outline-dark" href="#!">
-                    <%= t ("filter.load") %>
-                </a>
+                <%= link_to  I18n.t("filter.load"), "#", class:"btn btn-sm btn-outline-dark" %>
 
                 </div>
             </div>

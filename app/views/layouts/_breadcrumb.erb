@@ -7,7 +7,7 @@
         <!-- Breadcrumb -->
         <ol class="breadcrumb mb-0 font-size-xs text-gray-400">
           <li class="breadcrumb-item">
-            <a class="text-gray-400"><%= t "layout.header.home" %></a>
+            <%= link_to  I18n.t("layout.header.home"), "#", class:"text-gray-400" %>
           </li>
           <li class="breadcrumb-item active">
             <%= t "content.product.name_product" %>

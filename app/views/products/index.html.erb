@@ -261,8 +261,8 @@
 
       <!-- Buttons -->
       <div class="modal-body">
-        <a class="btn btn-block btn-dark" href="./checkout.html"><%= t "layout.cart.continue" %></a>
-        <a class="btn btn-block btn-outline-dark" href="./shopping-cart.html"><%= t "layout.cart.view_cart" %></a>
+        <%= link_to  I18n.t("layout.cart.continue"), "#", class:"btn btn-block btn-dark" %>
+        <%= link_to  I18n.t("layout.cart.view_cart"), "#", class:"btn btn-block btn-outline-dark" %>
       </div>
 
     </div>
@@ -287,9 +287,7 @@
         <h6 class="mb-7 text-center">Your cart is empty 😞</h6>
 
         <!-- Button -->
-        <a class="btn btn-block btn-outline-dark" href="#!">
-          <%= t "layout.cart.continue" %>
-        </a>
+        <%= link_to  I18n.t("layout.cart.continue"), "#", class:"btn btn-block btn-outline-dark" %>
 
       </div>
 
@@ -402,16 +400,16 @@
                       <!-- Links -->
                       <ul class="list-styled font-size-sm">
                       <li class="list-styled-item">
-                          <a class="list-styled-link" href="#">Iphone 11</a>
+                        <%= link_to  "Iphone 11", "#", class:"list-styled-link" %>
                       </li>
                       <li class="list-styled-item">
-                          <a class="list-styled-link" href="#">Iphone 10</a>
+                        <%= link_to  "Iphone 10", "#", class:"list-styled-link" %>
                       </li>
                       <li class="list-styled-item">
-                          <a class="list-styled-link" href="#">Iphone 8</a>
+                        <%= link_to  "Iphone 8", "#", class:"list-styled-link" %>
                       </li>
                       <li class="list-styled-item">
-                          <a class="list-styled-link" href="#">Iphone 7</a>
+                        <%= link_to  "Iphone 7", "#", class:"list-styled-link" %>
                       </li>
                       </ul>
 
@@ -424,10 +422,10 @@
                       <!-- Links -->
                       <ul class="list-styled mb-0 font-size-sm">
                       <li class="list-styled-item">
-                          <a class="list-styled-link" href="./shop.html">Macbook Pro</a>
+                        <%= link_to  "Macbook Pro", "#", class:"list-styled-link" %>
                       </li>
                       <li class="list-styled-item">
-                          <a class="list-styled-link" href="./shop.html">Macbook Air</a>
+                        <%= link_to  "Macbook Air", "#", class:"list-styled-link" %>
                       </li>
                       </ul>
 
@@ -440,10 +438,10 @@
                       <!-- Links -->
                       <ul class="list-styled font-size-sm">
                       <li class="list-styled-item">
-                          <a class="list-styled-link" href="./shop.html">Ipad Pro 11</a>
+                        <%= link_to  "Ipad Pro 11", "#", class:"list-styled-link" %>
                       </li>
                       <li class="list-styled-item">
-                          <a class="list-styled-link" href="./shop.html">Ipad  6</a>
+                        <%= link_to  "Ipad 6", "#", class:"list-styled-link" %>
                       </li>
                       </ul>
 
@@ -456,10 +454,10 @@
                       <!-- Links -->
                       <ul class="list-styled mb-md-0 font-size-sm">
                       <li class="list-styled-item">
-                          <a class="list-styled-link" href="./shop.html">Apple Watch 5</a>
+                        <%= link_to  "Apple Watch 5", "#", class:"list-styled-link" %>
                       </li>
                       <li class="list-styled-item">
-                          <a class="list-styled-link" href="./shop.html">Apple Watch 6</a>
+                        <%= link_to  "Apple Watch 6", "#", class:"list-styled-link" %>
                       </li>
                       </ul>
 
@@ -650,7 +648,7 @@
             <div class="card-body px-0 bg-white text-center">
                 <!-- Heading -->
                   <div class="mb-1 font-weight-bold">
-                  <a class="text-body"><%= product.product_name %></a><br>
+                  <%= link_to  product.product_name, "#", class:"text-body" %><br>
                   <%= link_to I18n.t("product_detail.detail"), product_path(product) %>
                   </div>
                 <!-- Price -->
@@ -688,7 +686,7 @@
       <div class="col-12">
         <!-- Link  -->
         <div class="mt-7 text-center">
-          <a class="link-underline" href="<%= lists_path %>"><%= t "content.product.discover" %></a>
+          <%= link_to  I18n.t("content.product.discover"), lists_path, class:"link-underline" %>
         </div>
       </div>
     </div>

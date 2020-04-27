@@ -300,9 +300,7 @@
     <div class="container">
 
     <!-- Brand -->
-    <a class="navbar-brand" href="<%= root_path %>">
-        <%= t "layout.header.name_shop" %>
-    </a>
+    <%= link_to  I18n.t("layout.header.name_shop"), root_path, class:"navbar-brand" %>
 
     <!-- Toggler -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarBoxedTopCollapse" aria-controls="navbarBoxedTopCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -316,13 +314,12 @@
         <ul class="navbar-nav mx-auto">
         <li class="nav-item dropdown">
             <!-- Toggle -->
-            <a class="nav-link" href="<%= root_path %>"><%= t "layout.header.home" %></a>
+            <%= link_to  I18n.t("layout.header.home"), root_path, class:"nav-link" %>
         </li>
         <li class="nav-item dropdown">
 
             <!-- Toggle -->
-            <a class="nav-link" data-toggle="dropdown" href="#"><%= t "layout.header.product" %></a>
-
+            <%= link_to I18n.t("layout.header.product"), lists_path, data:{ toggle: "dropdown" }, class:"nav-link" %>
             <!-- Menu -->
             <div class="dropdown-menu" style="min-width: 650px;">
             <div class="card card-lg">
@@ -337,16 +334,16 @@
                     <ul class="list-styled font-size-sm">
                         <li class="list-styled-item">
                         <li class="list-styled-item">
-                        <a class="list-styled-link" href="./product-images-left.html"><%= t "layout.header.phone" %></a>
+                          <%= link_to I18n.t("layout.header.phone"), lists_path, class:"list-styled-link" %>
                         </li>
                         <li class="list-styled-item">
-                        <a class="list-styled-link" href="./product-image-grid.html"><%= t "layout.header.laptop" %></a>
+                          <%= link_to I18n.t("layout.header.latop"), lists_path, class:"list-styled-link" %>
                         </li>
                         <li class="list-styled-item">
-                        <a class="list-styled-link" href="./product-image-slider.html"><%= t "layout.header.watch" %></a>
+                          <%= link_to I18n.t("layout.header.watch"), lists_path, class:"list-styled-link" %>
                         </li>
                         <li class="list-styled-item">
-                        <a class="list-styled-link" href="./product-images-stacked.html"><%= t "layout.header.ipad" %></a>
+                          <%= link_to I18n.t("layout.header.ipad"), lists_path, class:"list-styled-link" %>
                         </li>
                     </ul>
 
@@ -360,13 +357,13 @@
                     <ul class="list-styled mb-7 font-size-sm">
                         <li class="list-styled-item">
                         <li class="list-styled-item">
-                        <a class="list-styled-link" href="./product-images-left.html"><%= t "layout.header.phone" %></a>
+                          <%= link_to I18n.t("layout.header.phone"), lists_path, class:"list-styled-link" %>
                         </li>
                         <li class="list-styled-item">
-                        <a class="list-styled-link" href="./product-image-grid.html"><%= t "layout.header.laptop" %></a>
+                          <%= link_to I18n.t("layout.header.latop"), lists_path, class:"list-styled-link" %>
                         </li>
                         <li class="list-styled-item">
-                        <a class="list-styled-link" href="./product-images-stacked.html"><%= t "layout.header.ipad" %></a>
+                          <%= link_to I18n.t("layout.header.ipad"), lists_path, class:"list-styled-link" %>
                         </li>
                     </ul>
 
@@ -377,10 +374,10 @@
                     <ul class="list-styled font-size-sm">
                         <li class="list-styled-item">
                         <li class="list-styled-item">
-                        <a class="list-styled-link" href="./product-images-left.html"><%= t "layout.header.phone" %></a>
+                        <%= link_to I18n.t("layout.header.phone"), lists_path, class:"list-styled-link" %>
                         </li>
                         <li class="list-styled-item">
-                        <a class="list-styled-link" href="./product-image-grid.html"><%= t "layout.header.laptop" %></a>
+                        <%= link_to I18n.t("layout.header.latop"), lists_path, class:"list-styled-link" %>
                         </li>
                     </ul>
 
@@ -394,16 +391,16 @@
                     <ul class="list-styled font-size-sm">
                         <li class="list-styled-item">
                         <li class="list-styled-item">
-                        <a class="list-styled-link" href="./product-images-left.html"><%= t "layout.header.phone" %></a>
+                          <%= link_to I18n.t("layout.header.phone"), lists_path, class:"list-styled-link" %>
                         </li>
                         <li class="list-styled-item">
-                        <a class="list-styled-link" href="./product-image-grid.html"><%= t "layout.header.laptop" %></a>
+                          <%= link_to I18n.t("layout.header.latop"), lists_path, class:"list-styled-link" %>
                         </li>
                         <li class="list-styled-item">
-                        <a class="list-styled-link" href="./product-image-slider.html"><%= t "layout.header.watch" %></a>
+                          <%= link_to I18n.t("layout.header.watch"), lists_path, class:"list-styled-link" %>
                         </li>
                         <li class="list-styled-item">
-                        <a class="list-styled-link" href="./product-images-stacked.html"><%= t "layout.header.ipad" %></a>
+                          <%= link_to I18n.t("layout.header.ipad"), lists_path, class:"list-styled-link" %>
                         </li>
                     </ul>
 
@@ -415,10 +412,10 @@
         </li>
         <li class="nav-item">
             <!-- Toggle -->
-            <a class="nav-link" href="#"><%= t "layout.header.about" %></a>
+            <%= link_to  I18n.t("layout.header.about"), "#", class:"nav-link" %>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#"><%= t "layout.header.contact" %></a>
+            <%= link_to  I18n.t("layout.header.contact"), "#", class:"nav-link" %>
         </li>
         </ul>
 
@@ -435,10 +432,10 @@
                 <div class="card-body">
                 <ul class="list-styled font-size-sm">
                     <li class="list-styled-item">
-                    <a class="list-styled-link" href="#!">United States</a>
+                      <%= link_to  "United States", "#", class:"list-styled-link" %>
                     </li>
                     <li class="list-styled-item">
-                    <a class="list-styled-link" href="#!">Viet Nam</a>
+                      <%= link_to  "Việt Nam", "#", class:"list-styled-link" %>
                     </li>
                 </ul>
                 </div>
@@ -457,10 +454,10 @@
                 <div class="card-body">
                 <ul class="list-styled font-size-sm">
                     <li class="list-styled-item">
-                    <a class="list-styled-link" href="#!">USD</a>
+                      <%= link_to  "USD", "#", class:"list-styled-link" %>
                     </li>
                     <li class="list-styled-item">
-                    <a class="list-styled-link" href="#!">VNĐ</a>
+                      <%= link_to  "VNĐ", "#", class:"list-styled-link" %>
                     </li>
                 </ul>
                 </div>
@@ -479,10 +476,10 @@
                 <div class="card-body">
                 <ul class="list-styled font-size-sm">
                     <li class="list-styled-item">
-                    <a class="list-styled-link"><%= link_to "EN", locale:"en" %></a>
+                      <%= link_to  "EN", locale: "en", class:"list-styled-link" %>
                     </li>
                     <li class="list-styled-item">
-                    <a class="list-styled-link"><%= link_to "VN", locale:"vi" %></a>
+                      <%= link_to  "VN", locale: "vi", class:"list-styled-link" %>
                     </li>
                 </ul>
                 </div>
