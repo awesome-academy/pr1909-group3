@@ -175,3 +175,18 @@ vi:
     load: "Xem thêm"
     clear: "Xóa"
     show: "Xem kết quả"
+  product:
+    out_stock: " hết hàng, chỉ còn %{count}"
+    added: "%{count} %{name} đã được thêm vào giỏ hàng"
+    add_failed: "Thêm sản phẩm thất bại"
+  cart:
+    name: "Giỏ hàng"
+    product: "Tên sản phẩm"
+    detail: "Thông tin"
+    category: "Loại"
+    price: "Giá"
+    quantity: "Số lượng"
+    total_price: "Thành tiền"
+    continue: "Quay lại"
+    sub_price: "Tổng tiền"
+    payment: "Thanh toán"

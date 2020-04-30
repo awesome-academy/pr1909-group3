@@ -213,3 +213,18 @@ en:
     load: "Load more"
     clear: "Clear"
     show: "Show result"
+  product:
+    out_stock: " out stock, only %{count}"
+    added: "%{count} %{name} added into cart"
+    add_failed: "Add product failed"
+  cart:
+    name: "Shopping Cart"
+    product: "Product"
+    detail: "Infomation"
+    category: "Category"
+    price: "Price"
+    quantity: "Quantity"
+    total_price: "Total price"
+    continue: "Back"
+    sub_price: "Sub price"
+    payment: "Payment"

@@ -8,5 +8,8 @@ class User < ApplicationRecord
   # Validates
   validates :email, presence: true, length: { maximum: Settings.user.email.max_length }
   validates :name, presence: true, length: { maximum: Settings.user.name.max_length }
+  validates :address, presence: true, length: { minimum: Settings.user.address.min_length }
   validates :permission, presence: true
+
+  before_save { email.downcase! }
 end

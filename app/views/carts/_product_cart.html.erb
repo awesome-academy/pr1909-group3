@@ -1,0 +1,24 @@
+<tr>
+  <td><%= product_cart.product_name %></td>
+  <td class="text-left"><%= product_cart.detail %></td>
+  <td><%= product_cart.category.category_name %></td>
+  <td class="text-left"><%= number_to_price(product_cart.price) %></td>
+
+  <td class="text-center">
+    <%= form_tag carts_path, method: :PATCH do %>
+      <%= hidden_field_tag :product_id, product_cart.id %>
+      <%= number_field_tag :quantity, product_cart.amount_added,
+        class: "form-control" %>
+    <% end %>
+  </td>
+  <td class="text-left"><%= number_to_price product_cart.get_total_price %></td>
+
+  <td class="text-right">
+    <%= form_tag carts_path, method: :DELETE do %>
+      <%= hidden_field_tag :product_id, product_cart.id %>
+      <%= button_tag "", type: :submit, class: "btn btn-danger" do %>
+        <i class="fa fa-trash"></i>
+      <% end %>
+    <% end %>
+  </td>
+</tr>

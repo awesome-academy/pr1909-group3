@@ -1,0 +1,45 @@
+<div class="row justify-content-md-center">
+  <h1><%= I18n.t("cart.name")%></h1>
+</div>
+
+<table class="table">
+  <thead>
+    <tr style="text-align: center">
+      <th width="10%"><%= I18n.t ("cart.product")%></th>
+      <th width="20%"><%= I18n.t ("cart.detail")%></th>
+      <th width="15%"><%= I18n.t ("cart.category")%></th>
+      <th width="10%"><%= I18n.t ("cart.price")%></th>
+      <th width="10%"><%= I18n.t ("cart.quantity")%></th>
+      <th width="20%"><%= I18n.t ("cart.total_price")%></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: "product_cart", collection: @products %>
+  </tbody>
+</table>
+<hr>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%= link_to root_path, class: "btn btn-warning" do %>
+        <%= I18n.t("cart.continue") %>
+      <% end %>
+    </div>
+    <div class="col-md-7">
+      <div class="hidden-xs text-right">
+        <strong>
+          <%= I18n.t("cart.sub_price") %>
+          <%= number_to_price get_total_price(@products) %>
+        </strong>
+      </div>
+    </div>
+      <div class="col-md-2 text-right">
+        <%= link_to new_order_path, class: "btn btn-success" do %>
+          <%= I18n.t("cart.payment") %>
+        <% end %>
+      </div>
+  </div>
+</div>
+<br>

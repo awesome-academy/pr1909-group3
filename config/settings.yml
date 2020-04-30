@@ -5,6 +5,13 @@ user:
   email:
     max_length: 255
 
+  phone:
+    min_length: 10
+    max_length: 15
+
+  address:
+    min_length: 8
+
 product:
   product_name:
     max_length: 35

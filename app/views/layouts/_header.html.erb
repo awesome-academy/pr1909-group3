@@ -230,14 +230,19 @@
       </li>
 
       <li class="nav-item ml-lg-n4">
-          <a class="nav-link" data-toggle="modal" href="#modalShoppingCart">
-          <span data-cart-items="2">
-              <i class="fa fa-shopping-cart"></i>
-          </span>
-          </a>
-      </li>
+          <%= link_to  carts_path, class: "nav-link" do %>
+            <i class="fa fa-shopping-cart"></i>
+            <span class="badge badge-light" id="cart-size">
+              <%= load_size_cart %>
+            </span>
+          <% end %>
+        </li>
       </ul>
-
     </div>
   </div>
 </nav>
+<div class="container" id="alert-msg">
+    <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+    <% end %>
+</div>
