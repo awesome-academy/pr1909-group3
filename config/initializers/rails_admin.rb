@@ -36,5 +36,11 @@ RailsAdmin.config do |config|
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+
+    config.model 'Product' do
+      edit do
+        configure :detail, :ck_editor
+      end
+    end
   end
 end
