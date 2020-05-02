@@ -43,11 +43,12 @@ module CartsHelper
     end
 
     load_cookie_cart
+
     unless @orders.key? product_id
       return flash[:danger] = I18n.t("product.add_failed")
     end
     @orders[product_id] = quantity
-    check_out_stock product, quantity
+    check_out_stock(product, quantity)
   end
 
   def remove_product(product_id)

@@ -488,7 +488,60 @@
     </div>
   
     <div class="row">
+<<<<<<< HEAD
       <%= render partial: "shared/product_item", collection: @products %>
+=======
+    <% @product.each do |product|%>
+      <div class="col-6 col-md-3 col-lg">
+        <!-- Card -->
+        <div class="card mb-7" data-toggle="card-collapse">
+          <!-- Image -->
+          <a href="product.html">
+            <%# <img src="assets/img/products/product-5.jpg" alt="..." class="card-img-top"> %>
+          </a>
+          <!-- Collapse -->
+          <div class="card-collapse-parent">
+            <!-- Body -->
+            <div class="card-body px-0 bg-white text-center">
+                <!-- Heading -->
+                  <div class="mb-1 font-weight-bold">
+                  <%= link_to  product.product_name, "#", class:"text-body" %><br>
+                  <%= link_to I18n.t("product_detail.detail"), product_path(product) %>
+                  </div>
+                <!-- Price -->
+                  <div class="mb-1 font-weight-bold text-muted">
+                    $<%= product.price%>
+                  </div>
+
+                <!--Add shop cart-->
+                <ul style="list-style-type: none; display: inline-block">
+                  <li>
+                    <%= form_for :cart, url: shoping_path, method: :POST do |f| %>
+                      <div><%= f.hidden_field :product_id, value: product.id %></div>
+                      <div><%= f.hidden_field :quantity, value: 1 %></div>
+                      <%= f.button :submit do %>
+                        <i class="fa fa-shopping-bag"></i>
+                      <% end %>
+                    <% end %>
+                  </li>
+
+                  <li>
+                    <%= form_for :cart, url: shoping_path, method: :POST, remote: true do |f| %>
+                      <div><%= f.hidden_field :product_id, value: product.id %></div>
+                      <div><%= f.hidden_field :quantity, value: 1 %></div>
+                      <%= f.button :submit do %>
+                        <i class="fa fa-shopping-cart"></i>
+                      <% end %>
+                    <% end %>
+                  </li>
+                </ul>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+>>>>>>> 4808f97... Error
       <!-- Divider -->
       <div class="w-100 d-none d-lg-block"></div>
     </div>

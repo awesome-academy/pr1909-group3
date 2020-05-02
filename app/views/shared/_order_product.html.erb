@@ -1,0 +1,9 @@
+<tr>
+  <td><%= link_to (image_tag order_product.product.image_url, size: Settings.cart.size_img),
+    order_product.product %></td>
+  <td><%= order_product.name %></td>
+  <td><%= order_product.info %></td>
+  <td class="text-left"><%= number_to_price(order_product.price) %></td>
+  <td class="text-center"><%= order_product.quantity %></td>
+  <td class="text-left"><%= number_to_price(order_product.get_total_price) %></td>
+</tr>

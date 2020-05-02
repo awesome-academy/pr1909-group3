@@ -190,3 +190,10 @@ vi:
     continue: "Quay lại"
     sub_price: "Tổng tiền"
     payment: "Thanh toán"
+  payment:
+    title: "Thanh toán"
+    name: "Tên: *"
+    phone: "Số điện thoại: *"
+    address: "Địa chỉ: *"
+    submit: "Thanh toán"
+    success: "Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi."

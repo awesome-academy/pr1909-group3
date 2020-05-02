@@ -1,0 +1,43 @@
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h5>
+        <%= t("label.receipt") %>
+        [<%= order.id %>]
+        <%= show_state order.state %>
+      </h5>
+      <h5><%= l order.created_at, format: :long %></h5>
+    </div>
+    <div class="col-md-6 text-right">
+      <h5><%= order.reciever_name %></h5>
+      <h5><%= order.address %></h5>
+    </div>
+  </div>
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th width="10%"><%= t("label.image") %></th>
+          <th width="30%"><%= t("label.product") %></th>
+          <th width="40%"><%= t("label.info") %></th>
+          <th width="10%"><%= t("label.price") %></th>
+          <th width="10%"><%= t("label.quantity") %></th>
+          <th width="10%"><%= t("label.total") %></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: "shared/order_product", collection: order.order_products %>
+      </tbody>
+    </table>
+  </div>
+  <div class="row">
+    <div class="col-md-12 text-right">
+      <h3><strong>
+        <%= t("label.total") %>
+        <%= number_to_price(get_price_order order) %>
+      </strong></h3>
+    </div>
+  </div>
+</div>

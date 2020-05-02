@@ -3,6 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable
+
+  has_many :orders, dependent: :destroy
   # enum
   enum permission: { admin: 1, staff: 2, customer: 3 }
   # Validates

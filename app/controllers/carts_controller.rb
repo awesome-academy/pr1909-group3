@@ -2,7 +2,7 @@ class CartsController < ApplicationController
   before_action :authenticate_user!
 
   def shopping
-    add_product params[:carts][:product_id], params[:carts][:quantity].to_i
+    add_product(params[:carts][:product_id], params[:carts][:quantity].to_i)
     respond_to do |format|
       format.html { redirect_to carts_path }
       format.js
@@ -15,13 +15,19 @@ class CartsController < ApplicationController
   end
 
   def update
-    update_cart params[:product_id], params[:quantity].to_i
+    update_cart(params[:product_id], params[:quantity].to_i)
     redirect_to carts_path
   end
 
   def destroy
     remove_product params[:product_id]
     redirect_to carts_path
+  end
+
+  def checkout
+    orders = load_cookie_cart
+    load_products orders
+    render :payment
   end
 
   private

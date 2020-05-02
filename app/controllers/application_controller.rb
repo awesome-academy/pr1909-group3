@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   include ProductsHelper
   include CartsHelper
   include OrdersHelper
+  include UsersHelper
 
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale

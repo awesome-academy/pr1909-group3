@@ -1,10 +1,12 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @orders = current_user.orders.latest
   end
 
   def new
-    @order = current_user.orders.build(reciever_name: current_user.product_name,
+    @order = current_user.orders.build(reciever_name: current_user.name,
                                        phone: current_user.phone, address: current_user.address)
   end
 
@@ -16,7 +18,7 @@ class OrdersController < ApplicationController
 
     if @order.save
       clear_cart
-      flash[:success] = "Cam on"
+      flash[:success] = I18n.t("payment.success")
       redirect_to root_path
     else
       render :new

@@ -228,3 +228,10 @@ en:
     continue: "Back"
     sub_price: "Sub price"
     payment: "Payment"
+  payment:
+    title: "Payment"
+    name: "Name: *"
+    phone: "Phone: *"
+    address: "Address: *"
+    submit: "Payment"
+    success: "Thank you for you used servirce of our."
