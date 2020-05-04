@@ -5,6 +5,10 @@ ruby '2.6.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
+gem 'image_processing'
+gem 'ckeditor'
+gem 'carrierwave', '~> 2.0'
+gem 'mini_magick'
 gem "config"
 # Use Rubocop with AirBNB setting
 gem 'rubocop-airbnb', require: false

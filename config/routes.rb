@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   get 'lists/index'
   get 'lists/show'
   get 'products/add_to_cart/:id', to: 'products#add_to_cart', as: 'add_to_cart'
