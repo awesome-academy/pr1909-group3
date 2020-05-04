@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_30_234445) do
+ActiveRecord::Schema.define(version: 2020_05_04_114602) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "category_name", null: false
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2020_04_30_234445) do
     t.string "slug"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.json "images"
     t.index ["category_id"], name: "index_products_on_category_id"
   end
 

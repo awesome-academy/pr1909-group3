@@ -39,7 +39,9 @@ RailsAdmin.config do |config|
 
     config.model 'Product' do
       edit do
-        configure :detail, :ck_editor
+        configure :detail, :ck_editor do
+          config_js ActionController::Base.helpers.asset_path('ckeditor/config.js')
+        end
       end
     end
   end
