@@ -4,5 +4,5 @@
  */
 
 CKEDITOR.editorConfig = function (config) {
-	config.language = "en";
+  config.language = "en";
 };
