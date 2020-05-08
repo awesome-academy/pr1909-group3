@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   delete 'products/remove_from_cart/:id', to: 'products#remove_from_cart', as: 'remove_from_cart'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root to: 'products#index'
-  devise_for :users
+  devise_for :users,
+             path: '',
+             path_names: { sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'resgistration' },
+             controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   resources :customers
   resources :lists
   resources :products
