@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
   def index
     @q = Product.ransack params[:q]
     @products = @q.result(distinct: true).page(params[:page])
+    @order_detail = current_order.order_details.new
   end
 
   def show
