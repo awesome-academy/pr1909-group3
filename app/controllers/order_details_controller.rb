@@ -22,4 +22,14 @@ class OrderDetailsController < ApplicationController
   def order_detail_params
     params.require(:order_detail).permit(:product_id, :quantity)
   end
+
+  def current_order
+    if !session[:order_id].nil?
+      Order.find(session[:order_id])
+    elsif current_user
+      current_user.orders.new status: 0
+    else
+      Order.new
+    end
+  end
 end

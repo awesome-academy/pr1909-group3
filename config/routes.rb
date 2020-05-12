@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   get 'lists/index'
   get 'lists/show'
-  resources :order_details, only: [:create, :update, :destroy]
+  post '/shopping', to: 'order_details#create'
+  resources :order_details
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root to: 'products#index'
   devise_for :users
