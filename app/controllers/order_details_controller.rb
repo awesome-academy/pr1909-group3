@@ -28,8 +28,6 @@ class OrderDetailsController < ApplicationController
       Order.find(session[:order_id])
     elsif current_user
       current_user.orders.new status: 0
-    else
-      Order.new
     end
   end
 end
