@@ -4,7 +4,15 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :set_search
 
-  # helper_method :current_order
+  helper_method :current_order
+
+  def current_order
+    if !session[:order_id].nil?
+      Order.find(session[:order_id])
+    elsif current_user
+      current_user.orders.new status: 0
+    end
+  end
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
