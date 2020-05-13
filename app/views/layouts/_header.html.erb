@@ -230,11 +230,14 @@
       </li>
 
       <li class="nav-item ml-lg-n4">
-          <a class="nav-link" data-toggle="modal" href="#modalShoppingCart">
-          <span data-cart-items="2">
-              <i class="fa fa-shopping-cart"></i>
-          </span>
-          </a>
+        <% if current_user %>
+          <%= render "carts/cart_text"%>
+         <% else %>
+            <%= link_to cart_path(:id), 
+            class: "nav-link badge badge-light" do %>
+                <i class="fa fa-shopping-cart"></i>
+            <% end %>
+         <% end %> 
       </li>
       </ul>
 
