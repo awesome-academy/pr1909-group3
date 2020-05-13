@@ -22,4 +22,8 @@ class OrderDetailsController < ApplicationController
   def order_detail_params
     params.require(:order_detail).permit(:product_id, :quantity)
   end
+
+  def current_order
+    Order.where(user_id: current_user.id, status: 0).find_or_create_by(status: 0)
+  end
 end
