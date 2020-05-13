@@ -4,12 +4,6 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :set_search
 
-  helper_method :current_order
-
-  # def current_order
-  #   Order.where(user_id: current_user.id, status: 'new').find_or_create_by(user_id: current_user.id, status: 0)
-  # end
-
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end
