@@ -15,19 +15,19 @@
         <!-- Links -->
         <ul class="list-inline mb-7">
             <li class="list-inline-item px-3">
-            <a class="text-gray-300" href="#"><%= t "layout.footer.contact_us" %></a>
+            <%= link_to  I18n.t("layout.footer.contact_us"), "#", class:"text-gray-300" %>
             </li>
             <li class="list-inline-item px-3">
-            <a class="text-gray-300" href="#">FAQs</a>
+            <%= link_to  "FAQs", "#", class:"text-gray-300" %>
             </li>
             <li class="list-inline-item px-3">
-            <a class="text-gray-300" data-toggle="modal" href="#"><%= t "layout.footer.size_guide" %></a>
+            <%= link_to  I18n.t("layout.footer.size_guide"), "#", data: {toggle: "modal"} ,class:"text-gray-300" %>
             </li>
             <li class="list-inline-item px-3">
-            <a class="text-gray-300" href="#"><%= t "layout.footer.shipping_return" %></a>
+            <%= link_to  I18n.t("layout.footer.shipping_return"), "#", class:"text-gray-300" %>
             </li>
             <li class="list-inline-item px-3">
-            <a class="text-gray-300" href="#"><%= t "layout.footer.our_story" %></a>
+            <%= link_to  I18n.t("layout.footer.our_story"), "#", class:"text-gray-300" %>
             </li>
         </ul>
 

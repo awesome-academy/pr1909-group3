@@ -45,11 +45,13 @@ vi:
       name: "Tên *"
       phone: "Số điện thoại *"
       email: "Email *"
+      address: "Địa chỉ *"
       curent_password: "Mật khẩu hiện tại *"
       new_password: "Mật khẩu mới *"
       pla_name: "Tên"
       pla_phone: "Số điện thoại"
       pla_email: "Email"
+      pla_address: "Địa chỉ"
       pla_current_pw: "Mật khẩu cũ"
       pla_new_pw: "Mật khẩu mới"
       save: "Lưu"
@@ -57,7 +59,7 @@ vi:
       list: "Đơn hàng"
     product:
       name_product: Thông tin sản phẩm chi tiết
-      new_product: "Sản phẩm mới"
+      new_product: "Sản phẩm"
       discover: "Khám phá"
   login:
     title: "Đăng nhập"
@@ -93,6 +95,9 @@ vi:
         send_instructions: "Vui lòng vào mail để reset mật khẩu"
         updated: "Thay đổi mật khẩu thành công"
   simple_form:
+    labels:
+      defaults:
+        name: "Tên *"
     options:
       re_comfirmation: "Đã gửi lại xác nhận"
   product_detail:
@@ -144,3 +149,29 @@ vi:
       title: "Tiêu đề *"
       review: "Nhận xét *"
       post: "Gửi nhận xét"
+  filter:
+    name:
+      sort_by: "Sắp xếp"
+      category: "Thể loại"
+      brand: "Nhãn hiệu"
+      price: "Giá"
+    sort_by:
+      default: "Mặc định"
+      newest: "Mới nhất"
+      default_price: "Giá gốc"
+      hight_price: "Giá cao"
+    category:
+      all_product: "Tất cả sản phẩm"
+      phone: "Điện thoại"
+      laptop: "Laptop"
+      ipad: "Máy tính bảng"
+    brand:
+      search: "Tìm kiếm nhãn hàng"
+      apple: "Apple"
+      samsung: "Samsung"
+      dell: "Dell"
+      huawei: "Huawei"
+    price:
+    load: "Xem thêm"
+    clear: "Xóa"
+    show: "Xem kết quả"

@@ -76,18 +76,20 @@ en:
       name: "Email *"
       phone: "Phone *"
       email: "Email *"
+      address: "Address *"
       curent_password: "Current Password *"
       new_password: "New Password *"
       pla_name: "Name"
       pla_phone: "Phone"
       pla_email: "Email"
+      pla_address: "Address"
       pla_current_pw: "Current password"
       pla_new_pw: "New password"
       save: "Save changes"
     order:
       list: "Orders"
     product:
-      new_product: "New Product"
+      new_product: "Product"
       discover: "Discover More"
   login:
     title: "Log in"
@@ -185,3 +187,29 @@ en:
       title: "Title review *"
       review: "Review *"
       post: "Post Review"
+  filter:
+    name:
+      sort_by: "Sort by"
+      category: "Category"
+      brand: "Brand"
+      price: "Price"
+    sort_by:
+      default: "Default"
+      newest: "Newest"
+      default_price: "Default Price"
+      hight_price: "Hight Price"
+    category:
+      all_product: "All product"
+      phone: "Phone"
+      laptop: "Laptop"
+      ipad: "Tablet"
+    brand:
+      search: "Search brand"
+      apple: "Apple"
+      samsung: "Samsung"
+      dell: "Dell"
+      huawei: "Huawei"
+    price:
+    load: "Load more"
+    clear: "Clear"
+    show: "Show result"

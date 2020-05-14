@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   belongs_to :category, dependent: :destroy
-
+  has_many :order_details, dependent: :destroy
+  mount_uploaders :images, AssetUploader
   # Validates
   validates :product_name, presence: true, length: { maximum: Settings.product.product_name.max_length }
   validates :detail, length: {

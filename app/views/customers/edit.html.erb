@@ -1,0 +1,55 @@
+<hr>
+<%= render 'layouts/breadcrumb' %>
+<!-- CONTENT -->
+<section class="pt-7 pb-12">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+
+        <!-- Heading -->
+        <h3 class="mb-10" style="margin-bottom: 1rem !important"><%= t "content.account.name_account" %></h3>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-3">
+
+        <!-- Nav -->
+        <nav class="mb-10 mb-md-0">
+          <div class="list-group list-group-sm list-group-strong list-group-flush-x">
+            <a class="list-group-item list-group-item-action" href="account-orders.html">
+              <%= t "content.order.list"%>
+            </a>
+            <a class="list-group-item list-group-item-action active" href="#">
+              <%= t "content.account.list"%>
+            </a>
+          </div>
+        </nav>
+
+      </div>
+      <div class="col-12 col-md-9 col-lg-8 offset-lg-1">
+
+        <!-- Form -->
+        <div class="row">
+
+          <div class="col-12 col-md-6">
+              <%= form_for @user, url: customer_path(@user) do |f| %>
+                <%= f.label :name, I18n.t("content.account.name") %> <br>
+                <%= f.text_field :name, class: "form-control form-control-sm", placeholder: I18n.t("content.account.pla_name") %> <br>
+                <%= f.label :phone, I18n.t("content.account.phone") %> <br>
+                <%= f.text_field :phone, class: "form-control form-control-sm", placeholder: I18n.t("content.account.pla_phone") %> <br>
+                <%= f.label :email, I18n.t("content.account.email") %> <br>
+                <%= f.text_field :email, class: "form-control form-control-sm", placeholder: I18n.t("content.account.pla_email") %> <br>
+                <%= f.label :address, I18n.t("content.account.address") %> <br>
+                <%= f.text_field :address, class: "form-control form-control-sm", placeholder: I18n.t("content.account.pla_address") %>
+                <br>
+                <%= f.submit %>
+              <% end %>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

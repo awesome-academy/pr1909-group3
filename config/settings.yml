@@ -16,3 +16,4 @@ product:
 category:
   category_name:
     max_length: 16
+  search: { "Apple": 1, "Samsung": 2, "Huawei": 3, "Dell": 4 }

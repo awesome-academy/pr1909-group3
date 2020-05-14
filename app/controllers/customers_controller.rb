@@ -1,5 +1,5 @@
 class CustomersController < ApplicationController
-  before_action :get_user, only: [:index, :show, :edit]
+  before_action :get_user
   before_action :authenticate_user!
 
   def index
@@ -12,6 +12,15 @@ class CustomersController < ApplicationController
   def edit
   end
 
+  def update
+    if @user.update_attributes(user_params)
+      flash[:success] = "Profile updated"
+      redirect_to edit_customer_path(@user)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def get_user
@@ -19,6 +28,6 @@ class CustomersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :name, :phone, :address)
+    params.require(:user).permit(:name, :phone, :email, :address)
   end
 end
