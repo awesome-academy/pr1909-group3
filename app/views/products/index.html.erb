@@ -358,6 +358,26 @@
                   </div>
 
                 <!--Add shop cart-->
+                <ul style="list-style-type: none">
+                    <li style="display: inline-block; margin-right: 10px;">
+                    <%= form_for :order_detail, url: shopping_path, remote: true, method: :POST do |f| %>
+                        <div><%= f.hidden_field :product_id, value: product.id %></div>
+                        <div><%= f.hidden_field :quantity, value: 1 %></div>
+                        <%= f.button :submit do %>
+                        <i class="fa fa-shopping-bag"></i>
+                        <% end %>
+                    <% end %>
+                    </li>
+                    <li style="display: inline-block;">
+                    <%= form_for :order_detail, url: shopping_path, method: :POST do |f| %>
+                        <div><%= f.hidden_field :product_id, value: product.id %></div>
+                        <div><%= f.hidden_field :quantity, value: 1 %></div>
+                        <%= f.button :submit do %>
+                        <i class="fa fa-shopping-cart"></i>
+                        <% end %>
+                    <% end %>
+                    </li>
+                </ul>
             </div>
           </div>
         </div>
