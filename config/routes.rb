@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   resources :order_details
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root to: 'products#index'
-  devise_for :users
+  devise_for :users,
+             path: '',
+             path_names: { sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'resgistration' },
+             controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   resources :customers
   resources :lists
   resources :products
