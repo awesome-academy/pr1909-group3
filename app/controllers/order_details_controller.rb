@@ -29,6 +29,7 @@ class OrderDetailsController < ApplicationController
     @order_detail = @order.order_details.find(params[:id])
     @order_detail.destroy
     @order_details = @order.order_details
+    @order.destroy
   end
 
   private

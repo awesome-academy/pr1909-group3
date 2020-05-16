@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 2020_05_11_120814) do
 
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "address"
+    t.string "reciever_name"
+    t.string "phone"
     t.integer "status"
     t.integer "subtotal"
     t.bigint "user_id"
