@@ -2,11 +2,14 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   get 'lists/index'
   get 'lists/show'
-  get 'products/add_to_cart/:id', to: 'products#add_to_cart', as: 'add_to_cart'
-  delete 'products/remove_from_cart/:id', to: 'products#remove_from_cart', as: 'remove_from_cart'
+  post '/shopping', to: "order_details#create"
+  resources :order_details
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root to: 'products#index'
-  devise_for :users
+  devise_for :users,
+             path: '',
+             path_names: { sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'resgistration' },
+             controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   resources :customers
   resources :lists
   resources :products
