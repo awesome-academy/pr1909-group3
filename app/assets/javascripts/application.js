@@ -2,5 +2,8 @@
 //= require popper
 //= require bootstrap
 //= require rails-ujs
-//= require theme
+
+//= require flickity.pkgd.min.js
+//= require flickity-fade.js
+//= require theme.min
 //= require_tree .
