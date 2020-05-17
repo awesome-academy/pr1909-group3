@@ -192,3 +192,6 @@ vi:
     address: "Địa chỉ: *"
     submit: "Thanh toán"
     success: "Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi."
+  success:
+    update: "Số lượng sản phẩm trong giỏ đã được tăng lên"
+    create: "Đã thêm thành công sản phẩm vào giỏ hàng"
