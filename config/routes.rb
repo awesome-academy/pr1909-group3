@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :customers
   resources :lists
   resources :products
+  resources :reviews, only: %i(create update)
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end

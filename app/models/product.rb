@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   belongs_to :category, dependent: :destroy
   has_many :order_details, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   mount_uploaders :images, AssetUploader
   # Validates
   validates :product_name, presence: true, length: { maximum: Settings.product.product_name.max_length }
@@ -14,4 +15,8 @@ class Product < ApplicationRecord
                    where('created_at >= created_at or updated_at >= updated_at',
                          created_at: Time.zone.now - 15.days, updated_at: Time.zone.now - 3.days)
                  }
+
+  def get_rank
+    (rank * 2).round / 2.0
+  end
 end

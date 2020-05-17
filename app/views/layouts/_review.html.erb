@@ -29,26 +29,6 @@
 
           </div>
           <div class="col-12 col-md text-md-center">
-
-          <!-- Rating -->
-          <div class="rating text-dark h6 mb-4 mb-md-0" data-value="4">
-              <div class="rating-item">
-              <i class="fa fa-star"></i>
-              </div>
-              <div class="rating-item">
-              <i class="fa fa-star"></i>
-              </div>
-              <div class="rating-item">
-              <i class="fa fa-star"></i>
-              </div>
-              <div class="rating-item">
-              <i class="fa fa-star"></i>
-              </div>
-              <div class="rating-item">
-              <i class="fa fa-star"></i>
-              </div>
-          </div>
-
           <!-- Count -->
           <%# <strong class="font-size-sm ml-2">Reviews (3)</strong> %>
 
@@ -63,90 +43,45 @@
 
       <!-- New Review -->
       <div class="collapse" id="reviewForm">
+        <!-- Divider -->
+        <hr class="my-8">
 
-          <!-- Divider -->
-          <hr class="my-8">
-
-          <!-- Form -->
-          <form>
           <div class="row">
-              <div class="col-12 mb-6 text-center">
-
-              <!-- Text -->
-              <p class="mb-1 font-size-xs">
-                  <%= t ("review.write.score") %>
-              </p>
-
-              <!-- Rating form -->
-              <div class="rating-form">
-
-                  <!-- Input -->
-                  <input class="rating-input" type="range" min="1" max="5" value="5">
-
-                  <!-- Rating -->
-                  <div class="rating h5 text-dark" data-value="5">
-                  <div class="rating-item">
-                      <i class="fa fa-star"></i>
-                  </div>
-                  <div class="rating-item">
-                      <i class="fa fa-star"></i>
-                  </div>
-                  <div class="rating-item">
-                      <i class="fa fa-star"></i>
-                  </div>
-                  <div class="rating-item">
-                      <i class="fa fa-star"></i>
-                  </div>
-                  <div class="rating-item">
-                      <i class="fa fa-star"></i>
-                  </div>
-                  </div>
-
+            <div class="col-12 mb-6 text-center">
+                <!-- Text -->
+                <p class="mb-1 font-size-xs">
+                    <%= t ("review.write.score") %>
+                </p>
               </div>
 
               </div>
               <div class="col-12 col-md-6">
+                <div class="form-group">
+                  <%= form_for @review do |f| %>
+                    <div class="row">
+                    <div class="col-md-2">
+                        <h4><%= t("label.review") %>:</h4>
+                    </div>
+                    <div class="col-md-4 offset-md-1">
+                        <%= f.hidden_field :product_id, value: @product.id %>
+                        <%= f.hidden_field :score, class: "rating",
+                        data: {filled: "fa fa-star fa-2x", empty: "fa fa-star-o fa-2x"} %>
+                    </div>
+                    </div>
 
-              <!-- Name -->
-              <div class="form-group">
-                  <input class="form-control form-control-sm" id="reviewName" type="text" placeholder="<%= t ("review.write.yourname") %>" required>
+                    <div class="row">
+                    <div class="col-md-10">
+                        <%= f.text_area :content, placeholder: t("review.write.review"), class: "md-textarea form-control" %>
+                    </div>
+                    <div class="col-md-2">
+                        <%= f.button :submit, class: "btn btn-outline-dark" %>
+                    </div>
+                    </div>
+                  <% end %>
+                </div>
+
+                </div>
               </div>
-
-              </div>
-              <div class="col-12 col-md-6">
-
-              <!-- Email -->
-              <div class="form-group">
-                  <input class="form-control form-control-sm" id="reviewEmail" type="email" placeholder="<%= t ("review.write.email") %>" required>
-              </div>
-
-              </div>
-              <div class="col-12">
-
-              <!-- Name -->
-              <div class="form-group">
-                  <input class="form-control form-control-sm" id="reviewTitle" type="text" placeholder="<%= t ("review.write.title") %>" required>
-              </div>
-
-              </div>
-              <div class="col-12">
-
-              <!-- Name -->
-              <div class="form-group">
-                  <textarea class="form-control form-control-sm" id="reviewText" rows="5" placeholder="<%= t ("review.write.review") %>" required></textarea>
-              </div>
-
-              </div>
-              <div class="col-12 text-center">
-
-              <!-- Button -->
-              <button class="btn btn-outline-dark" type="submit">
-                  <%= t ("review.write.post") %>
-              </button>
-
-              </div>
-          </div>
-          </form>
 
       </div>
 
@@ -155,7 +90,6 @@
 
           <!-- Review -->
           <div class="review">
-
             <div class="review-body">
                 <div class="row">
                 <div class="col-12 col-md-auto">
@@ -172,58 +106,49 @@
 
                     <!-- Header -->
                     <div class="row mb-6">
-                    <div class="col-12">
+                      <div class="col-12">
 
                         <!-- Rating -->
                         <div class="rating font-size-sm text-dark" data-value="3">
-                        <div class="rating-item">
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="rating-item">
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="rating-item">
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="rating-item">
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="rating-item">
-                            <i class="fa fa-star"></i>
-                        </div>
+                          <div class="rating-item">
+                              <i class="fa fa-star"></i>
+                          </div>
+                          <div class="rating-item">
+                              <i class="fa fa-star"></i>
+                          </div>
+                          <div class="rating-item">
+                              <i class="fa fa-star"></i>
+                          </div>
+                          <div class="rating-item">
+                              <i class="fa fa-star"></i>
+                          </div>
+                          <div class="rating-item">
+                              <i class="fa fa-star"></i>
+                          </div>
                         </div>
 
+                      </div>
+                      <div class="col-12">
+
+                        <% if @product.reviews.any? %>
+                          <div class="container">
+                            <div class="card">
+                              <ul class="list-group list-group-flush">
+                                <%= render partial: "review", collection: @reviews %>
+                              </ul>
+                            </div>
+                          </div>
+                        <% end %>
+                      </div>
                     </div>
-                    <div class="col-12">
-
-                        <!-- Time -->
-                        <span class="font-size-xs text-muted">
-                        Sophie Casey, <time datetime="2019-07-07">07 Jul 2019</time>
-                        </span>
-
-                    </div>
-                    </div>
-
-                    <!-- Title -->
-                    <p class="mb-2 font-size-lg font-weight-bold">
-                    Cute, but too small
-                    </p>
-
-                    <!-- Text -->
-                    <p class="text-gray-500">
-                    Shall good midst can't. Have fill own his multiply the divided. Thing great. Of heaven whose signs.
-                    </p>
 
                     <!-- Footer -->
                     <div class="row align-items-center">
-                    <div class="col-auto d-none d-lg-block">
-
-                        <!-- Text -->
-                        <p class="mb-0 font-size-sm">Was this review helpful?</p>
-
-                    </div>
+                      <div class="col-auto d-none d-lg-block">
+                          <!-- Text -->
+                          <p class="mb-0 font-size-sm">Was this review helpful?</p>
+                      </div>
                     <div class="col-auto mr-auto">
-
                         <!-- Rate -->
                         <div class="rate">
                         <a class="rate-item" data-toggle="vote" data-count="2" href="#" role="button">
@@ -233,159 +158,21 @@
                             <i class="fa fa-thumbs-down"></i>
                         </a>
                         </div>
-
                     </div>
                     <div class="col-auto d-none d-lg-block">
-
                         <!-- Text -->
                         <p class="mb-0 font-size-sm">Comments (1)</p>
-
                     </div>
                     <div class="col-auto">
-
                         <!-- Button -->
                         <%= link_to  "Comment", "#", class:"btn btn-xs btn-outline-border" %>
-
                     </div>
-                    </div>
-
+                  </div>
                 </div>
-                </div>
+              </div>
             </div>
-
-          <!-- Child review -->
-            <div class="review review-child">
-                <div class="review-body">
-
-                <!-- Content -->
-                <div class="row">
-                    <div class="col-12 col-md-auto">
-
-                    <!-- Avatar -->
-                    <div class="avatar avatar-xxl mb-6 mb-md-0">
-                        <span class="avatar-title rounded-circle">
-                        <i class="fa fa-user"></i>
-                        </span>
-                    </div>
-
-                    </div>
-                    <div class="col-12 col-md">
-
-                    <!-- Header -->
-                    <div class="row mb-6">
-                        <div class="col-12">
-
-                        <!-- Rating -->
-                        <div class="rating font-size-sm text-dark" data-value="4">
-                            <div class="rating-item">
-                            <i class="fa fa-star"></i>
-                            </div>
-                            <div class="rating-item">
-                            <i class="fa fa-star"></i>
-                            </div>
-                            <div class="rating-item">
-                            <i class="fa fa-star"></i>
-                            </div>
-                            <div class="rating-item">
-                            <i class="fa fa-star"></i>
-                            </div>
-                            <div class="rating-item">
-                            <i class="fa fa-star"></i>
-                            </div>
-                        </div>
-
-                        </div>
-                        <div class="col-12">
-
-                        <!-- Time -->
-                        <span class="font-size-xs text-muted">
-                            William Stokes, <time datetime="2019-07-14">14 Jul 2019</time>
-                        </span>
-
-                        </div>
-                    </div>
-
-                    <!-- Title -->
-                    <p class="mb-2 font-size-lg font-weight-bold">
-                        Very good
-                    </p>
-
-                    <!-- Text -->
-                    <p class="text-gray-500">
-                        Made face lights yielding forth created for image behold blessed seas.
-                    </p>
-
-                    <!-- Footer -->
-                    <div class="row align-items-center">
-                        <div class="col-auto d-none d-lg-block">
-
-                        <!-- Text -->
-                        <p class="mb-0 font-size-sm">Was this review helpful?</p>
-
-                        </div>
-                        <div class="col-auto mr-auto">
-
-                        <!-- Rate -->
-                        <div class="rate">
-                            <a class="rate-item" data-toggle="vote" data-count="7" href="#" role="button">
-                            <i class="fa fa-thumbs-up"></i>
-                            </a>
-                            <a class="rate-item" data-toggle="vote" data-count="0" href="#" role="button">
-                            <i class="fa fa-thumbs-down"></i>
-                            </a>
-                        </div>
-
-                        </div>
-                        <div class="col-auto d-none d-lg-block">
-
-                        <!-- Text -->
-                        <p class="mb-0 font-size-sm">Comments (0)</p>
-
-                        </div>
-                        <div class="col-auto">
-
-                        <!-- Button -->
-                        <%= link_to  "Comment", "#", class:"btn btn-xs btn-outline-border" %>
-
-                        </div>
-                    </div>
-
-                    </div>
-                </div>
-
-                </div>
-            </div>
-
-          </div>
-
+        </div>
       </div>
-
-      <!-- Pagination -->
-      <nav class="d-flex justify-content-center mt-9">
-          <ul class="pagination pagination-sm text-gray-400">
-          <li class="page-item">
-              <a class="page-link page-link-arrow" href="#">
-              <i class="fa fa-caret-left"></i>
-              </a>
-          </li>
-          <li class="page-item active">
-            <%= link_to  "1", "#", class:"page-link" %>
-          </li>
-          <li class="page-item">
-            <%= link_to  "2", "#", class:"page-link" %>
-          </li>
-          <li class="page-item">
-            <%= link_to  "3", "#", class:"page-link" %>
-          </li>
-          <li class="page-item">
-              <a class="page-link page-link-arrow" href="#">
-              <i class="fa fa-caret-right"></i>
-              </a>
-          </li>
-          </ul>
-      </nav>
-
-      </div>
-  </div>
+    </div>
   </div>
 </section>
