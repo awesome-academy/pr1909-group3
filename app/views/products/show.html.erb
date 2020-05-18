@@ -1,5 +1,4 @@
 <%= render 'layouts/breadcrumb' %>
-
 <!-- PRODUCT -->
 <section>
   <div class="container">
@@ -7,10 +6,8 @@
       <div class="col-12">
         <div class="row">
           <div class="col-12 col-md-6">
-
-          <!-- Card -->
+            <!-- Card -->
             <div class="card">
-
               <!-- Badge -->
               <div class="badge badge-primary card-badge text-uppercase">
                 <% if @product.quantity > 0 %>
@@ -19,109 +16,91 @@
                   <%= t ("product_detail.status.unsale") %>
                 <% end %>
               </div>
-
               <!-- Slider -->
               <div class="mb-4" data-flickity='{"draggable": false, "fade": true}' id="productSlider">
                 <!-- Item -->
-                <a href="assets/img/products/product-7.jpg" data-fancybox>
-                  <%= image_tag ("products/product-7.jpg"), :class => "card-img-top"%>
-                </a>
+                <% @product.images.size.times do |n| %>
+                  <a href="<%=@product.images[n].url%>" data-fancybox>
+                    <%= image_tag (@product.images[n].url), :class => "card-img-top"%>
+                  </a>
+                <% end %>
               </div>
             </div>
-
           </div>
           <div class="col-12 col-md-6 pl-lg-10">
-
-          <!-- Header -->
-          <div class="row mb-1">
+            <!-- Header -->
+            <div class="row mb-1">
               <div class="col">
-
-              <!-- Preheading -->
-              <%= link_to  @product.slug, "#", class:"text-muted" %>
-
+                <!-- Preheading -->
+                <%= link_to  @product.slug, "#", class:"text-muted" %>
               </div>
               <div class="col-auto">
-
-              <!-- Rating -->
-              <div class="rating font-size-xs text-dark" data-value="4">
+                <!-- Rating -->
+                <div class="rating font-size-xs text-dark" data-value="4">
                   <div class="rating-item">
-                  <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
                   </div>
                   <div class="rating-item">
-                  <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
                   </div>
                   <div class="rating-item">
-                  <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
                   </div>
                   <div class="rating-item">
-                  <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
                   </div>
                   <div class="rating-item">
-                  <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
                   </div>
+                </div>
+                <%= link_to  "", "#", class:"font-size-sm text-reset ml-2" %>
               </div>
-
-              <%= link_to  "", "#", class:"font-size-sm text-reset ml-2" %>
-
-              </div>
-          </div>
-
-          <!-- Heading -->
-          <h3 class="mb-2"><%= @product.product_name %></h3>
-
-          <!-- Price -->
-          <div class="mb-7">
+            </div>
+            <!-- Heading -->
+            <h3 class="mb-2"><%= @product.product_name %></h3>
+            <!-- Price -->
+            <div class="mb-7">
               <span class="ml-1 font-size-h5 font-weight-bolder text-primary">$<%= @product.price%></span>
               <span class="font-size-sm ml-1"></span>
-          </div>
-
-              <div class="form-group">
-
+            </div>
+            <div class="form-group">
               <!-- Label -->
               <p class="mb-5">
-                    <%= t ("product_detail.quantity") %> <strong id="colorCaption"><%= @product.quantity%></strong>
+                <%= t ("product_detail.quantity") %> <strong id="colorCaption"><%= @product.quantity%></strong>
               </p>
-
-              </div>
-
-              <div class="form-row mb-7">
-                  <div class="col-12 col-lg-auto">
-
-                     <%= form_for :order_detail, url: shopping_path, method: :POST do |f| %>
-                        <div><%= f.hidden_field :product_id, value: @product.id %></div>
-                        <div class="form-inline">
-                          <%= f.number_field :quantity, value: 1 , class: "form-select form-control"%>
-                        </div>
-                        <br>
-                        <%= f.button :submit, class: "btn btn-block btn-dark mb-2" do %>
-                          <i class="fa fa-shopping-cart"></i> <%= t("product_detail.submit")%>
-                        <% end %>
-                      <% end %>
-
+            </div>
+            <div class="form-row mb-7">
+              <div class="col-12 col-lg-auto">
+                <%= form_for :order_detail, url: shopping_path, method: :POST do |f| %>
+                  <div><%= f.hidden_field :product_id, value: @product.id %></div>
+                  <div class="form-inline">
+                    <%= f.number_field :quantity, value: 1 , class: "form-select form-control"%>
                   </div>
-                  <div class="col-12 col-lg-auto">
-
-                  </div>
+                  <br>
+                  <%= f.button :submit, class: "btn btn-block btn-dark mb-2" do %>
+                    <i class="fa fa-shopping-cart"></i> <%= t("product_detail.submit")%>
+                  <% end %>
+                <% end %>
               </div>
-
-              <!-- Share -->
-              <p class="mb-0">
-                  <span class="mr-4"><%= t ("product_detail.share") %></span>
-                  <a class="btn btn-xxs btn-circle btn-light font-size-xxxs text-gray-350" href="#!">
-                  <i class="fa fa-twitter"></i>
-                  </a>
-                  <a class="btn btn-xxs btn-circle btn-light font-size-xxxs text-gray-350" href="#!">
-                  <i class="fa fa-facebook-f"></i>
-                  </a>
-              </p>
-
+              <div class="col-12 col-lg-auto">
               </div>
-
+            </div>
+            <!-- Share -->
+            <p class="mb-0">
+              <span class="mr-4"><%= t ("product_detail.share") %></span>
+              <a class="btn btn-xxs btn-circle btn-light font-size-xxxs text-gray-350" href="#!">
+                <i class="fa fa-twitter"></i>
+              </a>
+              <a class="btn btn-xxs btn-circle btn-light font-size-xxxs text-gray-350" href="#!">
+                <i class="fa fa-facebook-f"></i>
+              </a>
+            </p>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 </section>
 
 <!-- DESCRIPTION -->
@@ -129,187 +108,146 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-
         <!-- Nav -->
         <div class="nav nav-tabs nav-overflow justify-content-start justify-content-md-center border-bottom">
-            <%= link_to  I18n.t("product_detail.description"), "#descriptionTab", data: {toggle: "tab"} ,class:"nav-link active" %>
-            <%= link_to  I18n.t("product_detail.shipping"), "#shippingTab", data: {toggle: "tab"} ,class:"nav-link" %>
+          <%= link_to  I18n.t("product_detail.description"), "#descriptionTab", data: {toggle: "tab"} ,class:"nav-link active" %>
+          <%= link_to  I18n.t("product_detail.shipping"), "#shippingTab", data: {toggle: "tab"} ,class:"nav-link" %>
         </div>
-
         <!-- Content -->
         <div class="tab-content">
-            <div class="tab-pane fade show active" id="descriptionTab">
+          <div class="tab-pane fade show active" id="descriptionTab">
             <div class="row justify-content-center py-9">
-                <div class="col-12 col-lg-10 col-xl-8">
+              <div class="col-12 col-lg-10 col-xl-8">
                 <div class="row">
-                    <div class="col-12">
-
+                  <div class="col-12">
                     <!-- Text -->
                     <p class="text-gray-500">
-                        <%= @product.detail %>
+                      <%= @product.detail %>
                     </p>
-
-                    </div>
+                  </div>
                 </div>
-                </div>
+              </div>
             </div>
-            </div>
-            <div class="tab-pane fade" id="shippingTab">
+          </div>
+          <div class="tab-pane fade" id="shippingTab">
             <div class="row justify-content-center py-9">
-                <div class="col-12 col-lg-10 col-xl-8">
-
+              <div class="col-12 col-lg-10 col-xl-8">
                 <!-- Table -->
                 <div class="table-responsive">
-                    <table class="table table-bordered table-sm table-hover">
+                  <table class="table table-bordered table-sm table-hover">
                     <thead>
-                        <tr>
+                      <tr>
                         <th><%= t ("shipping.options.name") %></th>
                         <th><%= t ("shipping.deliverytime.name") %></th>
                         <th><%= t ("shipping.price") %></th>
-                        </tr>
+                      </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                      <tr>
                         <td><%= t ("shipping.options.stand") %></td>
                         <td><%= t ("shipping.deliverytime.stand") %></td>
                         <td></td>
-                        </tr>
-                        <tr>
+                      </tr>
+                      <tr>
                         <td><%= t ("shipping.options.express") %></td>
                         <td><%= t ("shipping.deliverytime.express") %></td>
                         <td></td>
-                        </tr>
-                        <tr>
+                      </tr>
+                      <tr>
                         <td><%= t ("shipping.options.free") %></td>
                         <td>
-                            <%= t ("shipping.deliverytime.free") %>
+                          <%= t ("shipping.deliverytime.free") %>
                         </td>
                         <td></td>
-                        </tr>
+                      </tr>
                     </tbody>
-                    </table>
+                  </table>
                 </div>
-
-                </div>
+              </div>
             </div>
-            </div>
+          </div>
         </div>
-
       </div>
     </div>
   </div>
 </section>
-
 <%= render 'layouts/review' %>
-
-  <!-- faATURES -->
+<!-- faATURES -->
 <section class="bg-light py-9">
   <div class="container">
-  <div class="row">
-    <div class="col-12 col-md-6 col-lg-3">
-
-    <!-- Item -->
-    <div class="d-flex mb-6 mb-lg-0">
-
-        <!-- Icon -->
-        <i class="fa fa-truck font-size-lg text-primary"></i>
-
-        <!-- Body -->
-        <div class="ml-6">
-
-        <!-- Heading -->
-        <h6 class="heading-xxs mb-1">
-            <%= t ("feauture.shipping.name") %>
-        </h6>
-
-        <!-- Text -->
-        <p class="mb-0 font-size-sm text-muted">
-            <%= t ("feauture.shipping.detail") %>
-        </p>
-
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-3">
+        <!-- Item -->
+        <div class="d-flex mb-6 mb-lg-0">
+          <!-- Icon -->
+          <i class="fa fa-truck font-size-lg text-primary"></i>
+          <!-- Body -->
+          <div class="ml-6">
+            <!-- Heading -->
+            <h6 class="heading-xxs mb-1">
+              <%= t ("feauture.shipping.name") %>
+            </h6>
+            <!-- Text -->
+            <p class="mb-0 font-size-sm text-muted">
+              <%= t ("feauture.shipping.detail") %>
+            </p>
+          </div>
         </div>
-
-    </div>
-
-    </div>
-    <div class="col-12 col-md-6 col-lg-3">
-
-    <!-- Item -->
-    <div class="d-flex mb-6 mb-lg-0">
-
-        <!-- Icon -->
-        <i class="fa fa-repeat font-size-lg text-primary"></i>
-
-        <!-- Body -->
-        <div class="ml-6">
-
-        <!-- Heading -->
-        <h6 class="mb-1 heading-xxs">
-            <%= t ("feauture.returns.name") %>
-        </h6>
-
-        <!-- Text -->
-        <p class="mb-0 font-size-sm text-muted">
-            <%= t ("feauture.returns.detail") %>
-        </p>
-
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <!-- Item -->
+        <div class="d-flex mb-6 mb-lg-0">
+          <!-- Icon -->
+          <i class="fa fa-repeat font-size-lg text-primary"></i>
+          <!-- Body -->
+          <div class="ml-6">
+            <!-- Heading -->
+            <h6 class="mb-1 heading-xxs">
+              <%= t ("feauture.returns.name") %>
+            </h6>
+            <!-- Text -->
+            <p class="mb-0 font-size-sm text-muted">
+              <%= t ("feauture.returns.detail") %>
+            </p>
+          </div>
         </div>
-
-    </div>
-
-    </div>
-    <div class="col-12 col-md-6 col-lg-3">
-
-    <!-- Item -->
-    <div class="d-flex mb-6 mb-md-0">
-
-        <!-- Icon -->
-        <i class="fa fa-lock font-size-lg text-primary"></i>
-
-        <!-- Body -->
-        <div class="ml-6">
-
-        <!-- Heading -->
-        <h6 class="mb-1 heading-xxs">
-            <%= t ("feauture.secure.name") %>
-        </h6>
-
-        <!-- Text -->
-        <p class="mb-0 font-size-sm text-muted">
-            <%= t ("feauture.secure.detail") %>
-        </p>
-
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <!-- Item -->
+        <div class="d-flex mb-6 mb-md-0">
+          <!-- Icon -->
+          <i class="fa fa-lock font-size-lg text-primary"></i>
+          <!-- Body -->
+          <div class="ml-6">
+            <!-- Heading -->
+            <h6 class="mb-1 heading-xxs">
+              <%= t ("feauture.secure.name") %>
+            </h6>
+            <!-- Text -->
+            <p class="mb-0 font-size-sm text-muted">
+              <%= t ("feauture.secure.detail") %>
+            </p>
+          </div>
         </div>
-
-    </div>
-
-    </div>
-    <div class="col-12 col-md-6 col-lg-3">
-
-    <!-- Item -->
-    <div class="d-flex">
-
-        <!-- Icon -->
-        <i class="fa fa-tag font-size-lg text-primary"></i>
-
-        <!-- Body -->
-        <div class="ml-6">
-
-        <!-- Heading -->
-        <h6 class="mb-1 heading-xxs">
-            <%= t ("feauture.style.name") %>
-        </h6>
-
-        <!-- Text -->
-        <p class="mb-0 font-size-sm text-muted">
-            <%= t ("feauture.style.detail") %>
-        </p>
-
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <!-- Item -->
+        <div class="d-flex">
+          <!-- Icon -->
+          <i class="fa fa-tag font-size-lg text-primary"></i>
+          <!-- Body -->
+          <div class="ml-6">
+            <!-- Heading -->
+            <h6 class="mb-1 heading-xxs">
+              <%= t ("feauture.style.name") %>
+            </h6>
+            <!-- Text -->
+            <p class="mb-0 font-size-sm text-muted">
+              <%= t ("feauture.style.detail") %>
+            </p>
+          </div>
         </div>
-
+      </div>
     </div>
-
-    </div>
-  </div>
   </div>
 </section>
