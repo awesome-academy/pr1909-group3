@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <h1><%= I18n.t("cart.name")%></h1>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th width="28%"><%= I18n.t ("cart.product")%></th>
+          <th width="30%"><%= I18n.t ("cart.detail")%></th>
+          <th width="35%"><%= I18n.t ("cart.quantity")%></th>
+          <th><%= I18n.t ("cart.price")%></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render "carts/cart_row", collection: @order_details %>
+      </tbody>
+    </table>
+    <hr>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <%= link_to root_path, class: "btn btn-warning" do %>
+        <%= I18n.t("cart.continue") %>
+      <% end %>
+    </div>
+    <div class="col-md-7">
+      <div class="hidden-xs text-right">
+        <strong>
+          <%= I18n.t("cart.sub_price") %>
+          <%= Order.find_by(user_id: current_user.id, status: 0).get_subtotal%>
+        </strong>
+      </div>
+    </div>
+    <div class="col-md-2 text-right">
+      <%= link_to "#", class: "btn btn-success" do %>
+        <%= I18n.t("cart.payment") %>
+      <% end %>
+    </div>
+  </div>
+  <br>
+</div>

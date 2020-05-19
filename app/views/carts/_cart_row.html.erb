@@ -1,0 +1,21 @@
+<table class="table table-bordered mt-2">
+  <% @order_details.each_with_index do |order_detail, i| %>
+    <%=  form_for order_detail, remote: true do |f| %>
+    <tr>
+      <td class="text-center"><%= order_detail.product.product_name %></td>
+      <td class="text-center"><%= order_detail.product.detail %></td>
+    
+      <td class="text-center">
+        <%= f.number_field :quantity, value: order_detail.quantity.to_i, class: "col-sm-3 product-quantity-input", min: 1 %>
+
+        <%= f.hidden_field :product_id, value: order_detail.product.id %>
+        <%= f.submit "Update_Quantity", class: "fa fa-trash-alt" %>
+
+        <%= link_to "Delete", order_detail, { data: { confirm: "Are you sure you wish to delete the product '#{order_detail.product.product_name}' from your cart?" },
+           method: :delete, remote: true, class: "fa fa-trash-alt" } %>
+      </td>
+      <td class="text-center"><%= order_detail.total_price %></td>
+    </tr>
+    <% end %>
+  <% end %>
+</table>
