@@ -1,2 +1,2 @@
-<%= link_to " #{OrderDetail.where(order_id: current_user.orders.ids).count} ", cart_path(:id), 
+<%= link_to " #{OrderDetail.where(order_id: current_user.orders.ids).count} ", cart_path(), 
   class: "nav-link badge badge-light fa fa-shopping-cart" %>
