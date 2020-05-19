@@ -28,7 +28,7 @@
       <div class="hidden-xs text-right">
         <strong>
           <%= I18n.t("cart.sub_price") %>
-          <%= Order.find_by(id: current_user.id, status: 0).get_subtotal%>
+          <%= Order.find_by(user_id: current_user.id, status: 0).get_subtotal%>
         </strong>
       </div>
     </div>
