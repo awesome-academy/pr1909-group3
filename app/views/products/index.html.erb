@@ -206,7 +206,7 @@
           <!-- Card -->
           <div class="card mb-7" data-toggle="card-collapse">
             <!-- Image -->
-            <%= link_to image_tag( product.images[0].url , alt: "image", class: "card-img-top"), product_path(product) if product.images.any? %>
+            <%= link_to image_tag( product.image.url , alt: "image", class: "card-img-top"), product_path(product) if product.image? %>
             <!-- Collapse -->
             <div class="card-collapse-parent">
               <!-- Body -->
