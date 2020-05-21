@@ -19,11 +19,9 @@
               <!-- Slider -->
               <div class="mb-4" data-flickity='{"draggable": false, "fade": true}' id="productSlider">
                 <!-- Item -->
-                <% @product.images.size.times do |n| %>
-                  <a href="<%=@product.images[n].url%>" data-fancybox>
-                    <%= image_tag (@product.images[n].url), :class => "card-img-top"%>
-                  </a>
-                <% end %>
+                <a href="<%=@product.image.url%>" data-fancybox>
+                  <%= image_tag (@product.image.url), :class => "card-img-top"%>
+                </a>
               </div>
             </div>
           </div>

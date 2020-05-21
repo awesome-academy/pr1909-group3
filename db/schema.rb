@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2020_05_11_120814) do
     t.float "rank", default: 0.0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.json "images"
+    t.string "image"
     t.index ["category_id"], name: "index_products_on_category_id"
   end
 
