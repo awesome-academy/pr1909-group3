@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  product: one
+  score: 1
+  content: MyString
+  view_at: 2020-05-17 20:43:07
+
+two:
+  user: two
+  product: two
+  score: 1
+  content: MyString
+  view_at: 2020-05-17 20:43:07

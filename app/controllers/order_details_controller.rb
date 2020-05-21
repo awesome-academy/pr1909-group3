@@ -17,6 +17,18 @@ class OrderDetailsController < ApplicationController
     redirect_to root_path
   end
 
+  def update
+    @order = current_order
+    @order_details = @order.order_details
+    @order_detail = @order_details.find(params[:id]).update_attributes(order_detail_params)
+  end
+
+  def destroy
+    @order = current_order
+    @order_details = @order.order_details
+    @order_detail = @order_details.find(params[:id]).destroy
+  end
+
   private
 
   def order_detail_params
