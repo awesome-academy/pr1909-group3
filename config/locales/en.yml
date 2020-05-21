@@ -69,6 +69,7 @@ en:
       subtotal: "Subtotal"
       continue: "Continue to Checkout"
       view_cart: "View Cart"
+      noti: "Shopping cart no products"
   content:
     account:
       name_account: "My Account"

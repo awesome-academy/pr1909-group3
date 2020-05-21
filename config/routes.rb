@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   root to: 'products#index'
   devise_for :users,
              path: '',
-             path_names: { sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'resgistration', confirmation: 'confirmation' },
+             path_names: {
+               sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'resgistration',
+               confirmation: 'confirmation',
+             },
              controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   resources :customers
   resources :lists

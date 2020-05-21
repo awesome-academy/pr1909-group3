@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'bootstrap', '~> 4.4.1'
+gem 'faker', '~> 1.6', '>= 1.6.6'
 gem 'jquery-rails'
 gem 'devise'
 gem 'devise-i18n'
