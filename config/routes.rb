@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   get 'lists/show'
   post '/shopping', to: "order_details#create"
   resources :order_details
+  resource :cart, only: :show
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root to: 'products#index'
   devise_for :users,
              path: '',
-             path_names: { sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'resgistration' },
+             path_names: { sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'resgistration', confirmation: 'confirmation' },
              controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   resources :customers
   resources :lists
