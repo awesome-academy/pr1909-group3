@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :get_product, only: [:show]
-
+  before_action :load_categories
   def index
     @q = Product.ransack params[:q]
     @products = @q.result(distinct: true).page(params[:page])
