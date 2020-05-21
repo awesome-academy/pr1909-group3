@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2020_05_11_120814) do
     t.integer "quantity", default: 1, null: false
     t.integer "category_id"
     t.string "slug"
+    t.float "rank", default: 0.0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "image"
@@ -76,6 +77,18 @@ ActiveRecord::Schema.define(version: 2020_05_11_120814) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "product_id"
     t.index ["product_id"], name: "index_promotions_on_product_id"
+  end
+
+  create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "product_id"
+    t.integer "score"
+    t.string "content"
+    t.datetime "view_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_reviews_on_product_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -110,4 +123,6 @@ ActiveRecord::Schema.define(version: 2020_05_11_120814) do
   add_foreign_key "order_details", "orders"
   add_foreign_key "order_details", "products"
   add_foreign_key "orders", "users"
+  add_foreign_key "reviews", "products"
+  add_foreign_key "reviews", "users"
 end

@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
   has_many :orders
+  has_many :reviews, dependent: :destroy
   # enum
   enum permission: { admin: 1, staff: 2, customer: 3 }
   # Validates

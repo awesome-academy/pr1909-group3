@@ -1,0 +1,7 @@
+<li class="list-group-item">
+  <%= hidden_field_tag :stars, review.score,
+    class: "rating", data: {filled: "fa fa-star fa-1x", empty: "fa fa-star-o fa-1x", readonly: true} %>
+  <strong> <%= review.user.name %></strong>
+  <p><small><%= l review.updated_at, format: :long %></small></p>
+  <p><%= review.content %></p>
+</li>
