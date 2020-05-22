@@ -8,10 +8,14 @@ Rails.application.routes.draw do
   resources :orders
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root to: 'products#index'
-  devise_for :users
+  devise_for :users,
+             path: '',
+             path_names: { sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'resgistration', confirmation: 'confirmation' },
+             controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   resources :customers
   resources :lists
   resources :products
+  resources :reviews, only: %i(create update)
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end

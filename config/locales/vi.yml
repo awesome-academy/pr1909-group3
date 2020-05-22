@@ -195,3 +195,7 @@ vi:
   success:
     update: "Số lượng sản phẩm trong giỏ đã được tăng lên"
     create: "Đã thêm thành công sản phẩm vào giỏ hàng"
+  flash:
+    nil_object: "%{name} không đượcc tìm thấy!"
+    review_success: "Đánh giá thành công!"
+    review_fail: "Đánh giá thất bại!"

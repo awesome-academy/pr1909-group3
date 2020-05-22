@@ -19,17 +19,14 @@ class OrderDetailsController < ApplicationController
 
   def update
     @order = current_order
-    @order_detail = @order.order_details.find(params[:id])
-    @order_detail.update_attributes(order_detail_params)
     @order_details = @order.order_details
+    @order_detail = @order_details.find(params[:id]).update_attributes(order_detail_params)
   end
 
   def destroy
     @order = current_order
-    @order_detail = @order.order_details.find(params[:id])
-    @order_detail.destroy
     @order_details = @order.order_details
-    @order.destroy
+    @order_detail = @order_details.find(params[:id]).destroy
   end
 
   private

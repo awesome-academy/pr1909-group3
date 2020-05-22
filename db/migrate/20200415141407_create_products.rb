@@ -7,6 +7,7 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.integer :quantity, null: false, default: 1
       t.integer :category_id, nul: false
       t.string :slug
+      t.float :rank, default: 0
 
       t.timestamps
     end

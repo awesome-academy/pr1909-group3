@@ -230,3 +230,7 @@ en:
     address: "Address: *"
     submit: "Payment"
     success: "Thank you for you used servirce of our."
+  flash:
+    nil_object: "%{name} can not found!"
+    review_success: "Reviews successfully!"
+    review_fail: "Reviews fail!"
