@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   def new
-    @order = current_user.orders.build(reciever_name: current_user.name,
+    @order = current_user.orders.build(name: current_user.name,
                                        phone: current_user.phone, address: current_user.address)
   end
 
@@ -16,6 +16,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:subtotal, :phone, :address, :reciever_name)
+    params.require(:order).permit(:subtotal, :phone, :address, :name)
   end
 end
