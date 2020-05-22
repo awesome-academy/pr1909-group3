@@ -3,7 +3,7 @@ class CartsController < ApplicationController
 
   def show
     @count = Order.where(user_id: current_user.id, status: 0).count
-    if @count > 1
+    if @count >= 1
       @order_details = OrderDetail.where(order_id: current_user.orders.ids)
     else
       redirect_to root_path
