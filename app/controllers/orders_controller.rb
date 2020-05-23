@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
     @order = Order.where(user_id: current_user.id, status: 0).update(order_params)
     @a = Order.find_by(user_id: current_user.id, status: 0).get_subtotal
     @order = Order.where(user_id: current_user.id, status: 0).update(status: 1, subtotal: @a)
-    @order_details = OrderDetail.find_by(order_id: current_user.orders.ids)
+    @order_details = OrderDetail.find_by(order_id: current_user.orders.ids).destroy
     flash[:success] = I18n.t("payment.success")
     redirect_to root_path
   end
