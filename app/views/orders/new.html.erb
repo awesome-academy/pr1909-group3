@@ -6,8 +6,8 @@
       <%= form_for @order do |f| %>
 
         <div class="form-group">
-          <%= f.label :reciever_name, I18n.t("payment.name") %>
-          <%= f.text_field :reciever_name, class: "form-control" %>
+          <%= f.label :name, I18n.t("payment.name") %>
+          <%= f.text_field :name, class: "form-control" %>
         </div>
         <div class="form-group">
           <%= f.label :phone, I18n.t("payment.phone") %>
