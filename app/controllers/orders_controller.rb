@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   def new
-    @order = current_user.orders.new(name: current_user.name,
-                                     phone: current_user.phone, address: current_user.address)
+    @order = current_user.orders.build(name: current_user.name,
+                                       phone: current_user.phone, address: current_user.address)
   end
 
   def create

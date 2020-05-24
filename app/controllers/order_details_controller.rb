@@ -7,7 +7,6 @@ class OrderDetailsController < ApplicationController
     if @order_detail
       quantity = @order_detail.quantity.to_i + order_detail_params[:quantity].to_i
       @order_detail.update_attributes quantity: quantity
-      flash[:succes] = I18n.t("success.update")
     else
       @order_detail = @order.order_details.new(order_detail_params)
     end
