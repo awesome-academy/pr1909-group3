@@ -8,14 +8,16 @@
       </button>
       <!-- Menu -->
       <div class="dropdown-menu dropdown-menu-lg w-100">
-        <form>
-          <%@categories.each do |category|%>
-            <a class="dropdown-item" data-toggle="collapse" href="#<%=category.category_name%><%=category.id%>">
-              <span class="mr-4">
-              </span> <%= category.category_name %>
-            </a>
-          <%end%>
-        </form>
+        <% @categories.each do |category| %>
+          <!--
+            <a class="dropdown-item" data-toggle="collapse" href="#ct-<%=category.id%>">
+            </span> <%= category.category_name %>
+          </a>
+            -->
+          <div class= "dropdown-item">
+            <%= link_to category.category_name, q: {category_id_eq: category.id}%>
+          </div>
+        <% end %>
       </div>
     </div>
     <div class="flex-grow-1 position-relative">
@@ -25,172 +27,14 @@
           <!-- Input -->
           <%= search_form_for @q do |f| %>
             <%= f.search_field :product_name_cont, placeholder: I18n.t("layout.header.placeholder"), class: "form-control form-control-lg"%>
-            <%= f.select :category_id_eq, Settings.category.search.to_h, prompt: I18n.t("layout.header.all_category"), class: "custom-select custom-select-lg d-none d-md-block"%>
+            <%= f.select :category_id_eq, @cates_hash, prompt: I18n.t("layout.header.all_category"), class: "custom-select custom-select-lg d-none d-md-block"%>
             <%= f.submit%>
           <% end %>
         </div>
       </form>
-      <!-- Collapse -->
-      <div class="dropdown-menu dropdown-collapse" id="navbarMenu">
-        <!-- Women clothes -->
-        <div class="collapse" id="Smartphone6" data-parent="#navbarMenu">
-          <!-- Close -->
-          <button type="button" class="close d-md-none">
-            <i class="fa fa-x" aria-hidden="true"></i>
-          </button>
-          <!-- Card -->
-          <div class="card card-lg shadow-border">
-            <div class="card-body">
-              <div class="row">
-                <div class="col">
-                  <div class="row">
-                    <div class="col-6 col-md-4">
-                      <!-- Heading -->
-                      <div class="mb-5 font-weight-bold"><%= t "layout.header.phone" %></div>
-                      <!-- Links -->
-                      <ul class="list-styled font-size-sm">
-                        <li class="list-styled-item">
-                          <%= link_to  "Iphone 11", "#", class:"list-styled-link" %>
-                        </li>
-                        <li class="list-styled-item">
-                          <%= link_to  "Iphone 10", "#", class:"list-styled-link" %>
-                        </li>
-                        <li class="list-styled-item">
-                          <%= link_to  "Iphone 8", "#", class:"list-styled-link" %>
-                        </li>
-                        <li class="list-styled-item">
-                          <%= link_to  "Iphone 7", "#", class:"list-styled-link" %>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="col-6 col-md-4">
-                      <!-- Heading -->
-                      <div class="mb-5 font-weight-bold"><%= t "layout.header.latop" %></div>
-                      <!-- Links -->
-                      <ul class="list-styled mb-0 font-size-sm">
-                        <li class="list-styled-item">
-                          <%= link_to  "Macbook Pro", "#", class:"list-styled-link" %>
-                        </li>
-                        <li class="list-styled-item">
-                          <%= link_to  "Macbook Air", "#", class:"list-styled-link" %>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="col-6 col-md-4">
-                      <!-- Heading -->
-                      <div class="mb-5 font-weight-bold"><%= t "layout.header.ipad" %></div>
-                      <!-- Links -->
-                      <ul class="list-styled font-size-sm">
-                        <li class="list-styled-item">
-                          <%= link_to  "Ipad Pro 11", "#", class:"list-styled-link" %>
-                        </li>
-                        <li class="list-styled-item">
-                          <%= link_to  "Ipad 6", "#", class:"list-styled-link" %>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="col-6 col-md-4">
-                      <!-- Heading -->
-                      <div class="mb-5 font-weight-bold"><%= t "layout.header.watch" %></div>
-                      <!-- Links -->
-                      <ul class="list-styled mb-md-0 font-size-sm">
-                        <li class="list-styled-item">
-                          <%= link_to  "Apple Watch 5", "#", class:"list-styled-link" %>
-                        </li>
-                        <li class="list-styled-item">
-                          <%= link_to  "Apple Watch 6", "#", class:"list-styled-link" %>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-4 d-none d-md-flex flex-column">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Men clothes -->
-        <div class="collapse" id="mensClothes" data-parent="#navbarMenu">
-          <!-- Close -->
-          <button type="button" class="close d-md-none">
-            <i class="fa fa-x" aria-hidden="true"></i>
-          </button>
-          <!-- Card -->
-          <div class="card card-lg shadow-border">
-            <div class="card-body">
-              <%= t "layout.header.notify" %>
-            </div>
-          </div>
-        </div>
-        <!-- Girls clothes -->
-        <div class="collapse" id="girlsClothes" data-parent="#navbarMenu">
-          <!-- Close -->
-          <button type="button" class="close d-md-none">
-            <i class="fa fa-x" aria-hidden="true"></i>
-          </button>
-          <!-- Card -->
-          <div class="card card-lg shadow-border">
-            <div class="card-body">
-              <%= t "layout.header.notify" %>
-            </div>
-          </div>
-        </div>
-        <!-- Boys clothes -->
-        <div class="collapse" id="boysClothes" data-parent="#navbarMenu">
-          <!-- Close -->
-          <button type="button" class="close d-md-none">
-            <i class="fa fa-x" aria-hidden="true"></i>
-          </button>
-          <!-- Card -->
-          <div class="card card-lg shadow-border">
-            <div class="card-body">
-              <%= t "layout.header.notify" %>
-            </div>
-          </div>
-        </div>
-        <!-- Bags & Accessories -->
-        <div class="collapse" id="bagsAccessories" data-parent="#navbarMenu">
-          <!-- Close -->
-          <button type="button" class="close d-md-none">
-            <i class="fa fa-x" aria-hidden="true"></i>
-          </button>
-          <!-- Card -->
-          <div class="card card-lg shadow-border">
-            <div class="card-body">
-              <%= t "layout.header.notify" %>
-            </div>
-          </div>
-        </div>
-        <!-- Women shoes -->
-        <div class="collapse" id="womensShoes" data-parent="#navbarMenu">
-          <!-- Close -->
-          <button type="button" class="close d-md-none">
-            <i class="fa fa-x" aria-hidden="true"></i>
-          </button>
-          <!-- Card -->
-          <div class="card card-lg shadow-border">
-            <div class="card-body">
-              <%= t "layout.header.notify" %>
-            </div>
-          </div>
-        </div>
-        <!-- Men shoes -->
-        <div class="collapse" id="mensShoes" data-parent="#navbarMenu">
-          <!-- Close -->
-          <button type="button" class="close d-md-none">
-            <i class="fa fa-x" aria-hidden="true"></i>
-          </button>
-          <!-- Card -->
-          <div class="card card-lg shadow-border">
-            <div class="card-body">
-              <%= t "layout.header.notify" %>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
+</div>
 </div>
 <section class="pt-12">
   <div class="container">
