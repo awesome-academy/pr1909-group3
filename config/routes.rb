@@ -17,6 +17,7 @@ Rails.application.routes.draw do
              controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   resources :customers
   resources :lists
+  resources :categories
   resources :products
   resources :reviews, only: %i(create update)
   devise_scope :user do
