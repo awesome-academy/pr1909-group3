@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2020_05_17_134307) do
-
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "category_name", null: false
     t.string "code", null: false
@@ -47,6 +46,8 @@ ActiveRecord::Schema.define(version: 2020_05_17_134307) do
 
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "address"
+    t.string "name"
+    t.string "phone"
     t.integer "status"
     t.integer "subtotal"
     t.bigint "user_id"

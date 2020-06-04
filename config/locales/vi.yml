@@ -38,6 +38,7 @@ vi:
       subtotal: "Tổng tiền"
       continue: "Tiếp tục thanh toán"
       view_cart: "Xem giỏ hàng"
+      noti: "Giỏ hàng chưa có sản phẩm"
   content:
     account:
       name_account: "Tài khoản của tôi"

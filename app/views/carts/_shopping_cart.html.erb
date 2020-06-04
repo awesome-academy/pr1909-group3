@@ -28,12 +28,14 @@
       <div class="hidden-xs text-right">
         <strong>
           <%= I18n.t("cart.sub_price") %>
-          <%= Order.find_by(user_id: current_user.id, status: 0).get_subtotal%>
+          <% if Order.where(user_id: current_user.id, status: 0).count != 0 %>
+            <%= Order.find_by(user_id: current_user.id, status: 0).get_subtotal %>
+          <% end %>
         </strong>
       </div>
     </div>
     <div class="col-md-2 text-right">
-      <%= link_to "#", class: "btn btn-success" do %>
+      <%= link_to new_order_path, class: "btn btn-success" do %>
         <%= I18n.t("cart.payment") %>
       <% end %>
     </div>

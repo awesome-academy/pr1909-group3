@@ -1,2 +1,7 @@
-<%= link_to " #{OrderDetail.where(order_id: current_user.orders.ids).count} ", cart_path(), 
+<% if Order.where(user_id: current_user.id, status: 0).count != 0 %>
+  <%= link_to " #{OrderDetail.where(order_id: current_user.orders.ids).count} ", cart_path(), 
   class: "nav-link badge badge-light fa fa-shopping-cart" %>
+<% else %>
+  <%= link_to "0", cart_path(), 
+  class: "nav-link badge badge-light fa fa-shopping-cart" %>
+<% end %>

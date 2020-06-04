@@ -7,13 +7,12 @@ class OrderDetailsController < ApplicationController
     if @order_detail
       quantity = @order_detail.quantity.to_i + order_detail_params[:quantity].to_i
       @order_detail.update_attributes quantity: quantity
-      flash[:succes] = "So luong do da duoc cap nhat"
     else
       @order_detail = @order.order_details.new(order_detail_params)
     end
     @order.save
     session[:order_id] = @order.id
-    flash[:success] = "Do da duoc them vao gio hang"
+    flash[:success] = I18n.t("success.create")
     redirect_to root_path
   end
 
