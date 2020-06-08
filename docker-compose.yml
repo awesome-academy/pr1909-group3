@@ -9,8 +9,9 @@ services:
    volumes:
      - ./docker/database:/var/lib/mysql
  app:
-   container_name: pr1909-project2
+   container_name: app_chat_realtime
    build: .
+   command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
    volumes:
      - .:/pr1909-project2
    ports:
