@@ -1,0 +1,17 @@
+inherit_from:
+  - .rubocop_airbnb.yml
+
+Metrics/LineLength:
+  Max: 120
+
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - 'db/schema.rb'
+    - 'db/seeds.rb'
+    - 'vendor/**/*'
+    - 'deploy_bin/*'
+    - 'config/deploy/*'
+    - 'config/deploy.rb'
+    - 'Capfile'
+    - 'node_modules/**/*'

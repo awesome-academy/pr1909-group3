@@ -37,3 +37,4 @@ docker/database
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+config/database.yml
