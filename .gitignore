@@ -15,7 +15,7 @@ docker/database
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-
+config/local_env.yml
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
 !/tmp/pids/
@@ -38,3 +38,4 @@ docker/database
 yarn-debug.log*
 .yarn-integrity
 config/database.yml
+
