@@ -1,0 +1,2 @@
+SQL_PASSWORD: 
+SOCKET: '/tmp/mysql.sock'  # mac: /tmp/mysql.sock, other: /var/run/mysqld/mysqld.sock
