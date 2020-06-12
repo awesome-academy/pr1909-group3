@@ -1,8 +1,10 @@
-class Users::RegistrationsController < Devise::RegistrationsController
-
+class Users::RegistrationsController < Devise::RegistrationsController  
   def new
     build_resource
     yield resource if block_given?
+    respond_to do |format|
+      format.js
+    end
   end
   
   def create
@@ -27,6 +29,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
   
   private
+  
   def user_params
     params.require(:user).permit :name, :email, :phone, :address, :password,
       :password_confirmation, :role_id

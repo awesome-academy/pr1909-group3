@@ -30,4 +30,71 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  users:
+  sessions:
+    login_form:
+      login: "Log in"
+      email: "Email"
+      pass: "Password"
+      submit: "Login"
+      new: "New member ?"
+      signup: "Sign up now!"
+      facebook: "Login with Facebook"
+      google: " Login with Google+"
+      other: "Or Login with: "
+    create:
+      warning: "Invalid email/password combination"
+    oouth:
+      text: "Sign in with"
+    dashboard:
+      text: "Login to Dashboard"
+  registrations:
+    signup_form:
+      text: "Create Account"
+      name: "Name"
+      email: "Email"
+      phone: "Phone number"
+      address: "Address"
+      pass: "Password"
+      confirm: "Password confirmation"
+      submit: "Create my account"
+      member: "Already a member ?"
+      login: "Login"
+    create:
+      welcome: "Welcome VP"
+  forgot:
+    text: "Forgot your password?"
+    confirm: "Didn't receive confirmation instructions?"
+    unlock: "Didn't receive unlock instructions?"
+  edit:
+    text: "Update profile"
+    name: "Name"
+    email: "Email"
+    phone: "Phone number"
+    address: "Address"
+    pass: "Password"
+    confirm: "Password confirmation"
+    submit: "Update profile"
+  update:
+    updated: "Updated"
+  find_user:
+    notfound: "User not found"
+  show:
+    profile: "Profile: "
+    name: "Name: "
+    email: "Email: "
+    phone: "Phone number: "
+    address: "Address: "
+    change_profile: "Change profile"
+    view_history: "View order history"
+    view_visited: "Recently Viewed Product"
+    danger: "Please login"
+  detail:
+    home: "Enter code or login join zoom"
+    placeholder: "Enter code"
+  footer:
+    license: "Copyright"
+  alert:
+    success: "Success"
+    settings: "Settings"
+    updated: "Updated !"

@@ -35,6 +35,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 gem "bootstrap-sass"
 gem "font-awesome-rails"
+gem 'rails-i18n'
+gem 'devise-i18n'
 gem "omniauth"
 gem "omniauth-google-oauth2"
 gem "omniauth-facebook"

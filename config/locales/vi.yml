@@ -1,0 +1,70 @@
+vi:
+  users:
+  sessions:
+    login_form:
+      login: "Đăng nhập"
+      email: "Email"
+      pass: "Mật khẩu"
+      submit: "Đăng nhập"
+      new: "Thành viên mới ?"
+      signup: "Đăng kí ngay!"
+      facebook: "Đăng nhập với Facebook"
+      google: " Đăng nhập với Google+"
+      other: "Hoặc đăng nhập với: "
+    create:
+      warning: "Sai tài khoản/mật khẩu"
+    oouth:
+      text: "Đăng nhập với"
+    dashboard:
+      text: "Đăng nhập vào list chat"
+  registrations:
+    signup_form:
+      text: "Tạo tài khoản mới"
+      name: "Tên"
+      email: "Email"
+      phone: "Số điện thoại"
+      address: "Địa chỉ"
+      pass: "Mật khẩu"
+      confirm: "Xác thực mật khẩu"
+      submit: "Tạo tài khoản"
+      member: "Thành viên đã có ?"
+      login: "Đăng nhập"
+    create:
+      welcome: "Chào mừng đến với DL"
+  forgot:
+    text: "Quên mật khẩu"
+    confirm: "Chưa xác thực tài khoản"
+    unlock: "Chưa nhận được mã mở tài khoản?"
+  edit:
+    text: "Cập nhật thông tin"
+    name: "Tên"
+    email: "Email"
+    phone: "Số điện thoại"
+    address: "Địa chỉ"
+    pass: "Mật khẩu"
+    confirm: "Xác thực mật khẩu"
+    submit: "Cập nhật"
+  update:
+    updated: "Đã cập nhật"
+  find_user:
+    notfound: "Không tìm thấy tài khoản"
+  show:
+    profile: "Thông tin: "
+    name: "Tên: "
+    email: "Email: "
+    phone: "Số điện thoại: "
+    address: "Địa chỉ: "
+    change_profile: "Thay đổi thông tin"
+    view_history: "Lịch sử"
+    view_visited: "Lịch sử vào gần đây"
+    danger: "Vui lòng đăng nhập"
+  detail:
+    home: "Nhập mã hoặc đăng nhập để tham gia cuộc họp"
+    placeholder: "Nhập mã phòng"
+  footer:
+    license: "Bản quyền đăng kí"
+  alert:
+    success: "Thành công"
+    settings: "Cài đặt"
+    updated: "Đã cập nhật !"
+    
