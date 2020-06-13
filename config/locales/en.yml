@@ -48,6 +48,9 @@ en:
       text: "Sign in with"
     dashboard:
       text: "Login to Dashboard"
+    placeholder:
+      email: "Email"
+      password: "Password"
   registrations:
     signup_form:
       text: "Create Account"
@@ -62,6 +65,13 @@ en:
       login: "Login"
     create:
       welcome: "Welcome VP"
+    placeholder:
+      name: "Name"
+      email: "Email"
+      phone: "Phone"
+      address: "Address"
+      pass: "Password"
+      confirm: "Password Confirmation"
   forgot:
     text: "Forgot your password?"
     confirm: "Didn't receive confirmation instructions?"
