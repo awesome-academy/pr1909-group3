@@ -2,7 +2,7 @@ class Users::SessionsController < Devise::SessionsController
   def new
     self.resource = resource_class.new(sign_in_params)
   end
-  
+
   def create
     self.resource = warden.authenticate!(auth_options)
     sign_in(resource_name, resource)
@@ -10,4 +10,3 @@ class Users::SessionsController < Devise::SessionsController
     redirect_ajax dashboard_root_url
   end
 end
-  

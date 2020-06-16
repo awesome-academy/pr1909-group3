@@ -3,7 +3,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     build_resource
     yield resource if block_given?
   end
-  
+
   def create
     build_resource(user_params)
     resource.save
@@ -24,11 +24,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
       end
     end
   end
-  
+
   private
 
   def user_params
     params.require(:user).permit :name, :email, :phone, :address, :password, :password_confirmation, :role_id
   end
 end
-  
