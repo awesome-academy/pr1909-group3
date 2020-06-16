@@ -1,0 +1,50 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), remote: true, authenticity_token: true,
+             html: {class: "form-horizontal form-bordered form-control-borderless", id: "form-register"})  do |f| %>
+  <div id="login-notice">
+    <% flash.each do |message_type, message| %>
+      <%= content_tag :div, message, class: "alert alert-#{message_type}" %>
+    <% end %>
+  </div>
+  <div class="form-group">
+    <div class="col-xs-12">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
+        <%= f.email_field :email, placeholder: t(".email"),
+                          class: "form-control input-lg" %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-xs-12">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+        <%= f.password_field :password, placeholder: t(".pass"),
+                             class: "form-control input-lg" %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group form-actions">
+    <div class="col-xs-4">
+      <label class="switch switch-primary" data-toggle="tooltip" title="Remember Me?">
+        <input type="checkbox" id="login-remember-me" name="login-remember-me" checked>
+        <span></span>
+      </label>
+    </div>
+    <div class="col-xs-8 text-right">
+      <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Login to Dashboard</button>
+    </div>
+  </div>
+  <br>
+  <%= render "devise/shared/links" %>  
+  <div class="form-group">
+    <div class="col-xs-12 text-center">
+      <%= link_to new_user_registration_path, remote: true do %>
+        <small>Tạo tài khoản mới</small>
+      <% end %>
+-
+      <%= link_to root_path, remote: true do %>
+        <small>Nhập mã code</small>
+      <% end %>
+    </div>
+  </div>
+<% end %>

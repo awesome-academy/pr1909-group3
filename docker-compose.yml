@@ -1,22 +1,30 @@
 version: '3.5'
 services:
- mysql:
-   image: mysql:5.7
-   container_name: mysql
-   restart: always
-   environment:
-     MYSQL_ROOT_PASSWORD: root
-   volumes:
-     - ./docker/database:/var/lib/mysql
- app:
-   container_name: app_chat_realtime
-   build: .
-   command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
-   volumes:
-     - .:/pr1909-project2
-   ports:
-     - "3000:3000"
-   environment:
-     DATABASE_HOST: mysql
-     DATABASE_USER_NAME: root
-     DATABASE_PASSWORD: root
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./docker/database:/var/lib/mysql
+    # networks:
+    #   - web
+  app:
+    container_name: app_chat_realtime
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/pr1909-project2
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_HOST: mysql
+      DATABASE_USER_NAME: root
+      DATABASE_PASSWORD: root
+# networks:
+#   web:
+#     external:
+#       name: web-networks
