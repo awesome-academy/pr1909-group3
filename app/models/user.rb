@@ -18,7 +18,7 @@ class User < ApplicationRecord
   validates :address, presence: true,
                       length: { maximum: 255 }, allow_nil: true
   validates :password, presence: true,
-                       length: { minimum: 50 }, allow_nil: true
+                       length: { minimum: 8 }, allow_nil: true
 
   def self.from_omniauth(auth)
     result = User.where(email: auth.info.email).first
@@ -35,6 +35,7 @@ class User < ApplicationRecord
 
         #  If you are using confirmable and the provider(s) you use validate emails
         # user.skip_confirmation!
+        user.save!
       end
     end
   end
