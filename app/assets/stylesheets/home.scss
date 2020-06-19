@@ -1,0 +1,22 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.search-box {
+  display: flex;
+  
+  .input-typeahead {
+    flex: 9;
+  }
+  
+  .button-search {
+    flex: 1;
+    color: #1bbae1;
+    background: #5ac5e0;
+  }
+  
+  .admin-button-search {
+    flex: 1;
+    color: #1bbae1;
+    background: #5ac5e0;
+  }
+}

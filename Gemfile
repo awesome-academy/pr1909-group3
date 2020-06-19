@@ -33,8 +33,11 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
-gem "bootstrap-sass"
-gem "font-awesome-rails"
+gem "bootstrap-kaminari-views"
+gem "bootstrap-sass", "3.3.7"
+gem "bootstrap3-datetimepicker-rails", "~> 4.17.47"
+gem "dropzonejs-rails", "~> 0.7.3"
+gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.1"
 gem 'rails-i18n'
 gem 'devise-i18n'
 gem "omniauth"

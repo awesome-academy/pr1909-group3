@@ -1,3 +1,26 @@
+/*
+ *  Document   : main.css
+ *  Author     : pixelcave
+ *  Description: The main stylesheet of the template
+ *
+ *  Structure (with shortcodes):
+ *      (#m01mls) MAIN LAYOUT
+ *      (#m02hds) HEADER
+ *      (#m03sns) SIDEBAR/NAVIGATION
+ *      (#m04mcs) MAIN CONTENT
+ *      (#m05pgs) PAGES
+ *      (#m06bos) BOOTSTRAP OVERWRITE/EXTEND STYLES
+ *      (#m07hes) HELPERS
+ *      (#m08ths) THEMES
+ *      (#m09res) RESPONSIVE
+ *      (#m10rts) RETINA
+ *      (#m11prs) PRINT
+ */
+/*
+=================================================================
+(#m01mls) MAIN LAYOUT
+=================================================================
+*/
 /* Include Open Sans font from Google Web Fonts */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,600italic,700,700italic');
 
