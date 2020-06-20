@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  starts_on: 2020-06-20 13:58:15
+  ends_on: 2020-06-20 13:58:15
+  description: MyText
+  degit_code: MyString
+  privacy: 1
+  user: one
+
+two:
+  name: MyString
+  starts_on: 2020-06-20 13:58:15
+  ends_on: 2020-06-20 13:58:15
+  description: MyText
+  degit_code: MyString
+  privacy: 1
+  user: two

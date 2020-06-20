@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield :title) %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+    <%= include_gon %>
+    <%= render "layouts/rails_default" %>
+    <%= action_cable_meta_tag %>
+  </head>
+  <body <%= "data-params-id=#{params[:id] || params["event_id"]}" %> >
+      <div id="page-wrapper">
+        <div id="page-container">
+          <div id="main-container">
+            <%= render "layouts/dashboard/navbar" %>
+            <div id="page-content">
+              <%= yield %>
+            </div>
+            <%= render "layouts/footer" %>
+          </div>
+        </div>
+        <%= render "shared/modal" %>
+      </div>
+      <%= javascript_tag do %>
+        $(function() {
+        $("time.timeago").timeago();
+        });
+      <% end %>
+      <%= debug(params) if Rails.env.development? %>
+    </body>
+</html>

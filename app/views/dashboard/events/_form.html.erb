@@ -1,0 +1,76 @@
+<%= form_for [:dashboard, @event], remote: true,
+  html: { class: "form-horizontal" } do |f| %>
+  <div class="form-group">
+    <div class="col-xs-12">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="gi gi-user"></i></span>
+        <%= f.text_field :name, placeholder: "Name",
+                         class: "form-control input-lg" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-xs-12">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-code"></i></span>
+        <%= f.text_field :degit_code, placeholder: "Degit code", readonly: true,
+                         class: "form-control input-lg", id: "dg-code",
+                         value: @event.degit_code || Event.generate_code
+        %>
+        <span onclick="refresh()" class="input-group-addon"><i class="fa fa-refresh"></i></span>
+        <span onclick="copy()" class="input-group-addon"><i class="fa fa-copy"></i></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Bắt đầu", class:
+      "control-label col-md-3 col-sm-3 col-xs-12" %>
+    <div class="input-group date col-md-6 col-sm-6 col-xs-12"
+         id="start_date">
+      <%= f.text_field :starts_on, class: "form-control" %>
+      <span class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar"></span>
+      </span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :privacy, class: "control-label col-md-3 col-sm-3 col-xs-12" %>
+    <div class="col-sm-5">
+      <%= f.select :privacy,
+                   options_for_select(Event.privacies.keys, @event.privacy), {},
+                   {class: "form-control"} %>
+    </div>
+  </div>
+
+  <div>
+    <%= f.cktext_area :description %>
+  </div>
+
+  <div class="field" hidden>
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+  </div>
+
+  <div class="form-group form-actions text-center">
+    <div class="col-xs-12">
+      <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Gửi</button>
+      <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Làm lại</button>
+    </div>
+  </div>
+<% end %>
+<script type="text/javascript" charset="utf-8">
+  function copy() {
+    var copyText = document.getElementById("dg-code");
+    copyText.select();
+    document.execCommand("copy");
+
+  }
+
+  function refresh() {
+    var code = document.getElementById("dg-code");
+    code.value = makeid(10);
+  }
+</script>
