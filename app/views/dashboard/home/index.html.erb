@@ -4,13 +4,13 @@
       <div class="block-title">
         <div class="block-options pull-right" id="dashboard-menu">
           <div class="btn-group">
-            <%= link_to "Tạo cuộc họp mới", new_dashboard_event_path,class: "btn btn-alt btn-sm btn-default dropdown-toggle", remote: true %>
+            <%= link_to t("events.create"), new_dashboard_event_path,class: "btn btn-alt btn-sm btn-default dropdown-toggle", remote: true %>
           </div>
         </div>
         <ul class="nav nav-tabs dashboard-tab" data-toggle="tabs">
-          <li class="active"><a href="#dashboard-events">Cuộc họp </a></li>
-          <li><a href="#dashboard-contacts">Liên hệ</a></li>
-          <li><a href="#dashboard-invited_events">Cuộc họp được mời</a></li>
+          <li class="active"><a href="#dashboard-events"><%= t('events.meet')%></a></li>
+          <li><a href="#dashboard-contacts"><%= t('events.contact')%></a></li>
+          <li><a href="#dashboard-invited_events"><%= t('events.invite')%></a></li>
         </ul>
       </div>
       <div class="tab-content">
