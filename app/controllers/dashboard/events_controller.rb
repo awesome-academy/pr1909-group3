@@ -7,11 +7,11 @@ class Dashboard::EventsController < ApplicationController
 
   def show
     gon.event = @event
-    byebug
-    @timeline = @event.timeline
+    @timeline = @event
   end
 
   def new
+    byebug
     @event = current_user.events.build
   end
 

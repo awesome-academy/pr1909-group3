@@ -14,9 +14,9 @@ var jQuery = require("jquery");
 global.$ = global.jQuery = jQuery;
 window.$ = window.jQuery = jQuery;
 
-import('styles/application.css');
-
 require("bootstrap");
+require("channels/dashboard_timeline")
+require("channels/timeline")
 require("@fortawesome/fontawesome-svg-core");
 require("packs/custom")
 require("packs/dashboard/time_picker")

@@ -7,7 +7,7 @@
   </form>
 <% end %>
 
-<% javascript("channels/dashboard_timeline", "channels/question") %>
+
 <div class="row">
   <div class="col-md-6">
     <div class="widget">
@@ -23,9 +23,6 @@
       <div class="widget-extra">
         <div class="timeline">
           <ul class="timeline-list" id="admin-timeline">
-            <% @timeline.each do |element| %>
-              <%= dashboard_timeline_el element %>
-            <% end %>
           </ul>
         </div>
       </div>
@@ -83,7 +80,6 @@
 
             <div class="tab-content list_element">
               <div class="tab-pane active" id="tabs-note">
-                <%= render "dashboard/notes/index" %>
               </div>
               <div class="tab-pane" id="tabs-poll">polls..</div>
               <div class="tab-pane" id="tabs-question">questions..</div>
