@@ -17,6 +17,9 @@ vi:
       text: "Đăng nhập với"
     dashboard:
       text: "Đăng nhập vào list chat"
+    placeholder:
+      email: "Email"
+      password: "Mật khẩu"
   registrations:
     signup_form:
       text: "Tạo tài khoản mới"
@@ -31,6 +34,13 @@ vi:
       login: "Đăng nhập"
     create:
       welcome: "Chào mừng đến với DL"
+    placeholder:
+      name: "Tên"
+      email: "Email"
+      phone: "Số điện thoại"
+      address: "Địa chỉ"
+      pass: "Mật khẩu"
+      confirm: "Xác thực mật khẩu"
   forgot:
     text: "Quên mật khẩu"
     confirm: "Chưa xác thực tài khoản"
@@ -67,4 +77,21 @@ vi:
     success: "Thành công"
     settings: "Cài đặt"
     updated: "Đã cập nhật !"
+  events:
+    new: "Cuộc họp mới"
+    meet: "Cuộc họp"
+    contact: "Liên hệ"
+    invite: "Cuộc họp được mời"
+    send: "Gửi"
+    again: "Làm lại"
+    create: "Tạo cuộc họp mới"
+  navbar:
+    account: "Tài khoản"
+    logout: "Đăng xuất tài khoản"
+    rename: "Thay đổi tên"
+    manager: "Đến trang quản lí"
+    signup: "Đăng nhập tài khoản"
+    logout: "Thoát khỏi cuộc họp"
+  modal:
+    setting: "Cài đặt"
     

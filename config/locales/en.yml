@@ -108,3 +108,20 @@ en:
     success: "Success"
     settings: "Settings"
     updated: "Updated !"
+  events:
+    new: "New meeting"
+    meet: "Meeting"
+    contact: "Contact"
+    invite: "Meeting is invited"
+    send: "Send"
+    again: "Again"
+    create: "Create new meet"
+  navbar:
+    account: "Account"
+    logout: "Logout account"
+    rename: "Rename"
+    manager: "Redirect to page manager"
+    signup: "Join meet"
+    logout: "Leave meeting"
+  modal:
+    setting: "Setting"

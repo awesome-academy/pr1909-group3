@@ -16,14 +16,14 @@
 
     <li class="dropdown">
       <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
-        <u>Account</u><i class="fa fa-angle-down"></i>
+        <u><%= t("navbar.account")%></u><i class="fa fa-angle-down"></i>
       </a>
       <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
-        <li class="dropdown-header text-center">Tài khoản</li>
+        <li class="dropdown-header text-center"><%= t("navbar.account")%></li>
         <li class="divider"></li>
         <li>
           <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="fa fa-lock fa-fw pull-right"></i> Logout Tài khoản
+            <i class="fa fa-lock fa-fw pull-right"></i> <%= t("navbar.logout")%>
           <% end %>
         </li>
       </ul>
