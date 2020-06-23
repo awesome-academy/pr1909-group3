@@ -6,6 +6,9 @@ class Dashboard::EventsController < ApplicationController
   end
 
   def show
+    gon.event = @event
+    byebug
+    @timeline = @event.timeline
   end
 
   def new
