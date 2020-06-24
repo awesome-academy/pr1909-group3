@@ -14,8 +14,6 @@ var jQuery = require("jquery");
 global.$ = global.jQuery = jQuery;
 window.$ = window.jQuery = jQuery;
 
-import('styles/application.css');
-
 require("bootstrap");
 require("@fortawesome/fontawesome-svg-core");
 require("packs/custom")
