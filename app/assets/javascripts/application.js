@@ -1,1 +1,12 @@
-//= require_tree .
+//= require jquery2.js
+//= require_tree ./config
+//= require bootstrap
+//= require plugins
+//= require jquery.timeago
+//= require app
+//= require custom
+//= require rails-ujs
+//= require bootstrap-datetimepicker
+//= require dashboard/application
+//= require ckeditor/init
+//= require select2
