@@ -11,7 +11,6 @@ class Dashboard::EventsController < ApplicationController
   end
 
   def new
-    byebug
     @event = current_user.events.build
   end
 

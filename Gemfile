@@ -40,6 +40,7 @@ gem "dropzonejs-rails", "~> 0.7.3"
 gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.1"
 gem 'rails-i18n'
 gem 'devise-i18n'
+gem 'jquery-rails'
 gem 'ckeditor'
 gem 'gon'
 gem "carrierwave"

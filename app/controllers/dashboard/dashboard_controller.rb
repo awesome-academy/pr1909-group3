@@ -1,11 +1,7 @@
-class Dashboard::HomeController < ApplicationController
+class Dashboard::DashboardController < ApplicationController
   protect_from_forgery
   before_action :authenticate_user!
   layout 'dashboard/application'
-
-  def index
-    @events = current_user.events
-  end
 
   protected
 

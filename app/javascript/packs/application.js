@@ -15,11 +15,11 @@ global.$ = global.jQuery = jQuery;
 window.$ = window.jQuery = jQuery;
 
 require("bootstrap");
-require("channels/dashboard_timeline")
-require("channels/timeline")
+// require("channels/dashboard_timeline")
+// require("channels/timeline")
 require("@fortawesome/fontawesome-svg-core");
 require("packs/custom")
-require("packs/dashboard/time_picker")
+require("packs/plugin")
 require("packs/config/ckeditor_config")
 require("packs/readyComingSoon")
 

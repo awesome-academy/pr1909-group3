@@ -1,1 +1,9 @@
-show_modal("<%= j render "new" %>", <%= t ('events.new') %>)
+function show_modal(partial, title = '', size) {
+    $("#notice-form").html("")
+    $("#modal-body").html(partial)
+    $("#modal-title").html(title)
+    $("#modal-shared").modal("toggle");
+    console.log("Vao day")
+}
+
+show_modal("<%= j render 'new' %>", "<%= t ('events.new')%>")
