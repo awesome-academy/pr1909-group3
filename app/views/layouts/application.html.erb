@@ -1,21 +1,54 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DL-CHAT</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <title><%= full_title(yield :title) %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+    <%= include_gon %>
+    <%= render "layouts/rails_default" %>
+    <%= render "layouts/shim" %>
+    <%= action_cable_meta_tag %>
   </head>
-
-  <body>
-      <div id="flash_messages">
-        <% flash.each do |message_type, message| %>
-          <%= content_tag :div, message, class: "alert alert-#{message_type}" %>
-        <% end %>
+  <body <%= "data-params-id=#{params[:id]}" if params.has_key?(:id) %>>
+    <%#= render "layouts/header" %>
+    <!--  <div id="flash_messages">-->
+    <%# flash.each do |message_type, message| %>
+      <%#= content_tag :div, message, class: "alert alert-#{message_type}" %>
+      <%# end %>
+      <!--  </div>-->
+      <div id="page-wrapper">
+        <%= render "layouts/preloader" %>
+        <div id="page-container">
+          <!-- Alternative Sidebar -->
+          <%#= render "layouts/sidebar-atl" %>
+          <!-- Main Sidebar -->
+          <%#= render "layouts/sidebar" %>
+          <!-- Main Container -->
+          <div id="main-container">
+            <%= render "layouts/navbar" if logged_in_event?%>
+            <!-- END Header -->
+            <!-- Page content -->
+            <div id="page-content">
+              <!-- Table Responsive Header -->
+              <%#= render "layouts/breadcrumb" %>
+              <!-- END Table Responsive Header -->
+              <%= yield %>
+            </div>
+            <!-- END Page Content -->
+            <!-- Footer -->
+            <%= render "layouts/footer" %>
+            <!-- END Footer -->
+          </div>
+          <!-- END Main Container -->
+        </div>
+        <!-- END Page Container -->
       </div>
-      <%= yield %>
-      <%= render "layouts/footer" %>
-  </body>
-</html>
+      <%= javascript_tag do %>
+        $(function() {
+        $("time.timeago").timeago();
+        });
+      <% end %>
+      <%= render "shared/modal" %>
+      <%#= render "layouts/footer" %>
+      <%= debug(params) if Rails.env.development? %>
+    </body>
+  </html>
