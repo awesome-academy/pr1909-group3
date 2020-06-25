@@ -8,20 +8,6 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
-var jQuery = require("jquery");
-
-// import jQuery from "jquery";
-global.$ = global.jQuery = jQuery;
-window.$ = window.jQuery = jQuery;
-
-require("bootstrap");
-// require("channels/dashboard_timeline")
-// require("channels/timeline")
-require("@fortawesome/fontawesome-svg-core");
-require("packs/custom")
-require("packs/plugin")
-require("packs/config/ckeditor_config")
-require("packs/readyComingSoon")
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
