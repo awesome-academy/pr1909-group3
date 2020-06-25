@@ -19,7 +19,7 @@
 
             <% @events.each do |event| %>
               <div id="product" >
-                
+                <%= render "dashboard/events/event_manual", event: event %>
               </div>
             <% end %>
           </div>
