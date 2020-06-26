@@ -1,0 +1,21 @@
+<%= form_tag set_admin_dashboard_event_participants_path(@event), remote: true, method: :post,
+             class: "form-horizontal" do |f| %>
+
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="example-select2"><%= t("participants.select") %></label>
+    <div class="col-md-10">
+      <select name="contact_ids[]" class="select2-option select2-hidden-accessible" multiple="multiple" style="width: 100%;" data-placeholder="Choose one.." tabindex="-1" aria-hidden="true">
+        <option></option>
+        <% @participants.each do|participant|  %>
+          <option <%= "selected" if participant.is_admin %> value="<%= participant.id %>"><%= participant.name %></option>
+        <% end %>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group form-actions text-center">
+    <div class="col-xs-12">
+      <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> <%= t("events.send) %></button>
+    </div>
+  </div>
+<% end %>

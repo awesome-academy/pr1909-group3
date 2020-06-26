@@ -23,7 +23,17 @@ Rails.application.routes.draw do
 
   root "homes#index"
   namespace :dashboard do
-    resources :events
-    root 'home#index'
+    resources :events do
+      resources :participants do
+        collection do
+          get :admin_list
+          post :set_admin
+        end
+      end
+
+      resources :invitations do
+      end
+      root 'home#index'
+    end
   end
 end

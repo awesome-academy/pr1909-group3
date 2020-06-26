@@ -18,6 +18,7 @@ class Dashboard::EventsController < ApplicationController
   end
 
   def update
+    @event.update(event_params)
   end
 
   def destroy

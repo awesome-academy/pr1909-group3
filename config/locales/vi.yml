@@ -94,4 +94,15 @@ vi:
     logout: "Thoát khỏi cuộc họp"
   modal:
     setting: "Cài đặt"
-    
+  danger:
+    text: "Chưa có phòng được tạo"
+  participants:
+    success: "Cài đặt người quản trị thành công"
+    update: "Sự kiện được cập nhật"
+    activity: "Hoạt động"
+    profile: "Hồ sơ cá nhân"
+    invite: "Lời mời"
+    block: "Trang khóa"
+    setting: "Cài đặt"
+    admin: "Chọn admin"
+    select: "Lựa chọn liên hệ"
