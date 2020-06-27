@@ -3,7 +3,7 @@
   <div class="col-md-6">
     <div class="block full">
       <div class="block-title">
-        <h4 class="text-center">Lời mời</h4>
+        <h4 class="text-center"><%= I18n.t("invitations.text")%></h4>
         <div class="block-options pull-right">
 
           <div class="btn-group">
@@ -18,8 +18,8 @@
           </div>
         </div>
         <ul class="nav nav-tabs invite-tab" data-toggle="tabs">
-          <li class="active"><a href="#invitation-unconfirmed">Chưa xác nhận</a></li>
-          <li class=""><a href="#invitation-confirmed">Đã xác nhận</a></li>
+          <li class="active"><a href="#invitation-unconfirmed"><%= I18n.t("invitations.unconfirmed")%></a></li>
+          <li class=""><a href="#invitation-confirmed"><%= I18n.t("invitations.confirmed")%></a></li>
         </ul>
       </div>
 
@@ -42,8 +42,8 @@
         </div>
       </div>
       <ul class="nav nav-tabs participant-tab" data-toggle="tabs">
-        <li class="active"><a href="#active-participant">Đang hoạt động</a></li>
-        <li class=""><a href="#all-participant">Tất cả</a></li>
+        <li class="active"><a href="#active-participant"><%= I18n.t("invitations.activity") %></a></li>
+        <li class=""><a href="#all-participant"><%= I18n.t("invitations.all") %></a></li>
       </ul>
     </div>
     <div class="tab-content list_element">
@@ -51,15 +51,15 @@
         <table class="table table-vcenter table-striped">
           <thead>
           <tr>
-            <th>Tên</th>
-            <th>Email</th>
+            <th><%= t ("form.name_placeholder")%></th>
+            <th><%= t ("sessions.placeholder.email")%></th>
           </tr>
           </thead>
           <tbody id="data-active-participant">
           </tbody>
         </table>
       </div>
-      <div class="tab-pane" id="all-participant">Profile..</div>
+      <div class="tab-pane" id="all-participant"><%= I18n.t("participants.profile") %>..</div>
     </div>
   </div>
   </div>

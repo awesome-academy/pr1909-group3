@@ -1,10 +1,9 @@
-<!--Show dashboard timeline-->
 <div class="col-md-3">
   <div class="widget well">
     <div class="widget-advanced widget-advanced-alt">
       <div class="widget-header text-center themed-background-dark-autumn">
         <div class="widget-options">
-          <%= link_to edit_dashboard_event_path(event), class: "btn btn-xs btn-primary", title: "Settings", remote: true do %>
+          <%= link_to edit_dashboard_event_path(event), class: "btn btn-xs btn-primary", title: I18n.t("form.title"), remote: true do %>
             <i class="fa fa-cog"></i>
           <% end %>
         </div>
@@ -25,7 +24,7 @@
             <p class="list-group-item-text"></p>
           </a>
           <div class="list-group-item">
-            <%= link_to 'Xem chi tiết', dashboard_event_path(event), remote: true %>
+            <%= link_to I18n.t("form.detail"), dashboard_event_path(event), remote: true %>
           </div>
         </div>
       </div>
