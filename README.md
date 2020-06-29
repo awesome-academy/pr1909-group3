@@ -5,20 +5,18 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 2.6.5
 
 * System dependencies
 
-* Configuration
+* Configuration database.yml, docker
 
-* Database creation
+* Database creation: mysql Ver 14.14 Distrib 5.7.30
 
-* Database initialization
+* Database initialization: chat
 
-* How to run the test suite
+* How to run the test suite: localhost:3000
 
 * Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
+* Deployment instructions in Heroku
