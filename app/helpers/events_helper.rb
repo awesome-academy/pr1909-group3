@@ -11,6 +11,14 @@ module EventsHelper
     end
   end
 
+  def active_button(object)
+    if object.active
+      '<span class="btn btn-success"><i class="fa fa-sign-out"></i></span>'.html_safe
+    else
+      '<span class="btn btn-danger"><i class="fa fa-sign-in"></i></span>'.html_safe
+    end
+  end
+
   def log_in_event(participant)
     session[:participant_id] = participant.id
   end

@@ -64,7 +64,7 @@
                   <a class="btn btn-alt btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">Menu</a>
                   <ul class="dropdown-menu dropdown-custom dropdown-menu-right" id="event-tab-id">
                     <li>
-                      <%= link_to "Tạo ghi chú mới", "#", remote: true %>
+                      <%= link_to "Tạo ghi chú mới", new_dashboard_event_note_path(@event), remote: true %>
                     </li>
                   </ul>
                 </div>
@@ -79,6 +79,7 @@
 
             <div class="tab-content list_element">
               <div class="tab-pane active" id="tabs-note">
+                <%= render 'dashboard/notes/index' %>
               </div>
               <div class="tab-pane" id="tabs-poll"><%= I18n.t("form.poll") %>..</div>
               <div class="tab-pane" id="tabs-question"><%= I18n.t("form.questions") %>..</div>

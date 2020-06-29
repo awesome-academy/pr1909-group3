@@ -1,0 +1,10 @@
+<div>
+  <h6>Thời gian tạo: <%= strftime @note.created_at %></h6>
+  <h6>T/g bắt đầu: <%= strftime @note.starts_on %> </h6>
+</div>
+<div>
+  <h6><b>Nội dung: </b></h6>
+  <div>
+    <%= @note.content.html_safe %>
+  </div>
+</div>
