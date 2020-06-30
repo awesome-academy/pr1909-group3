@@ -30,7 +30,7 @@ class Dashboard::InvitationsController < ApplicationController
   def destroy
     @invitation.destroy
     respond_to do |format|
-      format.html { redirect_to invitations_url, notice: 'Invitation was successfully destroyed.' }
+      format.html { redirect_to invitations_url, notice: I18n.t("notice.invitation") }
       format.json { head :no_content }
     end
   end
@@ -44,7 +44,7 @@ class Dashboard::InvitationsController < ApplicationController
   def load_event
     @event = Event.find_by id: params[:event_id]
     return if @event
-    flash[:danger] = t ".danger"
+    flash[:danger] = I18n.t("notice.load_event")
     redirect_to dashboard_events_path
   end
 

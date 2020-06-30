@@ -121,6 +121,15 @@ vi:
     discussion: "Thảo luận"
     document: "Tài liệu"
     questions: "Câu hỏi"
+    notes:
+      name: "Tên"
+      index: "STT"
+      starts_on: "Bắt đầu lúc"
+      activity: "Hành động"
+      time_start: "Thời gian tạo"
+      content: "Nội dung"
+      create_note: "Tạo ghi chú mới"
+      edit_note: "Sửa ghi chú"
   timeline:
     text: "Quá trình cuộc họp"
     title_edit: "Sửa phòng"
@@ -131,4 +140,8 @@ vi:
     confirmed: "Đã xác nhận"
     activity: "Đang hoạt động"
     all: "Tất cả"
-    
+  notice:
+    invitation: "Đã xóa lời mời thành công"
+    load_event: "Không thể load phòng"
+    load_note: "Không thể load ghi chú"
+    participant: "Thành viene đã được xóa thành công"
