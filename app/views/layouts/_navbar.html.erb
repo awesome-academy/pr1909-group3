@@ -35,7 +35,7 @@
         </li>
         <li class="divider"></li>
         <li>
-          <%= link_to  dashboard_root_path do %>
+          <%= link_to  dashboard_events_path do %>
               <i class="fa fa-lock fa-fw pull-right"></i> <%= t("navbar.manager")%></a>
           <% end if user_signed_in?%>
 
@@ -43,7 +43,7 @@
             <i class="fa fa-lock fa-fw pull-right"></i> <%= t("navbar.signup")%></a>
           <% end unless user_signed_in? %>
 
-          <%= link_to checkout_event_events_path, method: :post do %>
+          <%= link_to destroy_user_session_path, method: :post do %>
             <i class="fa fa-ban fa-fw pull-right"></i> <%= t("navbar.logout")%>
           <% end %>
         </li>

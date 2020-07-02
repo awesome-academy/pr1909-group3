@@ -7,6 +7,6 @@ class Users::SessionsController < Devise::SessionsController
     self.resource = warden.authenticate!(auth_options)
     sign_in(resource_name, resource)
     yield resource if block_given?
-    redirect_ajax(dashboard_root_url)
+    redirect_ajax(dashboard_events_path)
   end
 end

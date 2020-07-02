@@ -1,12 +1,11 @@
 <% content_for :search_box do %>
   <form action="a.html" method="post" class="navbar-form-custom">
     <div class="search-box">
-      <input type="text" id="search-data" class="form-control input-typeahead" autocomplete="off" placeholder="Search Elements..">
+      <input type="text" id="search-data" class="form-control input-typeahead" autocomplete="off" placeholder= <%= I18n.t ("form.search_placeholder") %>>
       <button type="button" class="form-control admin-button-search"><i class="fa fa-search fa-fw"></i></button>
     </div>
   </form>
 <% end %>
-
 
 <div class="row">
   <div class="col-md-6">
@@ -17,7 +16,7 @@
           </div>
         </div>
         <h3 class="widget-content-light">
-          Timeline
+          <%= t("timeline.text") %>
         </h3>
       </div>
       <div class="widget-extra">
@@ -34,12 +33,12 @@
         <div class="widget-options">
           <div class="btn-group btn-group-xs">
             <%= link_to edit_dashboard_event_path(@event),
-                        title: "Edit Event", class: "btn btn-default",
+                        title: I18n.t("timeline.title_edit") , class: "btn btn-default",
                         remote: true do %>
               <%= fa_icon "pencil" %>
             <% end %>
             <%= link_to admin_list_dashboard_event_participants_path(@event),
-                        title: "Admin Settings", class: "btn btn-default",
+                        title: I18n.t("form.title"), class: "btn btn-default",
                         remote: true do %>
               <%= fa_icon "cog" %>
             <% end %>
@@ -71,19 +70,19 @@
                 </div>
               </div>
               <ul class="nav nav-tabs event-tab" data-toggle="tabs" id="dashboard-event-tab">
-                <li class="active"><a href="#tabs-note">Ghi chú</a><span hidden>note</span></li>
-                <li><a href="#tabs-poll">Bầu chọn </a><span hidden>poll</span></li>
-                <li><a href="#tabs-question">Thảo luận</a><span hidden>question</span></li>
-                <li><a href="#tabs-document">Tài liệu</a><span hidden>document</span></li>
+                <li class="active"><a href="#tabs-note"><%= I18n.t("form.note") %></a><span hidden><%= I18n.t("form.note") %></span></li>
+                <li><a href="#tabs-poll"><%= I18n.t("form.poll") %> </a><span hidden><%= I18n.t("form.poll") %></span></li>
+                <li><a href="#tabs-question"><%= I18n.t("form.discussion") %></a><span hidden><%= I18n.t("form.discussion") %></span></li>
+                <li><a href="#tabs-document"><%= I18n.t("form.document") %></a><span hidden><%= I18n.t("form.document") %></span></li>
               </ul>
             </div>
 
             <div class="tab-content list_element">
               <div class="tab-pane active" id="tabs-note">
               </div>
-              <div class="tab-pane" id="tabs-poll">polls..</div>
-              <div class="tab-pane" id="tabs-question">questions..</div>
-              <div class="tab-pane" id="tabs-document">document..</div>
+              <div class="tab-pane" id="tabs-poll"><%= I18n.t("form.poll") %>..</div>
+              <div class="tab-pane" id="tabs-question"><%= I18n.t("form.questions") %>..</div>
+              <div class="tab-pane" id="tabs-document"><%= I18n.t("form.document") %>..</div>
             </div>
           </div>
         </div>
