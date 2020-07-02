@@ -22,8 +22,15 @@ Rails.application.routes.draw do
   end
 
   root "homes#index"
+
   namespace :dashboard do
     resources :events do
+      resources :notes do
+        member do
+          post :change_status
+        end
+      end
+
       resources :participants do
         collection do
           get :admin_list

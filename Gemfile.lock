@@ -197,6 +197,7 @@ GEM
     parallel (1.19.2)
     parser (2.7.1.4)
       ast (~> 2.4.1)
+    popper_js (1.16.0)
     public_suffix (4.0.5)
     puma (4.3.5)
       nio4r (~> 2.0)
@@ -360,6 +361,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   omniauth-google-oauth2
+  popper_js
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.1)
   rails-i18n

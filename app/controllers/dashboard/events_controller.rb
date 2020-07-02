@@ -26,7 +26,7 @@ class Dashboard::EventsController < ApplicationController
 
   def create
     @event = current_user.events.build(event_params)
-    redirect_ajax dashboard_root_path if @event.save
+    redirect_ajax dashboard_events_path if @event.save
   end
 
   private

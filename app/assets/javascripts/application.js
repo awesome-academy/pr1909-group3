@@ -1,5 +1,7 @@
 //= require jquery2.js
 //= require_tree ./config
+//= require popper
+//= require turbolinks
 //= require bootstrap
 //= require plugins
 //= require jquery.timeago

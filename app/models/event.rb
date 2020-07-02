@@ -1,5 +1,8 @@
 class Event < ApplicationRecord
   belongs_to :user
+  has_many :participants
+  has_many :notes
+  has_many :invitations
 
   validates :name, length: { minimum: 5 }
 

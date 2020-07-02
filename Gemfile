@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 gem "bcrypt"
+gem 'popper_js'
 gem "bootstrap-kaminari-views"
 gem "bootstrap-sass", "3.3.7"
 gem "bootstrap3-datetimepicker-rails", "~> 4.17.47"
