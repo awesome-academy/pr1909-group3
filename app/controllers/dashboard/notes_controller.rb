@@ -44,14 +44,14 @@ class Dashboard::NotesController < Dashboard::DashboardController
   def load_note
     @note = Note.find_by id: params[:id]
     return if @note
-    flash[:danger] = t '.danger'
+    flash[:danger] = I18n.t("notice.load_note")
     redirect_to admin_events_path
   end
 
   def load_event
     @event = Event.find_by id: params[:event_id]
     return if @event
-    flash[:danger] = t '.danger'
+    flash[:danger] = I18n.t("notice.load_event")
     redirect_to dashboard_events_path
   end
 

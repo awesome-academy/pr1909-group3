@@ -32,7 +32,7 @@ class Dashboard::ParticipantsController < Dashboard::DashboardController
   def destroy
     @participant.destroy
     respond_to do |format|
-      format.html { redirect_to participants_url, notice: 'Participant was successfully destroyed.' }
+      format.html { redirect_to participants_url, notice: I18n.t("notice.participant") }
       format.json { head :no_content }
     end
   end
