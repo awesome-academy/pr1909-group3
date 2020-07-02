@@ -1,0 +1,68 @@
+<% javascript("channels/appearance") %>
+<div class="row">
+  <div class="col-md-6">
+    <div class="widget">
+      <div class="widget-extra themed-background-dark">
+        <div class="widget-options">
+          <div class="btn-group btn-group-xs">
+            <a onclick="scrollToBot('participant-timeline')" class="btn btn-default" data-toggle="tooltip" title="Scroll to bot"><i class="hi hi-chevron-down"></i></a>
+          </div>
+        </div>
+        <h3 class="widget-content-light">
+          <%= I18n.t ("timeline.text")%>
+        </h3>
+      </div>
+      <div class="widget-extra">
+        <div class="timeline">
+          <ul class="timeline-list" id="participant-timeline">
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="widget">
+      <div class="widget-extra themed-background-dark">
+        <div class="widget-options">
+          <div class="btn-group btn-group-xs">
+          </div>
+        </div>
+        <h3 class="widget-content-light">
+          <strong><%= @event.name %></strong>
+        </h3>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="block full">
+            <div class="block-title">
+              <div class="block-options pull-right" id="participant-menu">
+                <div class="btn-group">
+                  <a class="btn btn-alt btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">Menu</a>
+                  <ul class="dropdown-menu dropdown-custom dropdown-menu-right" id="event-tab-id">
+
+                  </ul>
+                </div>
+              </div>
+              <ul class="nav nav-tabs event-tab" data-toggle="tabs" id="event-tab">
+                <li class="active"><a href="#tabs-note"><%= I18n.t("form.note") %></a><span hidden><%= I18n.t("form.note") %></span></li>
+                <li><a href="#tabs-poll"><%= I18n.t("form.poll") %></a><span hidden><%= I18n.t("form.poll") %></span></li>
+                <li><a href="#tabs-question"><%= I18n.t("form.discussion") %></a><span hidden><%= I18n.t("form.discussion") %></span></li>
+                <li><a href="#tabs-document"><%= I18n.t("form.document") %></a><span hidden><%= I18n.t("form.document") %></span></li>
+              </ul>
+            </div>
+            <div class="tab-content list_element">
+              <div class="tab-pane active" id="tabs-note">
+                <%= render "notes/index" %>
+              </div>
+              <div class="tab-pane" id="tabs-poll"><%= I18n.t("form.poll") %>..</div>
+              <div class="tab-pane" id="tabs-question"><%= I18n.t("form.questions") %>..</div>
+              <div class="tab-pane" id="tabs-document"><%= I18n.t("form.document") %>..</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

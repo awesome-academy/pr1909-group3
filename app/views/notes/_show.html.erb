@@ -1,0 +1,10 @@
+<div>
+  <h6><%= I18n.t("form.notes.time_start") %>: <%= strftime @note.created_at %></h6>
+  <h6><%= I18n.t("form.notes.starts_on") %>: <%= strftime @note.starts_on %> </h6>
+</div>
+<div>
+  <h6><b><%= I18n.t("form.notes.content") %>: </b></h6>
+  <div>
+    <%= @note.content.html_safe %>
+  </div>
+</div>
