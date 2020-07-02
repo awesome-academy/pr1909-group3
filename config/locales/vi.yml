@@ -106,6 +106,7 @@ vi:
     setting: "Cài đặt"
     admin: "Chọn admin"
     select: "Lựa chọn liên hệ"
+    join_by_code: "Không có cuộc họp nào tồn tại với code trên, vui lòng nhập lại!!"
   form:
     back: "Quay lại"
     title: "Cài đặt"
@@ -121,6 +122,8 @@ vi:
     discussion: "Thảo luận"
     document: "Tài liệu"
     questions: "Câu hỏi"
+    show: "Hiển thị"
+    code: "Mã code"
     notes:
       name: "Tên"
       index: "STT"

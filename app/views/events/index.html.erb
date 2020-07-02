@@ -1,0 +1,35 @@
+  <div class="row">
+    <div class="col-md-12">
+      <div class="block full">
+        <div class="block-title">
+          <div class="block-options pull-right">
+            <div class="btn-group">
+              <a class="btn btn-alt btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)"><i class="fa fa-angle-down"></i></a>
+              <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
+
+              </ul>
+            </div>
+          </div>
+          <ul class="nav nav-tabs" data-toggle="tabs">
+            <li class="active"><a href="#example-tabs2-activity"><%= I18n.t("participants.activity")%></a></li>
+            <li><a href="#example-tabs2-profile"><%= I18n.t("participants.profile")%></a></li>
+            <li><a href="#example-tabs2-options" data-toggle="tooltip" title="Settings"><i class="fa fa-cogs"></i></a></li>
+          </ul>
+        </div>
+        <div class="tab-content">
+          <div class="tab-pane active" id="example-tabs2-activity">
+            <div class="row">
+
+            <% @events.each do |event| %>
+              <div id="product" >
+                <%= render "event_manual", event: event %>
+              </div>
+            <% end %>
+            </div>
+          </div>
+          <div class="tab-pane" id="example-tabs2-profile"><%= I18n.t("participants.profile")%>..</div>
+          <div class="tab-pane" id="example-tabs2-options"><%= I18n.t("participants.setting")%>..</div>
+        </div>
+      </div>
+    </div>
+  </div>

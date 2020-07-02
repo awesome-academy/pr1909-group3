@@ -137,6 +137,7 @@ en:
     setting: "Setting"
     admin: "Select admin"
     select: "Select contact"
+    join_by_code: "No meeting exists with the above code, please retype!!"
   form:
     back: "Back"
     title: "Settings"
@@ -152,6 +153,8 @@ en:
     discussion: "Discussion"
     document: "Document"
     questions: "Questions"
+    show: "Show"
+    code: "Code"
     notes:
       name: "Name"
       index: "Index"

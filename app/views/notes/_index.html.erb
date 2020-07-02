@@ -1,0 +1,13 @@
+<table class="table table-vcenter table-striped">
+  <thead>
+    <tr>
+      <th><%= I18n.t("form.notes.name") %></th>
+      <th><%= I18n.t("form.notes.starts_on")%></th>
+      <th class="text-center"><%= I18n.t("form.notes.activity")%></th>
+    </tr>
+  </thead>
+  <tbody>
+  <%= render @event.notes %>
+  </tbody>
+</table>
+
