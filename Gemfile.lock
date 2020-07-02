@@ -336,6 +336,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
   bootsnap (>= 1.4.2)
   bootstrap-kaminari-views
   bootstrap-sass (= 3.3.7)

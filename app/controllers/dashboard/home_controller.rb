@@ -11,10 +11,8 @@ class Dashboard::HomeController < ApplicationController
 
   def authenticate_user!
     if user_signed_in?
-      byebug
       super
     else
-      buebug
       redirect_to root_path
     end
   end

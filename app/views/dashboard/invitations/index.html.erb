@@ -1,0 +1,66 @@
+<% javascript("channels/appearance") %>
+<div class="row">
+  <div class="col-md-6">
+    <div class="block full">
+      <div class="block-title">
+        <h4 class="text-center">Lời mời</h4>
+        <div class="block-options pull-right">
+
+          <div class="btn-group">
+            <%= link_to "Quay về timeline", dashboard_event_path(@event), class: "btn btn-alt btn-sm btn-default dropdown-toggle" %>
+          </div>
+
+          <div class="btn-group">
+            <a class="btn btn-alt btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" aria-expanded="false">Menu<i class="fa fa-angle-down"></i></a>
+            <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
+              <%= render "tab_menu" %>
+            </ul>
+          </div>
+        </div>
+        <ul class="nav nav-tabs invite-tab" data-toggle="tabs">
+          <li class="active"><a href="#invitation-unconfirmed">Chưa xác nhận</a></li>
+          <li class=""><a href="#invitation-confirmed">Đã xác nhận</a></li>
+        </ul>
+      </div>
+
+      <div class="tab-content list_element">
+        <div class="tab-pane active" id="invitation-unconfirmed" style="overflow-y: auto; max-height:700px; "></div>
+        <div class="tab-pane" id="invitation-confirmed"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="block full">
+    <div class="block-title">
+      <h4 class="text-center">Lời mời</h4>
+      <div class="block-options pull-right">
+        <div class="btn-group">
+          <a class="btn btn-alt btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" aria-expanded="false"><i class="fa fa-angle-down"></i></a>
+          <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
+          </ul>
+        </div>
+      </div>
+      <ul class="nav nav-tabs participant-tab" data-toggle="tabs">
+        <li class="active"><a href="#active-participant">Đang hoạt động</a></li>
+        <li class=""><a href="#all-participant">Tất cả</a></li>
+      </ul>
+    </div>
+    <div class="tab-content list_element">
+      <div class="tab-pane active" id="active-participant">
+        <table class="table table-vcenter table-striped">
+          <thead>
+          <tr>
+            <th>Tên</th>
+            <th>Email</th>
+          </tr>
+          </thead>
+          <tbody id="data-active-participant">
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-pane" id="all-participant">Profile..</div>
+    </div>
+  </div>
+  </div>
+</div>

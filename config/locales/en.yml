@@ -125,3 +125,15 @@ en:
     logout: "Leave meeting"
   modal:
     setting: "Setting"
+  danger:
+    text: "Non zoom is created"
+  participants:
+    success: "Setting adminstion successfull"
+    update: "Zoom is updated"
+    activity: "Activity"
+    profile: "Profile"
+    invite: "Invite"
+    block: "Block tab"
+    setting: "Setting"
+    admin: "Select admin"
+    select: "Select contact"
