@@ -9,6 +9,7 @@ class EventsController < ApplicationController
   def show
     gon.event = @event
     @notes = @event.notes.actived
+    @timeline = @event.timeline
   end
 
   def join_by_code

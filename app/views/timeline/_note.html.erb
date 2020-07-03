@@ -1,0 +1,12 @@
+<li class="active" id="note-tl-<%= note.id %>">
+  <div class="timeline-icon"><i class="fa fa-pencil"></i></div>
+  <div class="timeline-time"><small><%= time_shower(note.starts_on) %></small></div>
+  <div class="timeline-content">
+    <p class="push-bit">
+      <%= link_to "#", remote: true do %>
+        <strong class="title" data="note-tl-<%= note.id %>"><%= note.title %></strong>
+      <% end %>
+    </p>
+    <div class="push-bit more"><%= note.content.html_safe %></div>
+  </div>
+</li>

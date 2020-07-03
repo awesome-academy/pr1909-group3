@@ -7,7 +7,8 @@ class Dashboard::EventsController < ApplicationController
 
   def show
     gon.event = @event
-    @timeline = @event
+    @notes = @event.notes
+    @timeline = @event.timeline
   end
 
   def new

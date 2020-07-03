@@ -1,4 +1,4 @@
-<% javascript("channels/appearance") %>
+<% javascript("channels/appearance", "channels/timeline") %>
 <div class="row">
   <div class="col-md-6">
     <div class="widget">
@@ -15,7 +15,9 @@
       <div class="widget-extra">
         <div class="timeline">
           <ul class="timeline-list" id="participant-timeline">
-            
+            <% @timeline.each do |element| %>
+              <%= timeline_el(element) %>
+            <% end %>
           </ul>
         </div>
       </div>
