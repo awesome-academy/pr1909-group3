@@ -7,6 +7,7 @@
   </form>
 <% end %>
 
+<% javascript("channels/dashboard_timeline", "channels/timeline") %>
 <div class="row">
   <div class="col-md-6">
     <div class="widget">
@@ -22,6 +23,9 @@
       <div class="widget-extra">
         <div class="timeline">
           <ul class="timeline-list" id="admin-timeline">
+            <% @timeline.each do |element| %>
+              <%= dashboard_timeline_el element %>
+            <% end %>
           </ul>
         </div>
       </div>

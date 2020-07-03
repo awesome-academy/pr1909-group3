@@ -5,7 +5,9 @@ class Dashboard::NotesController < Dashboard::DashboardController
     @notes = @event.notes.order(created_at: :desc)
   end
 
-  def show; end
+  def show
+    @notes = @event.notes.order(created_at: :desc)
+  end
 
   def new
     @note = Note.new
@@ -45,7 +47,7 @@ class Dashboard::NotesController < Dashboard::DashboardController
     @note = Note.find_by id: params[:id]
     return if @note
     flash[:danger] = I18n.t("notice.load_note")
-    redirect_to admin_events_path
+    redirect_to dashboard_event_note_path
   end
 
   def load_event
