@@ -39,4 +39,15 @@ module EventsHelper
   def logged_in_event?
     !current_participant.nil?
   end
+
+  def time_shower(time, options = {})
+    options[:class] ||= 'timeago'
+    if time
+      content_tag(
+        :time,
+        time.to_s,
+        options.merge(datetime: time.getutc.iso8601)
+      )
+    end
+  end
 end

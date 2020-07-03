@@ -47,6 +47,10 @@ gem 'devise-i18n'
 gem 'ckeditor', "4.3.0"
 gem "select2-rails", "4.0.3"
 gem 'gon'
+gem "redis"
+gem "redis-namespace"
+gem "redis-rails"
+gem "redis-rack-cache"
 gem "carrierwave"
 gem "mini_magick"
 gem "omniauth"

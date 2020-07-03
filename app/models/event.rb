@@ -8,9 +8,10 @@ class Event < ApplicationRecord
 
   enum privacy: { low: 0, medium: 1, hight: 2 }
 
-  # def timeline
-  #   timeline.sort! { |a, b| b[:starts_on] <=> a[:starts_on] }
-  # end
+  def timeline
+    timeline = notes.actived.to_a
+    timeline.sort! { |a, b| b[:starts_on] <=> a[:starts_on] }
+  end
 
   def self.generate_code
     o = [('a'..'z'), ('A'..'Z'), (0..9)].map(&:to_a).flatten
