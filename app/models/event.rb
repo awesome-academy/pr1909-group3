@@ -3,6 +3,7 @@ class Event < ApplicationRecord
   has_many :participants
   has_many :notes
   has_many :invitations
+  has_many :question
 
   validates :name, length: { minimum: 5 }
 

@@ -1,6 +1,8 @@
 class Participant < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :event
+  has_many :answer
+  has_many :question
 
   after_create :create_degit
 

@@ -1,0 +1,42 @@
+<div class="block">
+  <!-- Title -->
+  <div class="block-title">
+    <div class="block-options pull-right">
+      <a class="btn btn-alt btn-sm btn-default dropdown-toggle enable-tooltip" title="Go to botton"
+         onclick="scrollToBot('box-list')">
+        <i class="hi hi-chevron-down"></i>
+      </a>
+    </div>
+    <h2><i class="fa fa-question"></i> <%= @question.title %></h2>
+  </div>
+  <div class="chatui-container block-content-full ow">
+    <div class="chatui-talk">
+      <div class="chatui-talk-scroll" id="box-list">
+        <ul>
+          <%= render partial: "answers/answer", collection: @answers, as: :answer, locals: {current_participant_id: current_participant.id} %>
+        </ul>
+      </div>
+    </div>
+    <div class="chatui-input">
+      <%= form_for @answer, remote: true, authenticity_token: true, html: {class: "form-horizontal form-control-borderless remove-margin", id: "form-answer"} do |f| %>
+        <div class="input-group">
+          <%= f.text_field :content,
+                           id: "chatui-message",
+                           disabled: @question.stop_answer,
+                           class: "form-control input-lg",
+                           placeholder: @question.stop_answer ? "Câu hỏi đã bị khóa trả lời" : "Nhập câu trả lời và nhấn nút gửi"%>
+          <%= f.hidden_field :question_id, value: @question.id %>
+          <span class="input-group-addon"><i class="fa fa-angle-right"></i></span>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= javascript_include_tag "dashboard/readyChat" %>
+<script>
+  room = ReadyChat.init();
+  $("#box-list").scrollTop(function () {
+    return this.scrollHeight;
+  });
+
+</script>

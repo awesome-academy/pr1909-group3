@@ -1,0 +1,29 @@
+<%= form_for [:dashboard, @event, @question], remote: true,
+             html: { class: "form-horizontal" } do |f| %>
+  <div class="form-group">
+    <%= f.label "Tên", class:
+      "control-label col-md-3 col-sm-3 col-xs-12" %>
+    <div class="input-group col-md-6 col-sm-6 col-xs-12">
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Thời gian dự kiến", class:
+        "control-label col-md-3 col-sm-3 col-xs-12" %>
+    <div class="input-group col-md-6 col-sm-6 col-xs-12">
+      <%= f.number_field :intend, class: "form-control", step: 5, min: 0 %>
+    </div>
+  </div>
+
+  <div>
+    <%= f.cktext_area :content %>
+  </div>
+
+  <div class="form-group form-actions text-center">
+    <div class="col-xs-12">
+      <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Gửi </button>
+    </div>
+  </div>
+<% end %>
+<%= javascript_include_tag "dashboard/time_picker" %>

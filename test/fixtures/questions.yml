@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  content: MyText
+  event: one
+  participant: one
+  starts_on: 2020-07-05 22:15:04
+  active: false
+  stop_answer: false
+
+two:
+  title: MyString
+  content: MyText
+  event: two
+  participant: two
+  starts_on: 2020-07-05 22:15:04
+  active: false
+  stop_answer: false
