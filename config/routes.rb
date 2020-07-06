@@ -46,8 +46,7 @@ Rails.application.routes.draw do
       #     post :import
       #   end
       # end
-
-      root 'home#index'
     end
+    root 'home#index'
   end
 end
