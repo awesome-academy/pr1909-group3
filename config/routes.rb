@@ -40,7 +40,8 @@ Rails.application.routes.draw do
 
       resources :invitations do
       end
-      root 'home#index'
     end
+
+    root 'homes#index'
   end
 end
