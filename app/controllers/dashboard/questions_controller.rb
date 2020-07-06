@@ -1,6 +1,5 @@
 class Dashboard::QuestionsController < ApplicationController
   before_action :set_question, except: [:new, :index, :create]
-  before_action :load_event
 
   def index
     @questions = @event.questions.order(created_at: :desc)
@@ -43,7 +42,7 @@ class Dashboard::QuestionsController < ApplicationController
     return unless @question.changeStatus
     action = @question.active ? 'enable_time_line' : 'disable_time_line'
     @question.message_to_stream(action, 'all')
-    end
+  end
 
   def lock_answer
     return unless @question.lock_answer

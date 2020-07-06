@@ -11,4 +11,6 @@
 //= require bootstrap-datetimepicker
 //= require dashboard/application
 //= require ckeditor/init
+//= require_tree ./tab_change
+//= require cable
 //= require select2
