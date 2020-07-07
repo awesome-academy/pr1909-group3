@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_05_151653) do
+ActiveRecord::Schema.define(version: 2020_07_07_083715) do
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
@@ -70,6 +70,16 @@ ActiveRecord::Schema.define(version: 2020_07_05_151653) do
     t.index ["event_id"], name: "index_notes_on_event_id"
   end
 
+  create_table "options", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "content"
+    t.bigint "poll_id"
+    t.float "vote_value"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "votes_count", default: 0, null: false
+    t.index ["poll_id"], name: "index_options_on_poll_id"
+  end
+
   create_table "participants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.text "authencode_app"
@@ -78,6 +88,19 @@ ActiveRecord::Schema.define(version: 2020_07_05_151653) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["event_id"], name: "index_participants_on_event_id"
+  end
+
+  create_table "polls", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.boolean "active", default: false
+    t.string "stop_vote", default: "0"
+    t.bigint "event_id"
+    t.integer "multi_vote", default: 1
+    t.datetime "starts_on"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_polls_on_event_id"
   end
 
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -122,12 +145,25 @@ ActiveRecord::Schema.define(version: 2020_07_05_151653) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "votes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "option_id"
+    t.bigint "participant_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["option_id"], name: "index_votes_on_option_id"
+    t.index ["participant_id"], name: "index_votes_on_participant_id"
+  end
+
   add_foreign_key "answers", "participants"
   add_foreign_key "answers", "questions"
   add_foreign_key "events", "users"
   add_foreign_key "invitations", "events"
   add_foreign_key "notes", "events"
+  add_foreign_key "options", "polls"
   add_foreign_key "participants", "events"
+  add_foreign_key "polls", "events"
   add_foreign_key "questions", "events"
   add_foreign_key "questions", "participants"
+  add_foreign_key "votes", "options"
+  add_foreign_key "votes", "participants"
 end

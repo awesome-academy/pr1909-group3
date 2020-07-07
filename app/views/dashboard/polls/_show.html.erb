@@ -1,0 +1,19 @@
+<div>
+  <h6>Tạo lúc: <%= strftime @poll.created_at %></h6>
+  <h6>Bắt đầu lúc: <%= strftime @poll.starts_on %> </h6>
+</div>
+<hr>
+<div>
+  <h6><b>Nội dung: </b></h6>
+  <div>
+    <%= @poll.content.html_safe %>
+  </div>
+</div>
+<hr>
+<div>
+  <h6><b>Các lựa chọn: </b></h6>
+  <%= render partial: 'dashboard/polls/vote_option', collection: @poll.options, as: :option %>
+</div>
+<hr>
+<p><b>Số phiếu bầu: <%= @poll.votes_summary %></b></p>
+

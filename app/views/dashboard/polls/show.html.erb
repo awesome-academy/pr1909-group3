@@ -1,0 +1,9 @@
+<% javascript("channels/poll") %>
+
+<div class="box-result">
+  <div class= "chart" id="chartContainer" style="height: 50%; width: 50%;"></div>
+</div>
+<script type="text/javascript" charset="utf-8">
+  var chart = createColumnChart(gon.poll.title,loadDataColumm(gon.result));
+  createPollChannel(chart);
+</script>
