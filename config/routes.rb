@@ -15,6 +15,8 @@ Rails.application.routes.draw do
                      }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
+  resources :votes, only: [:create, :index]
+  resources :polls
   resources :notes
   resources :questions
   resources :participants, only: %i(edit update)
@@ -27,6 +29,7 @@ Rails.application.routes.draw do
     end
 
     member do
+      get :polls
       get :questions
       get :notes
       get :my_questions
@@ -38,10 +41,19 @@ Rails.application.routes.draw do
   root "home#index"
 
   namespace :dashboard do
+    root 'home#index'
+    
     resources :events do
       resources :notes do
         member do
           post :change_status
+        end
+      end
+
+      resources :polls do
+        member  do
+          post :change_status
+          post :lock_vote
         end
       end
 
@@ -62,7 +74,5 @@ Rails.application.routes.draw do
       resources :invitations do
       end
     end
-
-    root 'home#index'
   end
 end

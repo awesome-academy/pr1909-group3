@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_07_083715) do
+ActiveRecord::Schema.define(version: 2020_07_07_094949) do
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(version: 2020_07_07_083715) do
     t.datetime "starts_on"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "intend"
     t.index ["event_id"], name: "index_polls_on_event_id"
   end
 
@@ -113,6 +114,7 @@ ActiveRecord::Schema.define(version: 2020_07_07_083715) do
     t.boolean "stop_answer", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "intend"
     t.index ["event_id"], name: "index_questions_on_event_id"
     t.index ["participant_id"], name: "index_questions_on_participant_id"
   end
