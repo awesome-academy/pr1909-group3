@@ -1,0 +1,41 @@
+<div class="block">
+  <!-- Title -->
+  <div class="block-title">
+    <div class="block-options pull-right">
+      <a class="btn btn-alt btn-sm btn-default dropdown-toggle enable-tooltip" title="Go to botton"
+         onclick="scrollToBot('box-list')">
+        <i class="hi hi-chevron-down"></i>
+      </a>
+      <div class="btn-group btn-group-sm">
+        <a href="javascript:void(0)" class="btn btn-alt btn-sm btn-default dropdown-toggle enable-tooltip" data-toggle="dropdown" title="Status"><i class="fa fa-cog"></i></a>
+      </div>
+    </div>
+    <h2><i class="fa fa-pencil animation-pulse"></i> <%= @question.title  %></h2>
+  </div>
+  <div class="chatui-container block-content-full ow">
+    <div class="chatui-talk">
+      <div class="chatui-talk-scroll" id="box-list">
+        <ul>
+          <%= render partial: "answers/answer", collection: @answers, as: :answer, locals: {current_participant_id: current_participant&.id} %>
+        </ul>
+      </div>
+    </div>
+<!--    <div class="chatui-input">-->
+      <%#= form_for @answer, remote: true, authenticity_token: true, html: {class: "form-horizontal form-control-borderless remove-margin", id: "form-answer"} do |f| %>
+<!--        <div class="input-group">-->
+          <%#= f.text_field :content, id: "chatui-message", class: "form-control input-lg", placeholder: "Type a message and hit enter.." %>
+          <%#= f.hidden_field :question_id, value: @question.id %>
+<!--          <span class="input-group-addon"><i class="fa fa-angle-right"></i></span>-->
+<!--        </div>-->
+      <%# end %>
+<!--    </div>-->
+  </div>
+</div>
+<%= javascript_include_tag "dashboard/readyChat" %>
+<script>
+  room = ReadyChat.init();
+  $("#box-list").scrollTop(function () {
+    return this.scrollHeight;
+  });
+
+</script>

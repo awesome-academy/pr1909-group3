@@ -1,0 +1,9 @@
+<% if current_participant_id == answer.participant_id %>
+  <li class="chatui-talk-msg">
+    <%= answer.content %>
+  </li>
+<% else %>
+  <li class="chatui-talk-msg chatui-talk-msg-highlight themed-border">
+    <h6><b><%= answer.participant.name %></b></h6><%= answer.content %>
+  </li>
+<% end %>

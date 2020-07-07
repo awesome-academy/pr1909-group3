@@ -1,15 +1,15 @@
 $(function () {
   $("#start_date").datetimepicker(
-      {
-        format: 'YYYY-MM-DD HH:mm:ss',
-        defaultDate: new Date()
-      }
+    {
+      format: 'YYYY-MM-DD HH:mm:ss',
+      defaultDate: new Date()
+    }
   );
 
   $("#end_date").datetimepicker(
-      {
-        format: 'YYYY-MM-DD HH:mm:ss'
-      }
+    {
+      format: 'YYYY-MM-DD HH:mm:ss'
+    }
   );
 
   $('#end_date').datetimepicker({

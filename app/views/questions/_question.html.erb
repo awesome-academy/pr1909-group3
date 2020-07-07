@@ -1,0 +1,12 @@
+<tr id="el-question-<%= question.id %>">
+  <td><%= question.title %></td>
+  <td><%= strftime question.starts_on %></td>
+  <td><%= question.intend || "Không" %></td>
+  <td class="text-center">
+    <%= link_to question,
+                title: "edit", class: "btn btn-default",
+                remote: true do %>
+      <i class="fa fa-question-circle"></i>
+    <% end %>
+  </td>
+</tr>

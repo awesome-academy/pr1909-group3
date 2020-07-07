@@ -1,0 +1,20 @@
+<tr id="el-question-<%= question.id %>">
+  <td><%= question.title %></td>
+  <td><%= strftime question.starts_on %></td>
+  <td class="text-center">
+    <div class="btn-group btn-group-xs">
+      <%= link_to edit_question_path(question),
+                  title: "edit", class: "btn btn-default",
+                  remote: true do %>
+        <%= fa_icon "edit" %>
+      <% end %>
+
+      <%= link_to question, method: :delete,
+                  title: "Delete", class: "btn btn-danger",
+                  data: {confirm: t(".confirm")} do %>
+        <%= fa_icon "trash" %>
+      <% end %>
+    </div>
+  </td>
+</tr>
+

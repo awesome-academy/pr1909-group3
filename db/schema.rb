@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_29_132738) do
+ActiveRecord::Schema.define(version: 2020_07_05_151653) do
+
+  create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "content"
+    t.bigint "question_id"
+    t.bigint "participant_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["participant_id"], name: "index_answers_on_participant_id"
+    t.index ["question_id"], name: "index_answers_on_question_id"
+  end
 
   create_table "ckeditor_assets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "data_file_name", null: false
@@ -70,6 +80,20 @@ ActiveRecord::Schema.define(version: 2020_06_29_132738) do
     t.index ["event_id"], name: "index_participants_on_event_id"
   end
 
+  create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.bigint "event_id"
+    t.bigint "participant_id"
+    t.datetime "starts_on"
+    t.boolean "active", default: false
+    t.boolean "stop_answer", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_questions_on_event_id"
+    t.index ["participant_id"], name: "index_questions_on_participant_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -98,8 +122,12 @@ ActiveRecord::Schema.define(version: 2020_06_29_132738) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "answers", "participants"
+  add_foreign_key "answers", "questions"
   add_foreign_key "events", "users"
   add_foreign_key "invitations", "events"
   add_foreign_key "notes", "events"
   add_foreign_key "participants", "events"
+  add_foreign_key "questions", "events"
+  add_foreign_key "questions", "participants"
 end

@@ -1,4 +1,4 @@
-class Dashboard::InvitationsController < ApplicationController
+class Dashboard::InvitationsController < Dashboard::ApplicationController
   before_action :load_event
   before_action :set_invitation, only: [:show, :edit, :update, :destroy]
 

@@ -1,7 +1,6 @@
 App.cable = ActionCable.createConsumer("/cable");
 App.notifications = App.cable.subscriptions.create("AppearanceChannel", {
     connected: function () {
-        // Called when the subscription is ready for use on the server
         return this.appear();
     },
 

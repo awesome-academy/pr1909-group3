@@ -15,19 +15,40 @@ Rails.application.routes.draw do
                      }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
+  resources :notes
+  resources :questions
+  resources :participants, only: %i(edit update)
+  resources :answers
+
   resources :events do
     collection do
       post :join_by_code
+      post :checkout_event
     end
+
+    member do
+      get :questions
+      get :notes
+      get :my_questions
+    end
+
+    resources :questions
   end
 
-  root "homes#index"
+  root "home#index"
 
   namespace :dashboard do
     resources :events do
       resources :notes do
         member do
           post :change_status
+        end
+      end
+
+      resources :questions do
+        member  do
+          post :change_status
+          post :lock_answer
         end
       end
 
@@ -40,7 +61,8 @@ Rails.application.routes.draw do
 
       resources :invitations do
       end
-      root 'home#index'
     end
+
+    root 'home#index'
   end
 end
