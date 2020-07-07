@@ -1,0 +1,9 @@
+<div class="col-md-12 fields">
+  <div class="input-group">
+    <%= f.text_field :content, class: "form-control",placeholder: "Lựa chọn" %>
+    <%= f.hidden_field :_destroy %>
+    <span class="input-group-btn">
+      <button type="button" onClick= "removeField(this); return false;" class="btn btn-primary remove-link-button"><i class="fa fa-trash"></i></button>
+    </span>
+  </div>
+</div>

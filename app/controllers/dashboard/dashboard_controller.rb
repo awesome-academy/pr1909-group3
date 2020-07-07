@@ -1,6 +1,7 @@
 class Dashboard::DashboardController < ApplicationController
   protect_from_forgery
   before_action :authenticate_user!
+  byebug
   layout 'dashboard/application'
 
   protected

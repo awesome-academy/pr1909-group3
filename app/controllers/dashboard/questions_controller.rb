@@ -1,5 +1,6 @@
-class Dashboard::QuestionsController < ApplicationController
+class Dashboard::QuestionsController < Dashboard::DashboardController
   before_action :set_question, except: [:new, :index, :create]
+  before_action :load_event
 
   def index
     @questions = @event.questions.order(created_at: :desc)
