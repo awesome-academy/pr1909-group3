@@ -6,3 +6,5 @@
 //= link channels/dashboard_timeline.js
 //= link channels/timeline.js
 //= link channels/question.js
+//= link dashboard/readyChat.js
+//= link dashboard/poll.js

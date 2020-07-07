@@ -4,7 +4,7 @@ class Answer < ApplicationRecord
 
   validates :content, presence: true
 
-  def answers_to_stream(action_type, display, current_participant_id)
+  def answer_to_stream(action_type, display, current_participant_id)
     data = {
       action: action_type,
       participant_id: participant_id,

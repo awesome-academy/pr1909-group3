@@ -45,6 +45,14 @@ module EventsHelper
     end
   end
 
+  def lock_vote_button(object)
+    if object.stop_vote
+      '<i class="fa fa-lock"></i>'.html_safe
+    else
+      '<i class="fa fa-unlock"></i>'.html_safe
+    end
+  end
+
   def log_in_event(participant)
     session[:participant_id] = participant.id
   end
