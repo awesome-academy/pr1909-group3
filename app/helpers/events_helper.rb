@@ -1,4 +1,9 @@
 module EventsHelper
+  def intend_time(start_time, end_time)
+    return 'undefine' if end_time.nil?
+    ((end_time - start_time) * 24 * 60).to_i
+  end
+
   def remember_participant(event)
     participant = Participant.create(event: event, name: "No Name", is_admin: false)
     cookies.permanent.signed[:participant_id] = participant.id
@@ -29,6 +34,14 @@ module EventsHelper
       '<span class="btn btn-success"><i class="fa fa-sign-out"></i></span>'.html_safe
     else
       '<span class="btn btn-danger"><i class="fa fa-sign-in"></i></span>'.html_safe
+    end
+  end
+
+  def lock_answer_button(object)
+    if object.stop_answer
+      '<i class="fa fa-lock"></i>'.html_safe
+    else
+      '<i class="fa fa-unlock"></i>'.html_safe
     end
   end
 

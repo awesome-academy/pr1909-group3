@@ -35,7 +35,7 @@ Rails.application.routes.draw do
     resources :questions
   end
 
-  root "homes#index"
+  root "home#index"
 
   namespace :dashboard do
     resources :events do
@@ -61,7 +61,8 @@ Rails.application.routes.draw do
 
       resources :invitations do
       end
-      root 'home#index'
     end
+
+    root 'home#index'
   end
 end
