@@ -1,0 +1,13 @@
+<li class="active" id="question-tl-<%= question.id %>">
+  <div class="timeline-icon themed-background-default themed-border-fire"><i class="gi gi-circle_question_mark"></i></div>
+  <div class="timeline-time"><small><%= time_shower(question.starts_on) %></small></div>
+  <div class="timeline-content">
+    <p class="push-bit">
+      <%= link_to question_path(question), remote: true do %>
+        <strong class="title" data="question-tl-<%= question.id %>"><%= question.title %></strong>
+        <%= '<i class="fa fa-lock"></i>'.html_safe if question.stop_answer %>
+        <% end %>
+    </p>
+    <div class="push-bit"><%= question.content.html_safe %></div>
+  </div>
+</li>

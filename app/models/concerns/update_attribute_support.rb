@@ -5,6 +5,10 @@ module UpdateAttributeSupport
     update_attributes active: !active, starts_on: Time.current
   end
 
+  def lock_answer
+    update_attributes stop_answer: !stop_answer
+  end
+
   included do
     before_update do
       @active_changed = false

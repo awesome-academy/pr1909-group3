@@ -1,6 +1,9 @@
 class Participant < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :event
+  has_many :votes
+  has_many :answers
+  has_many :questions
 
   after_create :create_degit
 
@@ -34,5 +37,11 @@ class Participant < ApplicationRecord
 
   def event_authenticated?(remember_token)
     BCrypt::Password.new(authencode_app).is_password?(remember_token)
+  end
+
+  def voted_for?(poll)
+    option_ids = poll.options.pluck(:id)
+    poll_votes = votes.where(option_id: option_ids)
+    poll_votes.size >= poll.multi_vote
   end
 end

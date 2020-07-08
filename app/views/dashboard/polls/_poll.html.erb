@@ -1,0 +1,38 @@
+<tr id="el-poll-<%= poll.id %>">
+  <td><%= link_to change_status_dashboard_event_poll_path(poll.event_id, poll, poll: {active: true}), method: :post,
+                  title: "Chang Status",
+                  data: {confirm: "Bạn có muốn thay đổi trạng thái?"}, remote: true do %>
+      <%= active_button poll %>
+    <% end %></td>
+  <td><%= poll.title %></td>
+  <td><%= strftime poll.starts_on %></td>
+  <td><%= poll.intend || "Không" %></td>
+
+  <td class="text-center">
+    <div class="btn-group btn-group-xs">
+      <%= link_to lock_vote_dashboard_event_poll_path(poll.event_id, poll), method: :post,
+                  title: "Lock vote",class: "btn btn-danger",
+                  data: {confirm: "Change?"}, remote: true do %>
+        <%= lock_vote_button poll %>
+      <% end %>
+
+      <%= link_to dashboard_event_poll_path(poll.event_id, poll),
+                  title: "show result", class: "btn btn-default",
+                  target: :_blank do %>
+        <i class="gi gi-signal"></i>
+      <% end %>
+
+      <%= link_to edit_dashboard_event_poll_path(poll.event_id, poll),
+                  title: "edit", class: "btn btn-default",
+                  remote: true do %>
+        <%= fa_icon "edit" %>
+      <% end %>
+
+      <%= link_to dashboard_event_poll_path(poll.event_id, poll), method: :delete,
+                  title: "Delete", class: "btn btn-danger",
+                  data: {confirm: t(".confirm")} do %>
+        <%= fa_icon "trash" %>
+      <% end %>
+    </div>
+  </td>
+</tr>

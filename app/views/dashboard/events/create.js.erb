@@ -1,0 +1,6 @@
+<% if @event.errors.any? %>
+$("#notice-error-form").html("<%= j render "shared/error_messages",
+    object: @event %>")
+<% else %>
+$('.modal').modal('hide');
+<% end %>

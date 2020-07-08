@@ -38,6 +38,7 @@ gem 'devise'
 gem "bcrypt"
 gem 'popper_js'
 gem "bootstrap-kaminari-views"
+gem 'execjs'
 gem "bootstrap-sass", "3.3.7"
 gem "bootstrap3-datetimepicker-rails", "~> 4.17.47"
 gem "dropzonejs-rails", "~> 0.7.3"
@@ -45,8 +46,10 @@ gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.1"
 gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'ckeditor', "4.3.0"
-gem "select2-rails", "4.0.3"
+gem 'config'
 gem 'gon'
+gem 'counter_culture'
+gem 'groupdate'
 gem "redis"
 gem "redis-namespace"
 gem "redis-rails"
@@ -56,6 +59,7 @@ gem "mini_magick"
 gem "omniauth"
 gem "omniauth-google-oauth2"
 gem "omniauth-facebook"
+gem "select2-rails", "4.0.3"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

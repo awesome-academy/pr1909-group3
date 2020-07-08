@@ -1,0 +1,11 @@
+<%= image_tag("placeholders/backgrounds/login.jpg", class: "full-bg animation-pulseSlow") %>
+<div id="login-container" class="animation-fadeIn">
+  <div class="login-title text-center">
+    <h1><i class="gi gi-flash"></i> <strong>DL-CHAT</strong><br>
+      <small> <%= I18n.t ("detail.home")%> </small></h1>
+  </div>
+  <div class="block push-bit" id="form-shower">
+    <%= render "home_code_form" %>
+    <%= debug(params) if Rails.env.development? %>
+  </div>
+</div>

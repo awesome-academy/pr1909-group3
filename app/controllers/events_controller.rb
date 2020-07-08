@@ -26,8 +26,16 @@ class EventsController < ApplicationController
     redirect_to root_path
   end
 
+  def questions
+    @questions = @event.questions.actived
+  end
+
   def notes
     @notes = @event.notes.actived
+  end
+
+  def my_questions
+    @questions = @event.questions.where(participant: current_participant)
   end
 
   private

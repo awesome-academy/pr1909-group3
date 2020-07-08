@@ -1,0 +1,9 @@
+<div class="btn-group">
+  <a class="btn btn-alt btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" aria-expanded="false">Menu</a>
+  <ul class="dropdown-menu dropdown-custom dropdown-menu-right" id="event-tab-id">
+    <li>
+      <%= link_to "Thảo luận mới", new_event_questions_path(@event), remote: true %>
+      <%= link_to "Các thảo luận", questions_event_path(@event), remote: true %>
+    </li>
+  </ul>
+</div>

@@ -3,7 +3,7 @@ class DashboardTimelineUpdateJob < ApplicationJob
 
   def perform(data)
     puts data
-    ActionCable.server.broadcast "event_#{data[:event_id]}_timeline_channel",
+    ActionCable.server.broadcast "dashboard_event_#{data[:event_id]}_timeline_channel",
                                  data
   end
 end
