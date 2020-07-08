@@ -168,6 +168,7 @@ ActiveRecord::Schema.define(version: 2020_07_07_094949) do
 
   add_foreign_key "answers", "participants"
   add_foreign_key "answers", "questions"
+  add_foreign_key "contacts", "users"
   add_foreign_key "events", "users"
   add_foreign_key "invitations", "events"
   add_foreign_key "notes", "events"
