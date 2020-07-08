@@ -1,0 +1,18 @@
+<li class="active" id="poll-tl-<%= poll.id %>">
+  <div class="timeline-icon"><i class="gi gi-signal"></i></div>
+  <div class="timeline-time"><small><%= time_shower(poll.starts_on) %></small></div>
+  <div class="timeline-content">
+    <p class="push-bit">
+      <%= link_to poll, remote: true do %>
+        <strong class="title" data="poll-tl-<%= poll.id %>"><%= poll.title %></strong>
+        <%= '<i class="fa fa-lock"></i>'.html_safe if poll.stop_vote %>
+      <% end %>
+    </p>
+    <div class="push-bit"><%= poll.content.html_safe %></div>
+    <p class="push-bit">
+      <%= link_to poll, remote: true do %>
+        Vote Poll
+      <% end %>
+    </p>
+  </div>
+</li>

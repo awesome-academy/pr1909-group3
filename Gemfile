@@ -48,6 +48,8 @@ gem 'devise-i18n'
 gem 'ckeditor', "4.3.0"
 gem 'config'
 gem 'gon'
+gem 'counter_culture'
+gem 'groupdate'
 gem "redis"
 gem "redis-namespace"
 gem "redis-rails"
