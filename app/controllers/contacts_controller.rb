@@ -5,6 +5,7 @@ class Dashboard::ContactsController < Dashboard::DashboardController
 
   def index
     @contacts = current_user.contacts.search(params[:search]).page(params[:page]).per(10)
+    byebug
   end
 
   def show; end
