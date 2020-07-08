@@ -1,0 +1,12 @@
+<tr id="el-poll-<%= poll.id %>">
+  <td><%= poll.title %></td>
+  <td><%= strftime poll.starts_on %></td>
+  <td><%= poll.intend || "Không"%></td>
+  <td class="text-center">
+    <%= link_to poll,
+                title: "edit", class: "btn btn-default",
+                remote: true do %>
+      <i class="fa fa-check-square-o"></i>
+    <% end %>
+  </td>
+</tr>

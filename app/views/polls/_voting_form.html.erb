@@ -1,0 +1,17 @@
+<%= form_tag votes_path, method: :post, remote: true, id: 'voting_form' do %>
+  <%= hidden_field_tag 'poll[id]', @poll.id %>
+
+  <%= render partial: 'polls/vote_option', collection: @poll.options, as: :option %>
+
+  <p><b>Total votes: <%= @poll.votes_summary %></b></p>
+
+  <% if @is_voted %>
+    <p class="text-center">Bạn đã bầu chọn</p>
+  <% elsif @poll.stop_vote  %>
+    <p class="text-center text-danger"> Bầu chọn đã bị khóa</p>
+  <% else %>
+    <div class="form-group text-center">
+      <%= submit_tag 'Vote', class: 'btn btn btn-primary' %>
+    </div>
+  <% end %>
+<% end %>
