@@ -47,6 +47,7 @@ gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'ckeditor', "4.3.0"
 gem 'config'
+gem "kaminari"
 gem 'gon'
 gem 'counter_culture'
 gem 'groupdate'

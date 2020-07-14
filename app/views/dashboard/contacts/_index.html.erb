@@ -1,0 +1,27 @@
+<div class="row">
+<div class="col-md-offset-3 col-md-6 col-sm-6 col-xs-12 text-center">
+  <%= form_tag dashboard_contacts_path, method: "get", remote: true,
+               enforce_utf8: false do %>
+    <%= text_field_tag :search, params[:search], class: "form-control" %>
+    <%= submit_tag 'Search', :name => nil,
+                   class: "btn btn-success", width: "10px" %>
+  <% end %>
+</div>
+<div class="col-md-offset-3 col-md-6 col-sm-6 col-xs-12">
+<table class="table table-vcenter table-striped">
+  <thead>
+  <tr>
+    <th>Tên</th>
+    <th>Email</th>
+    <th>Số điện thoại</th>
+  </tr>
+  </thead>
+  <tbody>
+  <%= render @contacts %>
+  </tbody>
+</table>
+</div>
+<div class="col-md-offset-3 col-md-6 col-sm-6 col-xs-12 text-center">
+<%= paginate @contacts, remote: true %>
+</div>
+</div>

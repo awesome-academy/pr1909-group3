@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
   has_many :events
+  has_many :contacts
 
   validates :name, presence: true,
                    length: { maximum: 50 }

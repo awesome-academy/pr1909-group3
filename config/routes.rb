@@ -41,8 +41,6 @@ Rails.application.routes.draw do
   root "home#index"
 
   namespace :dashboard do
-    root 'home#index'
-    
     resources :events do
       resources :notes do
         member do
@@ -74,5 +72,11 @@ Rails.application.routes.draw do
       resources :invitations do
       end
     end
+    resources :contacts do
+      collection do
+        post :import
+      end
+    end
+    root 'home#index'
   end
 end

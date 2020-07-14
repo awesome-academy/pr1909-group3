@@ -433,6 +433,7 @@ DEPENDENCIES
   groupdate
   jbuilder (~> 2.7)
   jquery-rails (= 4.3.3)
+  kaminari
   listen (~> 3.2)
   mini_magick
   momentjs-rails (>= 2.9.0)

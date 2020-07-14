@@ -44,3 +44,4 @@ yarn-debug.log*
 config/environments/*.local.yml
 config/database.yml
 .DS_Store
+*.tmp
