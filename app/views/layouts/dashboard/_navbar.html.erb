@@ -1,19 +1,13 @@
 <header class="navbar navbar-default">
-
   <ul class="nav navbar-nav-custom">
     <li>
-      <%= link_to dashboard_events_path do %>
+      <%= link_to dashboard_root_path do %>
         <i class="fa fa-home fa-fw"></i>
       <% end %>
     </li>
-
   </ul>
-
-
   <%= yield :search_box %>
-
   <ul class="nav navbar-nav-custom pull-right">
-
     <li class="dropdown">
       <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
         <u><%= t("navbar.account")%></u><i class="fa fa-angle-down"></i>

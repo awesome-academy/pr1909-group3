@@ -2,37 +2,30 @@
   <div class="col-md-12">
     <div class="block full">
       <div class="block-title">
-        <div class="block-options pull-right" id="dashboard-menu">
+        <div class="block-options pull-right">
           <div class="btn-group">
-            <%= link_to t("events.create"), new_dashboard_event_path,class: "btn btn-alt btn-sm btn-default dropdown-toggle", remote: true %>
+            <a class="btn btn-alt btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">Menu</a>
+            <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
+              <li>
+                <%= link_to t(".new_product"), new_dashboard_event_path, remote: true %>
+              </li>
+            </ul>
           </div>
         </div>
-        <ul class="nav nav-tabs dashboard-tab" data-toggle="tabs">
-          <li class="active"><a href="#dashboard-events"><%= t('events.meet')%></a></li>
-          <li><a href="#dashboard-contacts"><%= t('events.contact')%></a></li>
-          <li><a href="#dashboard-invited_events"><%= t('events.invite')%></a></li>
+        <ul class="nav nav-tabs" data-toggle="tabs">
+          <li class="active"><a href="#example-tabs2-activity">Events</a></li>
+          <li><a href="#example-tabs2-profile">Contacts</a></li>
+          <li><a href="#example-tabs2-options" data-toggle="tooltip" title="Settings"><i class="fa fa-cogs"></i></a></li>
         </ul>
       </div>
       <div class="tab-content">
-        <div class="tab-pane active" id="dashboard-events">
+        <div class="tab-pane active" id="example-tabs2-activity">
           <div class="row">
-
             <% @events.each do |event| %>
               <div id="product" >
-                <%= render "dashboard/events/event_manual", event: event %>
+                <%= render "event_manual", event: event %>
               </div>
             <% end %>
-          </div>
-        </div>
-        <div class="tab-pane active" id="dashboard-contacts">
-          <div class="row">
-
-          </div>
-        </div>
-
-        <div class="tab-pane active" id="dashboard-invited_events">
-          <div class="row">
-
           </div>
         </div>
       </div>
