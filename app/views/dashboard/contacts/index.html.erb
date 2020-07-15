@@ -1,0 +1,27 @@
+<% javascript("channels/appearance") %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="block full">
+      <div class="block-title">
+        <h4 class="text-center">Các lời mời</h4>
+        <div class="block-options pull-right">
+          <div class="btn-group">
+            <a class="btn btn-alt btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" aria-expanded="false"><i class="fa fa-angle-down"></i></a>
+            <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
+              <%= render "tab_menu" %>
+              <li class="divider"></li>
+            </ul>
+          </div>
+        </div>
+        <ul class="nav nav-tabs invite-tab" data-toggle="tabs">
+          <li class="active"><a href="#contact-unconfirmed">Chưa xác nhận</a></li>
+          <li class=""><a href="#contact-confirmed">Đã xác nhận</a></li>
+        </ul>
+      </div>
+      <div class="tab-content">
+        <div class="tab-pane active" id="contact-unconfirmed" style="overflow-y: auto; max-height:700px; "><%= render "index" %></div>
+        <div class="tab-pane" id="contact-confirmed"></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="btn-group">
+  <a class="btn btn-alt btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" aria-expanded="false">Menu</a>
+  <ul class="dropdown-menu dropdown-custom dropdown-menu-right" id="event-tab-id"><li>
+    <%= link_to_function("Thêm từ excel file",
+                         h("show_modal(\"#{j render "dashboard/contacts/upload"}\")"),
+                         ) %>
+
+    <%= link_to "Thêm liên hệ mới", new_dashboard_contact_path, remote: true %>
+  </li>
+  </ul>
+</div>
