@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <!--  <title><%#= full_title(yield :title) %></title>-->
+  <%= include_gon %>
+  <%= render "layouts/rails_default" %>
+  <%= render "layouts/shim" %>
+  <%= action_cable_meta_tag %>
+</head>
+  <body <%= "data-params-id=#{params[:id]}" if params.has_key?(:id) %>  class="empty-body">
+    <%= yield %>
+  </body>
+</html>

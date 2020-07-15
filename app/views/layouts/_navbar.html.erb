@@ -1,12 +1,10 @@
 <header class="navbar navbar-default">
-
   <ul class="nav navbar-nav-custom">
     <li>
       <a href="/dashboard/events">
         <i class="fa fa-home fa-fw"></i>
       </a>
     </li>
-
   </ul>
   <form action="a.html" method="post" class="navbar-form-custom">
     <div class="search-box">
@@ -14,16 +12,13 @@
       <button type="button" class="form-control button-search"><i class="fa fa-search fa-fw"></i></button>
     </div>
   </form>
-
   <ul class="nav navbar-nav-custom pull-right">
-
     <li class="dropdown">
       <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
         <u><%= t("navbar.account") %></u><i class="fa fa-angle-down"></i>
       </a>
       <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
         <li class="dropdown-header text-center"><%= t("navbar.account") %></li>
-
         <li class="divider"></li>
         <li>
           <% if current_participant %>
@@ -35,20 +30,18 @@
         </li>
         <li class="divider"></li>
         <li>
-          <%= link_to  dashboard_events_path do %>
-              <i class="fa fa-lock fa-fw pull-right"></i> <%= t("navbar.manager")%></a>
-          <% end if user_signed_in?%>
-
-          <%= link_to new_user_session_path, remote: true do %>
-            <i class="fa fa-lock fa-fw pull-right"></i> <%= t("navbar.signup")%></a>
-          <% end unless user_signed_in? %>
-
-          <%= link_to destroy_user_session_path, method: :post do %>
-            <i class="fa fa-ban fa-fw pull-right"></i> <%= t("navbar.logout")%>
-          <% end %>
-        </li>
-      </ul>
+          <%= link_to  dashboard_root_path do %>
+            <i class="fa fa-lock fa-fw pull-right"></i> <%= t("navbar.manager")%></a>
+        <% end if user_signed_in?%>
+        <%= link_to new_user_session_path, remote: true do %>
+          <i class="fa fa-lock fa-fw pull-right"></i> <%= t("navbar.signup")%></a>
+      <% end unless user_signed_in? %>
+      <%= link_to checkout_event_events_path, method: :post do %>
+        <i class="fa fa-ban fa-fw pull-right"></i> <%= t("navbar.logout")%>
+      <% end %>
     </li>
-    <!-- END User Dropdown -->
   </ul>
+</li>
+<!-- END User Dropdown -->
+</ul>
 </header>

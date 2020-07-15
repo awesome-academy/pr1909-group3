@@ -1,4 +1,5 @@
 //= require jquery2.js
+//= require pluralize
 //= require_tree ./config
 //= require popper
 //= require turbolinks
@@ -7,10 +8,17 @@
 //= require jquery.timeago
 //= require app
 //= require custom
+//= require readyComingSoon
 //= require rails-ujs
+//= require canvasjs.min
+//= require activestorage
+//= require moment
 //= require bootstrap-datetimepicker
 //= require dashboard/application
 //= require ckeditor/init
+//= require show_more_content
+//= require chart_support
 //= require_tree ./tab_change
 //= require cable
+//= require jquery.toast
 //= require select2
