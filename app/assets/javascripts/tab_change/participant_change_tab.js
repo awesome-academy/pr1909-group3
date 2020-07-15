@@ -1,21 +1,21 @@
-$(document).ready(function () {
-  console.log("sddddddddddd")
+$(document).ready(function(){
+    console.log("sddddddddddd")
   var event_id = $('body').data('params-id');
-  $('.participant-tab li a').click(function () {
+  $('.participant-tab li a').click(function() {
     console.log($(this).attr('href'))
-    switch ($(this).attr('href')) {
+    switch($(this).attr('href')){
       case '#all-participant':
         loadParticipant('all');
-        break;
+      break;
     }
   });
-
+  
 
 });
 
 function loadParticipant(option = '') {
   $.ajax({
-    url: 'participants/',
+    url:  'participants/',
     type: 'get',
     dataType: "script",
     data: {

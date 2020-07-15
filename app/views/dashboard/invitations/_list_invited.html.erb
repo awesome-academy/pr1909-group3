@@ -1,0 +1,21 @@
+<%= form_tag invite_by_contact_dashboard_event_invitations_path(@event), remote: true, method: :post,
+             class: "form-horizontal" do |f| %>
+
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="example-select2">Select contact</label>
+    <div class="col-md-10">
+      <select name="contact_ids[]" class="select2-option select2-hidden-accessible" multiple="multiple" style="width: 100%;" data-placeholder="Lựa chọn" tabindex="-1" aria-hidden="true">
+        <option></option>
+        <% @list_contact.each do|contact|  %>
+          <option value="<%= contact[2] %>"><%= contact[0] %> (<%= contact[1] %>)</option>
+        <% end %>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group form-actions text-center">
+    <div class="col-xs-12">
+      <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Submit</button>
+    </div>
+  </div>
+<% end %>

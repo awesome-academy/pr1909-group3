@@ -1,8 +1,8 @@
 FROM ruby:2.6.5
 
 RUN apt-get update && \
-  apt-get install -y nodejs npm nano vim \
-  && curl -o- -L https://yarnpkg.com/install.sh | bash
+    apt-get install -y nodejs npm nano vim \
+    && curl -o- -L https://yarnpkg.com/install.sh | bash
 
 RUN mkdir /pr1909-project2
 WORKDIR /pr1909-project2

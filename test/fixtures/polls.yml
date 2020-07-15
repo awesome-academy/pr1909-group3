@@ -1,19 +1,13 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
+  title: MyText
   content: MyText
-  active: false
-  stop_vote: MyString
   event: one
   multi_vote: 1
-  starts_on: 2020-07-07 15:31:42
 
 two:
-  title: MyString
+  title: MyText
   content: MyText
-  active: false
-  stop_vote: MyString
   event: two
   multi_vote: 1
-  starts_on: 2020-07-07 15:31:42

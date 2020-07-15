@@ -1,0 +1,32 @@
+<div id="sidebar">
+  <div id="sidebar-scroll">
+    <div class="sidebar-content">
+      <a href="index.html" class="sidebar-brand">
+        <i class="gi gi-flash"></i><span class="sidebar-nav-mini-hide"><strong>Pro</strong>UI</span>
+      </a>
+      <ul class="sidebar-nav">
+        <li>
+          <%#= link_to dashboard_event_invitations_path @event do %>
+          <%# end %>
+        </li>
+        <li>
+          <a href="page_widgets_social.html"><i class="gi gi-share_alt sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Social</span></a>
+        </li>
+        <li>
+          <a href="page_widgets_media.html"><i class="gi gi-film sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Media</span></a>
+        </li>
+        <li>
+          <%= link_to dashboard_contacts_path do %>
+            <i class="gi gi-link sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Contacts</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to dashboard_events_path do %>
+            <i class="gi gi-link sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Events</span>
+          <% end %>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>

@@ -1,17 +1,15 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
   event: one
   email: MyString
   name: MyString
   confirm: false
-  invitation_digest: MyText
-  participant_id: 1
+  confirmation_digit: MyText
 
 two:
   event: two
   email: MyString
   name: MyString
   confirm: false
-  invitation_digest: MyText
-  participant_id: 1
+  confirmation_digit: MyText

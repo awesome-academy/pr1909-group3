@@ -1,0 +1,23 @@
+<div class="row">
+<div class="col-md-offset-3 col-md-6 col-sm-6 col-xs-12">
+<table class="table table-vcenter table-striped">
+  <thead>
+  <tr>
+    <th>Tên</th>
+    <th>Trạng thái</th>
+    <th>Bắt đầu lúc</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @invitations.each do |invitation| %>
+    <div id="product" >
+      <%= render "invited_element", invitation: invitation %>
+    </div>
+  <% end %>
+  </tbody>
+</table>
+</div>
+<div class="col-md-offset-3 col-md-6 col-sm-6 col-xs-12 text-center">
+<%#= paginate @contacts, remote: true %>
+</div>
+</div>

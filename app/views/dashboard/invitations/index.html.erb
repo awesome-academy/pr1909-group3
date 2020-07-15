@@ -3,7 +3,7 @@
   <div class="col-md-6">
     <div class="block full">
       <div class="block-title">
-        <h4 class="text-center"><%= I18n.t("invitations.text")%></h4>
+        <h4 class="text-center">Lời mời</h4>
         <div class="block-options pull-right">
 
           <div class="btn-group">
@@ -24,7 +24,7 @@
       </div>
 
       <div class="tab-content list_element">
-        <div class="tab-pane active" id="invitation-unconfirmed" style="overflow-y: auto; max-height:700px; "></div>
+        <div class="tab-pane active" id="invitation-unconfirmed" style="overflow-y: auto; max-height:700px; "><%= render "index" %></div>
         <div class="tab-pane" id="invitation-confirmed"></div>
       </div>
     </div>

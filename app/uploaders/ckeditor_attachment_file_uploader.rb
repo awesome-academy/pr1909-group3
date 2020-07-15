@@ -1,5 +1,7 @@
+
 # frozen_string_literal: true
 
+# Sử dụng gem này để load file lên hệ thống
 require 'carrierwave'
 
 class CkeditorAttachmentFileUploader < CarrierWave::Uploader::Base

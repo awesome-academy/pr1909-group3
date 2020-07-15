@@ -43,6 +43,7 @@ function scrollToBot(id) {
 
 jQuery.timeago.settings.allowFuture = true;
 
+// Su dung cho phan dat cau hoi
 function toast_success(text, heading = 'Success') {
   $.toast({
     heading: heading,

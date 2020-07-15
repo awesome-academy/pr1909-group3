@@ -1,27 +1,18 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
-  mount ActionCable.server => "/cable"
+  mount ActionCable.server => '/cable'
 
-  get "set_language/en"
-  get "set_language/vi"
+  get 'set_language/en'
+  get 'set_language/vi'
 
-  devise_for :users, path: '',
-                     path_names: {
-                       sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'resgistration',
-                       confirmation: 'confirmation',
-                     }, controllers: {
-                       registrations: "users/registrations",
-                       sessions: "users/sessions", omniauth_callbacks: 'omniauth_callbacks',
-                     }
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-
-  resources :votes, only: [:create, :index]
+  resources :votes, only: %i[create index]
   resources :polls
   resources :notes
   resources :questions
-  resources :participants, only: %i(edit update)
+  resources :participants, only: %i[edit update]
   resources :answers
-
   resources :events do
     collection do
       post :join_by_code
@@ -32,29 +23,34 @@ Rails.application.routes.draw do
       get :polls
       get :questions
       get :notes
+      get :documents
       get :my_questions
     end
 
-    resources :questions
+    resource :questions
   end
 
-  root "home#index"
+  devise_for :users, path: '',
+  path_names: {
+    sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'resgistration',
+    confirmation: 'confirmation',
+  }, controllers: { registrations: 'users/registrations',
+                                    sessions: 'users/sessions' }
+  root 'home#index'
 
   namespace :dashboard do
     resources :events do
       resources :notes do
-        member do
+        member  do
           post :change_status
         end
       end
-
       resources :polls do
         member  do
           post :change_status
           post :lock_vote
         end
       end
-
       resources :questions do
         member  do
           post :change_status
@@ -62,14 +58,23 @@ Rails.application.routes.draw do
         end
       end
 
+      resources :invitations do
+        collection do
+          post :invite_by_contact
+          post :import
+          get :list_invited
+        end
+      end
       resources :participants do
         collection do
           get :admin_list
           post :set_admin
         end
       end
+      resources :documents
 
-      resources :invitations do
+      collection do
+        get :invited
       end
     end
     resources :contacts do
@@ -77,6 +82,9 @@ Rails.application.routes.draw do
         post :import
       end
     end
+
     root 'home#index'
   end
+
+  resources :invitation_confirmations, only: [:edit]
 end

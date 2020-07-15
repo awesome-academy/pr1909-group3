@@ -3,10 +3,10 @@ class Users::SessionsController < Devise::SessionsController
     self.resource = resource_class.new(sign_in_params)
   end
 
-  def create
+   def create
     self.resource = warden.authenticate!(auth_options)
     sign_in(resource_name, resource)
     yield resource if block_given?
-    redirect_ajax(dashboard_root_url)
+    redirect_ajax dashboard_root_url
   end
 end

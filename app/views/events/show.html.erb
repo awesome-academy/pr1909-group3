@@ -1,4 +1,4 @@
-<% javascript("channels/appearance", "channels/timeline") %>
+<% javascript("channels/appearance", "channels/timeline", "channels/question") %>
 <div class="row">
   <div class="col-md-6">
     <div class="widget">
@@ -16,7 +16,7 @@
         <div class="timeline">
           <ul class="timeline-list" id="participant-timeline">
             <% @timeline.each do |element| %>
-              <%= timeline_el(element) %>
+              <%= timeline_el element %>
             <% end %>
           </ul>
         </div>
@@ -60,6 +60,7 @@
               <div class="tab-pane" id="tabs-poll"><%= I18n.t("form.poll") %>..</div>
               <div class="tab-pane" id="tabs-question"><%= I18n.t("form.questions") %>..</div>
               <div class="tab-pane" id="tabs-document"><%= I18n.t("form.document") %>..</div>
+              <div class="tab-pane" id="tabs-settings">questions..</div>
             </div>
           </div>
         </div>
@@ -67,4 +68,3 @@
     </div>
   </div>
 </div>
-

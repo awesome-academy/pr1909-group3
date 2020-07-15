@@ -1,0 +1,19 @@
+<tr id="el-document-<%= document.id %>">
+  <td class="title-element"><%= document.title %></td>
+  <td><%= document.file_name %></td>
+  <td class="text-center">
+    <div class="btn-group btn-group-xs">
+      <%= link_to edit_dashboard_event_document_path(document.event_id, document),
+                  title: "edit", class: "btn btn-default",
+                  remote: true do %>
+        <%= fa_icon "edit" %>
+      <% end %>
+
+      <%= link_to dashboard_event_document_path(document.event_id, document), method: :delete,
+                  title: "Delete", class: "btn btn-danger",
+                  data: {confirm: t(".confirm")} do %>
+        <%= fa_icon "trash" %>
+      <% end %>
+    </div>
+  </td>
+</tr>

@@ -1,13 +1,15 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
   name: MyString
   authencode_app: MyText
+  user: one
   event: one
-  is_admin: false
+  role: one
 
 two:
   name: MyString
   authencode_app: MyText
+  user: two
   event: two
-  is_admin: false
+  role: two

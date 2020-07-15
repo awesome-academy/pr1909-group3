@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--  <title><%#= full_title(yield :title) %></title>-->
+  <%= include_gon %>
+  <%= render "layouts/rails_default" %>
+  <%= render "layouts/shim" %>
+  <%= action_cable_meta_tag %>
+</head>
+<body <%= "data-params-id=#{params[:id]}" if params.has_key?(:id) %> >
+<%#= render "layouts/header" %>
+<!--  <div id="flash_messages">-->
+<%# flash.each do |message_type, message| %>
+<%#= content_tag :div, message, class: "alert alert-#{message_type}" %>
+<%# end %>
+<!--  </div>-->
+
+
+<div id="page-wrapper">
+
+  <%= render "layouts/preloader" %>
+  <!-- Page Container -->
+  <!-- In the PHP version you can set the following options from inc/config file -->
+  <div id="page-container" class="sidebar-partial sidebar-visible-lg sidebar-no-animations">
+    <!-- Alternative Sidebar -->
+    <%#= render "layouts/sidebar-atl" %>
+    <!-- END Alternative Sidebar -->
+
+    <!-- Main Sidebar -->
+    <%#= render "layouts/sidebar" %>
+    <!-- END Main Sidebar -->
+
+    <!-- Main Container -->
+    <div id="main-container">
+
+      <%= render "layouts/navbar" %>
+      <!-- END Header -->
+
+      <!-- Page content -->
+      <div id="page-content">
+        <!-- Table Responsive Header -->
+        <%= render "layouts/breadcrumb" %>
+        <!-- END Table Responsive Header -->
+        <%= yield %>
+
+      </div>
+      <!-- END Page Content -->
+
+      <!-- Footer -->
+      <%= render "layouts/footer" %>
+      <!-- END Footer -->
+    </div>
+    <!-- END Main Container -->
+  </div>
+  <!-- END Page Container -->
+
+</div>
+
+<%= render "shared/modal" %>
+<%#= render "layouts/footer" %>
+<%#= debug(params) if Rails.env.development? %>
+</body>
+</html>

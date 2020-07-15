@@ -7,29 +7,29 @@
 var ReadyChat = function () {
   var chatHeight = 400; // Default chat container height in large screens
   var chatHeightSmall = 200; // Default chat components (talk & people) height in small screens
-
+  
   /* Cache some often used variables */
   var chatCon = $('.chatui-container');
   var chatTalk = $('.chatui-talk');
   var chatTalkScroll = $('.chatui-talk-scroll');
-
+  
   var chatPeople = $('.chatui-people');
   var chatPeopleScroll = $('.chatui-people-scroll');
-
+  
   var chatInput = $('.chatui-input');
   var chatMsg = '';
   var submitButton = $('span.input-group-addon');
-
+  
   /* Updates chat UI components height */
   var updateChatHeight = function () {
     var windowW = window.innerWidth
       || document.documentElement.clientWidth
       || document.body.clientWidth;
-
+    
     if (windowW < 768) { // On small screens
       chatCon
         .css('height', (chatHeightSmall * 2) + chatInput.outerHeight());
-
+      
       chatTalk
         .add(chatTalkScroll)
         .add(chatTalkScroll.parent())
@@ -41,19 +41,19 @@ var ReadyChat = function () {
     else if (windowW > 767) { // On large screens
       chatCon
         .css('height', chatHeight);
-
+      
       chatTalk
         .add(chatTalkScroll)
         .add(chatTalkScroll.parent())
         .css('height', chatHeight - chatInput.outerHeight());
-
+      
       chatPeople
         .add(chatPeopleScroll)
         .add(chatPeopleScroll.parent())
         .css('height', chatHeight);
     }
   };
-
+  
   return {
     init: function () {
       // Initialize default chat height
@@ -80,11 +80,11 @@ var ReadyChat = function () {
       //     position: 'right',
       //     touchScrollStep: 100
       //   });
-
+      
       submitButton.click(function (e) {
         var form = $('#form-answer');
         var url = form.attr('action');
-
+        
         $.ajax({
           type: "POST",
           url: url,
@@ -92,12 +92,12 @@ var ReadyChat = function () {
           success: function (data) {
           }
         });
-
+        
         e.preventDefault();
       });
-
+  
       $('#form-answer')
-        .submit(function (e) {
+        .submit(function(e){
           e.preventDefault();
         });
     },
@@ -108,10 +108,10 @@ var ReadyChat = function () {
         chatTalk
           .find('ul')
           .append(chatMsg);
-
+        
         // Scroll the message list to the bottom
         chatTalkScroll
-          .animate({ scrollTop: chatTalkScroll[0].scrollHeight }, 150);
+          .animate({scrollTop: chatTalkScroll[0].scrollHeight}, 150);
       }
     },
     addOthersAnswer: function (chatMsg) {
@@ -121,12 +121,12 @@ var ReadyChat = function () {
         chatTalk
           .find('ul')
           .append(chatMsg);
-
+        
         // Scroll the message list to the bottom
         chatTalkScroll
-          .animate({ scrollTop: chatTalkScroll[0].scrollHeight }, 150);
+          .animate({scrollTop: chatTalkScroll[0].scrollHeight}, 150);
       }
     }
-
+    
   };
 }();

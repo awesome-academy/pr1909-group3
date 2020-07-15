@@ -1,5 +1,5 @@
 class Dashboard::PollsController < Dashboard::DashboardController
-  layout "empty", :only => [:show]
+  layout "empty", :only => [ :show ]
   before_action :load_event
   before_action :load_poll, except: [:new, :index, :create]
   def index
@@ -13,7 +13,7 @@ class Dashboard::PollsController < Dashboard::DashboardController
 
   def new
     @poll = Poll.new
-    gon.push({ event: @event })
+    gon.push({ event: @event } )
   end
 
   def edit; end
@@ -67,6 +67,6 @@ class Dashboard::PollsController < Dashboard::DashboardController
 
   def poll_params
     params.require(:poll).permit :content, :starts_on, :intend, :event_id, :title, :multi_vote,
-                                 options_attributes: [:id, :content, :_destroy]
+                                 options_attributes:[:id, :content, :_destroy]
   end
 end

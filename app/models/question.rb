@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Question < ApplicationRecord
   include UpdateAttributeSupport
   include TimeLineUpdate

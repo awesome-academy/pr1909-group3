@@ -9,7 +9,7 @@ module TimeLineUpdate
     update_content: 'update_content',
     enable_time_line: 'enable_time_line',
     disable_time_line: 'disable_time_line',
-    delete: 'delete',
+    delete: 'delete'
   }.freeze
 
   included do
@@ -24,7 +24,7 @@ module TimeLineUpdate
       tab_html: tab_data_render(display),
       event_id: event_id,
       title: title,
-      id: id,
+      id: id
     }
   end
 

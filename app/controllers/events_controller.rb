@@ -8,16 +8,17 @@ class EventsController < ApplicationController
 
   def show
     gon.event = @event
+    render :'events/comming_soon' if @event.starts_on > Time.now
     @notes = @event.notes.actived
     @timeline = @event.timeline
   end
 
   def join_by_code
-    if @event = Event.find_by_degit_code(params[:degit_code])
+    if @event = Event.find_by_degit_code( params[:degit_code] )
       redirect_ajax event_path(@event)
       remember_participant @event
     else
-      # redirect ve trang dang nhap va hien thong bao
+
     end
   end
 
@@ -26,12 +27,20 @@ class EventsController < ApplicationController
     redirect_to root_path
   end
 
+  def polls
+    @polls = @event.polls.actived
+  end
+
   def questions
     @questions = @event.questions.actived
   end
 
   def notes
     @notes = @event.notes.actived
+  end
+
+  def documents
+    @documents = @event.documents
   end
 
   def my_questions

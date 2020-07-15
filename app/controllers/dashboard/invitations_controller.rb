@@ -4,6 +4,7 @@ class Dashboard::InvitationsController < Dashboard::DashboardController
 
   def index
     @tab = params["filter"] == "confirmed" ? "confirmed" : "unconfirmed"
+    @invitations = @event.invitations.send(@tab)
   end
 
   def show; end
@@ -30,8 +31,32 @@ class Dashboard::InvitationsController < Dashboard::DashboardController
   def destroy
     @invitation.destroy
     respond_to do |format|
-      format.html { redirect_to invitations_url, notice: I18n.t("notice.invitation") }
+      format.html { redirect_to invitations_url, notice: 'Invitation was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def import
+    if !params[:file].present?
+      flash[:danger] = t(".not_found")
+    else
+      Invitation.import params[:file], params[:event_id]
+      flash[:success] = t(".success")
+    end
+    redirect_to dashboard_event_invitations_path
+  end
+
+  def list_invited
+    contacts = current_user.contacts.order(:name).pluck(:name, :email, :id)
+    invited_contacts = @event.invitations.pluck(:email)
+    @list_contact = contacts.select { |contact| invited_contacts.exclude? contact[0] }
+  end
+
+  def invite_by_contact
+    contact_ids = params[:contact_ids]
+    contacts = Contact.select(:name, :email).where(id: contact_ids)
+    contacts.each do |contact|
+      SendInvitationEmailJob.perform_later(contact.name, contact.email, @event)
     end
   end
 
@@ -44,7 +69,7 @@ class Dashboard::InvitationsController < Dashboard::DashboardController
   def load_event
     @event = Event.find_by id: params[:event_id]
     return if @event
-    flash[:danger] = I18n.t("notice.load_event")
+    flash[:danger] = t ".danger"
     redirect_to dashboard_events_path
   end
 

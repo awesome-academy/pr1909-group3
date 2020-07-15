@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Answer < ApplicationRecord
   belongs_to :question
   belongs_to :participant
@@ -11,7 +13,7 @@ class Answer < ApplicationRecord
       answer_html: answer_html_render(display, current_participant_id),
       other_answer_html: answer_html_render(display, nil),
       question_id: question_id,
-      id: id,
+      id: id
     }
     QuestionUpdateJob.perform_later(data)
   end

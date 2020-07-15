@@ -1,25 +1,25 @@
-$(document).ready(function () {
-  console.log("sddddddddddd")
+$(document).ready(function(){
+    console.log("sddddddddddd")
   var event_id = $('body').data('params-id');
-  $('.invite-tab li a').click(function () {
+  $('.invite-tab li a').click(function() {
     console.log($(this).attr('href'))
-    switch ($(this).attr('href')) {
+    switch($(this).attr('href')){
       case '#invitation-unconfirmed':
         loadInvitation('unconfirmed');
-        break;
-
+      break;
+      
       case '#invitation-confirmed':
         loadInvitation('confirmed');
-        break;
+      break;
     }
   });
-
+  
 
 });
 
 function loadInvitation(option = '') {
   $.ajax({
-    url: 'invitations/',
+    url:  'invitations/',
     type: 'get',
     dataType: "script",
     data: {

@@ -1,5 +1,5 @@
 class Dashboard::EventsController < Dashboard::DashboardController
-  before_action :set_event, only: %i(show edit update destroy)
+  before_action :set_event, only: %i[show edit update destroy]
 
   def index
     @events = current_user.events
@@ -15,19 +15,29 @@ class Dashboard::EventsController < Dashboard::DashboardController
     @event = current_user.events.build
   end
 
-  def edit
-  end
-
-  def update
-    @event.update(event_params)
-  end
-
-  def destroy
-  end
+  def edit; end
 
   def create
     @event = current_user.events.build(event_params)
-    redirect_ajax dashboard_events_path if @event.save
+    redirect_ajax dashboard_root_path if @event.save
+  end
+
+  def update
+    if @event.update(event_params)
+
+    end
+  end
+
+  def destroy
+    @event.destroy
+    respond_to do |format|
+      format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  def invited
+    @invitations = Invitation.where(email: current_user.email).includes(:event)
   end
 
   private

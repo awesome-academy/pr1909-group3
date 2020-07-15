@@ -1,0 +1,12 @@
+<tr id="el-document-<%= document.id %>">
+  <td><%= document.title %></td>
+  <td><%= document.file_name %></td>
+  <td><%= document.file_size %></td>
+  <td class="text-center">
+    <div class="btn-group btn-group-xs">
+      <a title="download" target="_blank" class="btn btn-default" href="<%= document.file_url %>">
+        <i class="fa fa-download"></i>
+      </a>
+    </div>
+  </td>
+</tr>

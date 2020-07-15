@@ -2,10 +2,10 @@
              class: "form-horizontal" do |f| %>
 
   <div class="form-group">
-    <label class="col-md-2 control-label" for="example-select2"><%= t("participants.select") %></label>
+    <label class="col-md-2 control-label" for="example-select2">Select contact</label>
     <div class="col-md-10">
       <select name="contact_ids[]" class="select2-option select2-hidden-accessible" multiple="multiple" style="width: 100%;" data-placeholder="Choose one.." tabindex="-1" aria-hidden="true">
-        <option></option>
+        <option></option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
         <% @participants.each do|participant|  %>
           <option <%= "selected" if participant.is_admin %> value="<%= participant.id %>"><%= participant.name %></option>
         <% end %>
@@ -15,7 +15,7 @@
 
   <div class="form-group form-actions text-center">
     <div class="col-xs-12">
-      <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> <%= t("events.send) %></button>
+      <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Gửi</button>
     </div>
   </div>
 <% end %>

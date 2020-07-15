@@ -1,13 +1,11 @@
 class Dashboard::NotesController < Dashboard::DashboardController
   before_action :load_event
-  before_action :load_note, except: %i(new index create)
+  before_action :load_note, except: %i[new index create]
   def index
     @notes = @event.notes.order(created_at: :desc)
   end
 
-  def show
-    @notes = @event.notes.order(created_at: :desc)
-  end
+  def show; end
 
   def new
     @note = Note.new
@@ -46,14 +44,14 @@ class Dashboard::NotesController < Dashboard::DashboardController
   def load_note
     @note = Note.find_by id: params[:id]
     return if @note
-    flash[:danger] = I18n.t("notice.load_note")
-    redirect_to dashboard_event_note_path
+    flash[:danger] = t '.danger'
+    redirect_to admin_events_path
   end
 
   def load_event
     @event = Event.find_by id: params[:event_id]
     return if @event
-    flash[:danger] = I18n.t("notice.load_event")
+    flash[:danger] = t '.danger'
     redirect_to dashboard_events_path
   end
 

@@ -7,7 +7,7 @@ class Vote < ApplicationRecord
     option_poll = option.poll
     data = {
       poll: option_poll,
-      options: option_poll.options.to_a,
+      options: option_poll.options.to_a
     }
     PollUpdateJob.perform_later(data)
   end

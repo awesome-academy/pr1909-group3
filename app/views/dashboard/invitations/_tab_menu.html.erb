@@ -1,3 +1,8 @@
 <li>
+  <%= link_to_function("Mời bằng file excel",
+                       h("show_modal(\"#{j render "dashboard/invitations/upload"}\")"),
+                       ) %>
+</li>
+<li>
   <%= link_to I18n.t("invitations.contact"), "#", remote: true %>
 </li>

@@ -7,7 +7,6 @@
     <%= render "layouts/rails_default" %>
     <%= render "layouts/shim" %>
     <%= action_cable_meta_tag %>
-    <%= render 'layouts/shim'%>
   </head>
   <body <%= "data-params-id=#{params[:id] || params["event_id"]}" %> >
     <%#= render "layouts/header" %>

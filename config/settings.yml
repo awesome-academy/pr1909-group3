@@ -1,0 +1,35 @@
+user:
+  name:
+    max_length: 50
+
+  email:
+    max_length: 50
+
+  address:
+    max_length: 255
+
+  password:
+    min_length: 8
+  index:
+    per_page: 7
+  token_min: 0
+  token_max: 20
+category:
+  name_max: 70
+  name_min: 3
+product:
+  max_name: 200
+  min_name: 3
+  per_page: 7
+  top_seller: 10
+promotion:
+  per_page: 7
+order:
+  per_page: 7
+suggestion:
+  per_page: 7
+permission:
+  except: ["admin", "session"]
+chatwork:
+  chatroom_id: "104917365"
+  admin_id: 3075711
