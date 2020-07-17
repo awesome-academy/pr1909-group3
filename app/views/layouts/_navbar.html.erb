@@ -43,8 +43,8 @@
             <i class="fa fa-lock fa-fw pull-right"></i> <%= t("navbar.signup")%></a>
           <% end unless user_signed_in? %>
 
-          <%= link_to destroy_user_session_path, method: :post do %>
-            <i class="fa fa-ban fa-fw pull-right"></i> <%= t("navbar.logout")%>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fa fa-lock fa-fw pull-right"></i> <%= t("navbar.logout")%>
           <% end %>
         </li>
       </ul>

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module EventsHelper
   def intend_time(start_time, end_time)
     return 'undefine' if end_time.nil?
@@ -5,7 +7,7 @@ module EventsHelper
   end
 
   def remember_participant(event)
-    participant = Participant.create(event: event, name: "No Name", is_admin: false)
+    participant = Participant.create(event: event, name: 'No Name', is_admin: false)
     cookies.permanent.signed[:participant_id] = participant.id
     cookies.permanent[:authen_event_token] = participant.participant_token
     session[:participant_id] = participant.id
@@ -22,11 +24,19 @@ module EventsHelper
       @current_participant ||= Participant.find_by(id: participant_id)
     elsif (participant_id = cookies.signed[:participant_id])
       participant = Participant.find_by(id: participant_id)
-      if participant && participant.event_authenticated?(cookies[:authen_event_token])
+      if participant&.event_authenticated?(cookies[:authen_event_token])
         log_in_event participant
         @current_participant = participant
       end
     end
+  end
+
+  def log_in_event(participant)
+    session[:participant_id] = participant.id
+  end
+
+  def logged_in_event?
+    !current_participant.nil?
   end
 
   def active_button(object)
@@ -51,14 +61,6 @@ module EventsHelper
     else
       '<i class="fa fa-unlock"></i>'.html_safe
     end
-  end
-
-  def log_in_event(participant)
-    session[:participant_id] = participant.id
-  end
-
-  def logged_in_event?
-    !current_participant.nil?
   end
 
   def time_shower(time, options = {})

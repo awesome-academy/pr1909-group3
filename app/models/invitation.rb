@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 class Invitation < ApplicationRecord
   attr_accessor :invitation_token
 
   belongs_to :event
-
   scope :confirmed, -> { where confirm: true }
   scope :unconfirmed, -> { where confirm: false }
   before_create :create_invitation_digest

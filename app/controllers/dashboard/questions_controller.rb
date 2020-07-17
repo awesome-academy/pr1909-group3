@@ -1,5 +1,5 @@
 class Dashboard::QuestionsController < Dashboard::DashboardController
-  before_action :set_question, except: [:new, :index, :create]
+  before_action :set_question, except: %i[new index create]
   before_action :load_event
 
   def index
@@ -16,15 +16,11 @@ class Dashboard::QuestionsController < Dashboard::DashboardController
     @question = Question.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @question = @event.questions.new(question_params)
-    if @question.save
-      @question.message_to_stream('create', 'admin')
-    else
-    end
+    @question.message_to_stream('create', 'admin') if @question.save
   end
 
   def update
@@ -34,16 +30,14 @@ class Dashboard::QuestionsController < Dashboard::DashboardController
   end
 
   def destroy
-    if @question.destroy
-      @question.message_to_stream('delete', 'all')
-    end
+    @question.message_to_stream('delete', 'all') if @question.destroy
   end
 
   def change_status
     return unless @question.changeStatus
     action = @question.active ? 'enable_time_line' : 'disable_time_line'
     @question.message_to_stream(action, 'all')
-  end
+    end
 
   def lock_answer
     return unless @question.lock_answer
@@ -59,7 +53,7 @@ class Dashboard::QuestionsController < Dashboard::DashboardController
   def load_event
     @event = Event.find_by id: params[:event_id]
     return if @event
-    flash[:danger] = t ".danger"
+    flash[:danger] = t '.danger'
     redirect_to dashboard_events_path
   end
 

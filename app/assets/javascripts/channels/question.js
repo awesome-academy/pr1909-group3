@@ -13,12 +13,12 @@ function createQuesionChannel(question_id, current_participant_id) {
       },
     }
   );
-
+  
   return subscription;
 }
 
-function update_question_box(data, current_participant_id) {
-  if (data.participant_id == current_participant_id) {
+function update_question_box(data, current_participant_id){
+  if(data.participant_id == current_participant_id){
     $("#chatui-message").val("");
     ReadyChat.addAnswer(data.answer_html)
   } else {

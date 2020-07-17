@@ -3,7 +3,7 @@
   <div class="timeline-time"><small><%= time_shower(note.starts_on) %></small></div>
   <div class="timeline-content">
     <p class="push-bit">
-      <%= link_to "#", remote: true do %>
+      <%= link_to note_path(id: note.id), remote: true do %>
         <strong class="title" data="note-tl-<%= note.id %>"><%= note.title %></strong>
       <% end %>
     </p>

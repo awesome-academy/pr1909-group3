@@ -1,7 +1,5 @@
-# frozen_string_literal: true
-
 class Dashboard::ContactsController < Dashboard::DashboardController
-  before_action :set_contact, only: %i(show edit update destroy)
+  before_action :set_contact, only: [:show, :edit, :update, :destroy]
 
   def index
     @contacts = current_user.contacts.search(params[:search]).page(params[:page]).per(10)
@@ -28,17 +26,18 @@ class Dashboard::ContactsController < Dashboard::DashboardController
     @contact.destroy
   end
 
+  # Su dung gem activerecord-import
   def import
-    if params[:file].blank?
-      flash[:danger] = t('.not_found')
+    if !params[:file].present?
+      flash[:danger] = t(".not_found")
     else
       Contact.import params[:file], current_user.id
-      flash[:success] = t('.success')
+      flash[:success] = t(".success")
     end
-    redirect_to dashboard_root_path
+    redirect_to dashboard_event_contacts_path
   end
 
-    private
+  private
 
   def set_contact
     @contact = Contact.find(params[:id])
@@ -47,4 +46,4 @@ class Dashboard::ContactsController < Dashboard::DashboardController
   def contact_params
     params.require(:contact).permit(:name, :email, :phone)
   end
-  end
+end

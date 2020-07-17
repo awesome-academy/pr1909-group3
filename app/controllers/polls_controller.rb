@@ -1,12 +1,11 @@
 class PollsController < ApplicationController
-  before_action :set_poll, only: [:show, :edit, :update, :destroy]
+  before_action :set_poll, only: %i[show edit update destroy]
 
   def index
     @polls = Poll.all
   end
 
-  def show
-  end
+  def show; end
 
   private
 

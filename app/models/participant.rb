@@ -9,8 +9,8 @@ class Participant < ApplicationRecord
 
   validates :name, presence: true, allow_blank: false
 
-  attr_accessor :participant_token
 
+  attr_accessor :participant_token
   class << self
     def new_token
       SecureRandom.urlsafe_base64
@@ -29,7 +29,6 @@ class Participant < ApplicationRecord
       end
     end
   end
-
   def create_degit
     self.participant_token = Participant.new_token
     update_attribute(:authencode_app, Participant.digest(participant_token))
@@ -44,4 +43,5 @@ class Participant < ApplicationRecord
     poll_votes = votes.where(option_id: option_ids)
     poll_votes.size >= poll.multi_vote
   end
+
 end

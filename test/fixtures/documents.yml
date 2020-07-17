@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  event: one
+  file_data: MyString
+
+two:
+  title: MyString
+  event: two
+  file_data: MyString

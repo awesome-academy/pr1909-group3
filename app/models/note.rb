@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Note < ApplicationRecord
   include UpdateAttributeSupport
   include TimeLineUpdate

@@ -2,7 +2,7 @@
   <td><%= note.title %></td>
   <td><%= strftime note.starts_on %></td>
   <td class="text-center">
-    <%= link_to "#",
+    <%= link_to note,
                 title: "edit", class: "btn btn-default",
                 remote: true do %>
       <%= fa_icon "eye" %>

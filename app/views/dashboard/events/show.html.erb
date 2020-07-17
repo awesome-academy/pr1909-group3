@@ -7,7 +7,8 @@
   </form>
 <% end %>
 
-<% javascript("channels/dashboard_timeline", "channels/timeline") %>
+
+<% javascript("channels/dashboard_timeline", "channels/question") %>
 <div class="row">
   <div class="col-md-6">
     <div class="widget">
@@ -60,7 +61,7 @@
 
 
                 <div class="btn-group">
-                <%= link_to "Quản lý người tham gia",dashboard_event_invitations_path(@event), class: "btn btn-alt btn-sm btn-default dropdown-toggle"%>
+                <%= link_to "Quản lý người tham gia", dashboard_event_invitations_path(@event), class: "btn btn-alt btn-sm btn-default dropdown-toggle"%>
                 </div>
 
 
@@ -83,11 +84,11 @@
 
             <div class="tab-content list_element">
               <div class="tab-pane active" id="tabs-note">
-                <%= render 'dashboard/notes/index' %>
+                <%= render "dashboard/notes/index" %>
               </div>
-              <div class="tab-pane" id="tabs-poll"><%= I18n.t("form.poll") %>..</div>
-              <div class="tab-pane" id="tabs-question"><%= I18n.t("form.questions") %>..</div>
-              <div class="tab-pane" id="tabs-document"><%= I18n.t("form.document") %>..</div>
+              <div class="tab-pane" id="tabs-poll">polls..</div>
+              <div class="tab-pane" id="tabs-question">questions..</div>
+              <div class="tab-pane" id="tabs-document">document..</div>
             </div>
           </div>
         </div>

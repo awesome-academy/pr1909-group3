@@ -24,7 +24,7 @@
           <%#= render "layouts/sidebar" %>
           <!-- Main Container -->
           <div id="main-container">
-            <%= render "layouts/dashboard/navbar"%>
+            <%= render "layouts/navbar" if logged_in_event?%>
             <!-- END Header -->
             <!-- Page content -->
             <div id="page-content">
