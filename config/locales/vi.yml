@@ -107,6 +107,8 @@ vi:
     admin: "Chọn admin"
     select: "Lựa chọn liên hệ"
     join_by_code: "Không có cuộc họp nào tồn tại với code trên, vui lòng nhập lại!!"
+    select: "Lựa chọn liên hệ"
+    data-placeholder: "Lựa chọn.."
   form:
     back: "Quay lại"
     title: "Cài đặt"
@@ -114,6 +116,7 @@ vi:
     name_placeholder: "Tên"
     degit_placeholder: "Mã phòng"
     start: "Thời gian bắt đầu"
+    expec: "Thời gian dự kiến"
     edit: "Sửa cuộc họp"
     new: "Tạo cuộc họp"
     search_placeholder: "Tìm kiếm"
@@ -148,3 +151,39 @@ vi:
     load_event: "Không thể load phòng"
     load_note: "Không thể load ghi chú"
     participant: "Thành viene đã được xóa thành công"
+  contact:
+    new: "Thêm liên hệ mới"
+    excel: "Thêm từ excel file"
+    upload: "Tải lên"
+    edit: "Sửa ghi chú"
+    all-send: "Các lời mời"
+    unconfirmed: "Chưa xác nhận"
+    confirmed: "Đã xác nhận"
+    new-contact: "Tạo liên hệ"
+    chat-update: "Cuộc họp được cập nhật"
+    update: "Cập nhật"
+  document:
+    file: "Tệp"
+    new_file: "Tài liệu mới"
+    edit_file: "Chỉnh sửa tài liệu"
+  event:
+    status: "Trạng thái"
+    comming:
+      text: "Chúng tôi sẽ trở lại sau thời gian đếm ngược."
+      subscribe: "Đăng kí và chúng tôi sẽ luôn giữ cập nhật cho bạn."
+      sub: "Đăng kí"
+      spam: "Đừng lo lắng, chúng tôi ghét sự thư rác."
+    name: "Những sự kiện"
+    create: "Tạo ghi chú mới"
+    manager: "Quản lí người tham gia"
+  invitation:
+    upload: "Tải lên"
+    add_contact: "Thêm các lời mời từ danh bạ"
+  note:
+    confirm: "Bạn có muốn thau đổi trạng thái ?"
+    edit_title: "Sửa"
+    delete_title: "Xóa"
+  poll:
+    placeholder: "Nhập vào nội dung"
+    number: "Số lần bầu chọn"
+    add_poll: "Thêm lựa chọn"

@@ -1,7 +1,7 @@
 <%= form_for [:dashboard, @event, @document], remote: true,
              html: { class: "form-horizontal" } do |f| %>
   <div class="form-group">
-    <%= f.label "Tên", class:
+    <%= f.label I18n.t("registrations.placeholder.name"), class:
       "control-label col-md-3 col-sm-3 col-xs-12" %>
     <div class="input-group col-md-6 col-sm-6 col-xs-12">
       <%= f.text_field :title, class: "form-control" %>
@@ -9,7 +9,7 @@
   </div>
 
   <div class="form-group">
-    <%= f.label "File", class:
+    <%= f.label I18n.t("document.file"), class:
       "control-label col-md-3 col-sm-3 col-xs-12" %>
     <div class="input-group col-md-6 col-sm-6 col-xs-12">
       <%= f.file_field :file, class: "form-control" %>
