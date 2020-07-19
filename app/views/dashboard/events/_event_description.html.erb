@@ -1,8 +1,8 @@
 <div>
-  <h6>Bắt đầu lúc: <%= strftime @event.starts_on %> </h6>
+  <h6><%= I18n.t("form.notes.starts_on")%>: <%= strftime @event.starts_on %> </h6>
 </div>
 <div>
-  <h6><b>Nội dung: </b></h6>
+  <h6><b><%= I18n.t("form.notes.content")%>: </b></h6>
   <div>
     <%= @event.description&.html_safe %>
   </div>

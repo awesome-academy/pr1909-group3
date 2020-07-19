@@ -1,7 +1,7 @@
 <%= form_for [:dashboard, @event, @poll], remote: true,
              html: { class: "form-horizontal" } do |f| %>
   <div class="form-group">
-    <%= f.label "Tên", class:
+    <%= f.label t("form.name_placeholder"), class:
       "control-label col-md-3 col-sm-3 col-xs-12" %>
     <div class="input-group col-md-6 col-sm-6 col-xs-12">
       <%= f.text_field :title, class: "form-control" %>
@@ -9,18 +9,18 @@
   </div>
 
   <div class="form-group">
-    <%= f.label "Thời gian dự kiến", class:
+    <%= f.label t("form.expec"), class:
         "control-label col-md-3 col-sm-3 col-xs-12" %>
     <div class="input-group col-md-6 col-sm-6 col-xs-12">
       <%= f.number_field :intend, class: "form-control", step: 5, min: 0 %>
     </div>
   </div>
 
-    <h4 class = "text-center">Content</h4>
-    <%= f.text_area :content, id: "editor1", col: 5,class: "form-control editor-inline", placeholder: "Input the content", contenteditable: true %>
+    <h4 class = "text-center"><%= I18n.t("form.notes.content")%></h4>
+    <%= f.text_area :content, id: "editor1", col: 5,class: "form-control editor-inline", placeholder: I18n.t("poll.placeholder"), contenteditable: true %>
   <hr>
   <div class="form-group">
-    <%= f.label "Số lần bầu chọn", class:
+    <%= f.label I18n.t("poll.number"), class:
       "control-label col-md-3 col-sm-3 col-xs-12" %>
     <div class="input-group col-md-6 col-sm-6 col-xs-12">
       <%= f.number_field :multi_vote, class: "form-control", step: 1, min: 0, value: (@poll.multi_vote || 1) %>
@@ -33,7 +33,7 @@
         <%= render "option_fields", f: option_form %>
       <% end %>
     </div>
-    <%= link_to_add_fields("Thêm lựa chọn", f, :options, { class: "add-link-button" }) %>
+    <%= link_to_add_fields(I18n.t("poll.add_poll"), f, :options, { class: "add-link-button" }) %>
   </div>
   <div class="form-group form-actions text-center">
     <div class="col-xs-12">

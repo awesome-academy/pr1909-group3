@@ -1,11 +1,11 @@
 <%= image_tag("placeholders/backgrounds/coming_soon_full_bg.jpg", class: "full-bg animation-pulseSlow") %>
 <div class="full-page-container text-center">
-  <h1 class="text-light"><i class="gi gi-flash"></i>Event-Hub</h1>
-  <h2 class="h3 text-light">Chúng tôi sẽ trở lại sau thời giạn đếm ngược </h2>
+  <h1 class="text-light"><i class="gi gi-flash"></i>DL-Chat</h1>
+  <h2 class="h3 text-light"><%= I18n.t("event.comming.text") %> </h2>
   <div class="full-page-section">
     <div class="js-countdown"></div>
   </div>
-  <h2 class="h3 text-light push">Subscribe and we will keep you up to date.</h2>
+  <h2 class="h3 text-light push"><%= I18n.t("event.comming.subscribe") %></h2>
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
       <form action="page_ready_coming_soon.html" method="post" class="form-horizontal">
@@ -14,10 +14,10 @@
             <div class="input-group">
               <input type="email" id="subscribe-email" name="subscribe-email" class="form-control" placeholder="Your Email..">
               <div class="input-group-btn">
-                <button type="submit" class="btn btn-primary"><strong>Subscribe</strong></button>
+                <button type="submit" class="btn btn-primary"><strong><%= I18n.t("event.comming.sub") %></strong></button>
               </div>
             </div>
-            <small class="text-light"><em>Don't worry, we hate spam.</em></small>
+            <small class="text-light"><em><%= I18n.t("event.comming.spam") %></em></small>
           </div>
         </div>
       </form>

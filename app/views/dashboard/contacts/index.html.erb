@@ -3,7 +3,7 @@
   <div class="col-md-12">
     <div class="block full">
       <div class="block-title">
-        <h4 class="text-center">Các lời mời</h4>
+        <h4 class="text-center"><%= I18n.t("contact.all-send")%></h4>
         <div class="block-options pull-right">
           <div class="btn-group">
             <a class="btn btn-alt btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" aria-expanded="false"><i class="fa fa-angle-down"></i></a>
@@ -14,8 +14,8 @@
           </div>
         </div>
         <ul class="nav nav-tabs invite-tab" data-toggle="tabs">
-          <li class="active"><a href="#contact-unconfirmed">Chưa xác nhận</a></li>
-          <li class=""><a href="#contact-confirmed">Đã xác nhận</a></li>
+          <li class="active"><a href="#contact-unconfirmed"><%= I18n.t("contact.unconfirmed")%></a></li>
+          <li class=""><a href="#contact-confirmed"><%= I18n.t("contact.confirmed")%></a></li>
         </ul>
       </div>
       <div class="tab-content">

@@ -2,9 +2,9 @@
              class: "form-horizontal" do |f| %>
 
   <div class="form-group">
-    <label class="col-md-2 control-label" for="example-select2">Select contact</label>
+    <label class="col-md-2 control-label" for="example-select2"><%= I18n.t("participants.select")%></label>
     <div class="col-md-10">
-      <select name="contact_ids[]" class="select2-option select2-hidden-accessible" multiple="multiple" style="width: 100%;" data-placeholder="Choose one.." tabindex="-1" aria-hidden="true">
+      <select name="contact_ids[]" class="select2-option select2-hidden-accessible" multiple="multiple" style="width: 100%;" data-placeholder= <%= I18n.t("participants.data-placeholder") %> tabindex="-1" aria-hidden="true">
         <option></option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
         <% @participants.each do|participant|  %>
           <option <%= "selected" if participant.is_admin %> value="<%= participant.id %>"><%= participant.name %></option>

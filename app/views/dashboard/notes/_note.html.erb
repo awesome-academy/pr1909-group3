@@ -1,7 +1,7 @@
 <tr id="el-note-<%= note.id %>">
   <td><%= link_to change_status_dashboard_event_note_path(note.event_id, note, note: {active: true}), method: :post,
                   title: "Chang Status",
-                  data: {confirm: "Bạn có muốn thay đổi trạng thái ?"}, remote: true do %>
+                  data: {confirm: I18n.t("note.confirm")}, remote: true do %>
       <%= active_button note %>
     <% end %></td>
   <td class="title-element"><%= note.title %></td>
@@ -9,13 +9,13 @@
   <td class="text-center">
     <div class="btn-group btn-group-xs">
       <%= link_to edit_dashboard_event_note_path(note.event_id, note),
-                  title: "edit", class: "btn btn-default",
+                  title: I18n.t("note.edit_title"), class: "btn btn-default",
                   remote: true do %>
         <%= fa_icon "edit" %>
       <% end %>
 
       <%= link_to dashboard_event_note_path(note.event_id, note), method: :delete,
-                  title: "Delete", class: "btn btn-danger",
+                  title: I18n.t("note.delete_title"), class: "btn btn-danger",
                   data: {confirm: t(".confirm")} do %>
         <%= fa_icon "trash" %>
       <% end %>
