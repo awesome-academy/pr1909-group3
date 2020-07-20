@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_07_15_121538) do
 
-  create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
     t.bigint "question_id"
     t.bigint "participant_id"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_07_15_121538) do
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
-  create_table "ckeditor_assets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "ckeditor_assets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "data_file_name", null: false
     t.string "data_content_type"
     t.integer "data_file_size"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_07_15_121538) do
     t.index ["type"], name: "index_ckeditor_assets_on_type"
   end
 
-  create_table "contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.bigint "user_id"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2020_07_15_121538) do
     t.index ["user_id"], name: "index_contacts_on_user_id"
   end
 
-  create_table "documents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "documents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.bigint "event_id"
     t.string "file_data"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2020_07_15_121538) do
     t.index ["event_id"], name: "index_documents_on_event_id"
   end
 
-  create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "starts_on"
     t.datetime "ends_on"
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2020_07_15_121538) do
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
-  create_table "invitations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "invitations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "event_id"
     t.string "email"
     t.string "name"
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 2020_07_15_121538) do
     t.index ["event_id"], name: "index_invitations_on_event_id"
   end
 
-  create_table "notes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "notes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.text "content"
     t.bigint "event_id"
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 2020_07_15_121538) do
     t.index ["event_id"], name: "index_notes_on_event_id"
   end
 
-  create_table "options", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "options", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
     t.bigint "poll_id"
     t.float "vote_value"
@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(version: 2020_07_15_121538) do
     t.index ["poll_id"], name: "index_options_on_poll_id"
   end
 
-  create_table "participants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "participants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.text "authencode_app"
     t.bigint "event_id", null: false
@@ -109,11 +109,11 @@ ActiveRecord::Schema.define(version: 2020_07_15_121538) do
     t.index ["event_id"], name: "index_participants_on_event_id"
   end
 
-  create_table "polls", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "polls", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.text "content"
     t.boolean "active", default: false
-    t.string "stop_vote", default: "0"
+    t.boolean "stop_vote", default: false
     t.bigint "event_id"
     t.integer "multi_vote", default: 1
     t.datetime "starts_on"
@@ -123,7 +123,7 @@ ActiveRecord::Schema.define(version: 2020_07_15_121538) do
     t.index ["event_id"], name: "index_polls_on_event_id"
   end
 
-  create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.text "content"
     t.bigint "event_id"
@@ -138,7 +138,7 @@ ActiveRecord::Schema.define(version: 2020_07_15_121538) do
     t.index ["participant_id"], name: "index_questions_on_participant_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "name"
@@ -166,7 +166,7 @@ ActiveRecord::Schema.define(version: 2020_07_15_121538) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "votes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "votes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "option_id"
     t.bigint "participant_id"
     t.datetime "created_at", null: false
