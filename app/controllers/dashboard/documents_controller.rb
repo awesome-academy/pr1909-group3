@@ -22,7 +22,10 @@ class Dashboard::DocumentsController < Dashboard::DashboardController
 
   def create
     @document = @event.documents.build(document_params)
-    @document.message_to_stream('create', 'all') if @document.save
+    if @document.save
+      @document.message_to_stream('create', 'all')
+    else
+    end
   end
 
   def update
@@ -36,7 +39,9 @@ class Dashboard::DocumentsController < Dashboard::DashboardController
   end
 
   def destroy
-    @document.message_to_stream('delete', 'all') if @document.destroy
+    if @document.destroy
+      @document.message_to_stream('delete', 'all')
+    end
   end
 
   def change_status
