@@ -1,5 +1,5 @@
 <% if @action_status %>
-  toast_success("Tạo thành công hãy chờ kiểm duyệt");
+  toast_success("<%= I18n.t("questions.status_wait") %>");
   $('.modal').modal('hide');
 <% else %>
 

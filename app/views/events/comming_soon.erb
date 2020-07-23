@@ -1,11 +1,11 @@
 <%= image_tag("placeholders/backgrounds/coming_soon_full_bg.jpg", class: "full-bg animation-pulseSlow") %>
 <div class="full-page-container text-center">
-  <h1 class="text-light"><i class="gi gi-flash"></i> V-Event</h1>
-  <h2 class="h3 text-light">We are working on it and it is coming soon!</h2>
+  <h1 class="text-light"><i class="gi gi-flash"></i> DL-Chat</h1>
+  <h2 class="h3 text-light"><%= I18n.t("comming.title") %></h2>
   <div class="full-page-section">
     <div class="js-countdown"></div>
   </div>
-  <h2 class="h3 text-light push">Subscribe and we will keep you up to date.</h2>
+  <h2 class="h3 text-light push"><%= I18n.t("comming.subcribe") %></h2>
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
       <form action="page_ready_coming_soon.html" method="post" class="form-horizontal">
@@ -17,7 +17,7 @@
                 <button type="submit" class="btn btn-primary"><strong>Subscribe</strong></button>
               </div>
             </div>
-            <small class="text-light"><em>Don't worry, we hate spam.</em></small>
+            <small class="text-light"><em><%= I18n.t("comming.worry") %></em></small>
           </div>
         </div>
       </form>

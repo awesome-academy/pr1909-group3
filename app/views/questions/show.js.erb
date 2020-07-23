@@ -1,4 +1,4 @@
-show_modal("<%= j render "show" %>", 'Question and Answer')
+show_modal("<%= j render "show" %>", '<%= I18n.t("questions.answer") %>')
 subcription = createQuesionChannel(<%= @question.id %>, <%= current_participant.id %>)
 $("#modal-shared").on('hidden.bs.modal', function () {
   App.cable.subscriptions.remove(subcription);

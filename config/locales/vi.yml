@@ -109,6 +109,8 @@ vi:
     join_by_code: "Không có cuộc họp nào tồn tại với code trên, vui lòng nhập lại!!"
     select: "Lựa chọn liên hệ"
     data-placeholder: "Lựa chọn.."
+    name: "Tên của bạn"
+    edit: "Sửa tên hiển thị"
   form:
     back: "Quay lại"
     title: "Cài đặt"
@@ -139,6 +141,7 @@ vi:
   timeline:
     text: "Quá trình cuộc họp"
     title_edit: "Sửa phòng"
+    result: "Xem kết quả"
   invitations:
     contact: "Mời bằng danh bạ"
     text: "Lời mời"
@@ -166,6 +169,10 @@ vi:
     file: "Tệp"
     new_file: "Tài liệu mới"
     edit_file: "Chỉnh sửa tài liệu"
+    name: "Tên"
+    name_file: "Tên file"
+    size_file: "Kích thước tệp"
+    download: "Tải về"
   event:
     status: "Trạng thái"
     comming:
@@ -183,7 +190,40 @@ vi:
     confirm: "Bạn có muốn thau đổi trạng thái ?"
     edit_title: "Sửa"
     delete_title: "Xóa"
+    change: "Thay đổi trạng thái"
   poll:
     placeholder: "Nhập vào nội dung"
     number: "Số lần bầu chọn"
     add_poll: "Thêm lựa chọn"
+    vote_poll: "Bầu chọn"
+  questions:
+    status_succes: "Cập nhật thành công"
+    status_wait: "Tạo thành công hãy chờ kiểm duyệt"
+    answer: "Câu hỏi và trả lời"
+    edit: "Sửa thảo luận"
+    new: "Thảo luận mới"
+    question_your: "Thảo luận của tôi"
+    all: "Các thảo luận"
+    lock: "Câu hỏi đã bị khóa trả lời"
+    unlock: "Nhập câu trả lời và nhấn nút gửi"
+    no: "Không"
+    rep: "Trả lời thảo luận"
+  votes:
+    voted: "Bạn đã bầu chọn"
+    lock: "Bầu chọn bị khóa"
+    total: "Tổng số lượt bầu chọn"
+    options: "Lựa chọn"
+  layouts:
+    pro: "Đẳng cấp"
+    social: "Mạng xã hội"
+    media: "Truyền thông"
+    contact: "Liên hệ"
+    event: "Sự kiện"
+    loading: "Đang chờ"
+  invitations:
+    title: "Mời chat"
+    code: "Nhập mã code hoặc đăng nhập để tham gia cuộc họp"
+  comming:
+    title: "Chúng ta làm việc và nó sẽ bắt đầu."
+    subcribe: "Đăng kí và bạn sẽ nhận được thông tin."
+    worry: "Đừng lo lắng, chúng tôi ghét thư rác."
