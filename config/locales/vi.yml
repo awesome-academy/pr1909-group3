@@ -149,11 +149,13 @@ vi:
     confirmed: "Đã xác nhận"
     activity: "Đang hoạt động"
     all: "Tất cả"
+    title: "Mời chat"
+    code: "Nhập mã code hoặc đăng nhập để tham gia cuộc họp"
   notice:
     invitation: "Đã xóa lời mời thành công"
     load_event: "Không thể load phòng"
     load_note: "Không thể load ghi chú"
-    participant: "Thành viene đã được xóa thành công"
+    participant: "Thành viên đã được xóa thành công"
   contact:
     new: "Thêm liên hệ mới"
     excel: "Thêm từ excel file"
@@ -220,9 +222,6 @@ vi:
     contact: "Liên hệ"
     event: "Sự kiện"
     loading: "Đang chờ"
-  invitations:
-    title: "Mời chat"
-    code: "Nhập mã code hoặc đăng nhập để tham gia cuộc họp"
   comming:
     title: "Chúng ta làm việc và nó sẽ bắt đầu."
     subcribe: "Đăng kí và bạn sẽ nhận được thông tin."

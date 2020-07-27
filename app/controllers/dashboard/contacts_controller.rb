@@ -34,7 +34,7 @@ class Dashboard::ContactsController < Dashboard::DashboardController
       Contact.import params[:file], current_user.id
       flash[:success] = t(".success")
     end
-    redirect_to dashboard_event_contacts_path
+    redirect_to dashboard_root_path
   end
 
   private
