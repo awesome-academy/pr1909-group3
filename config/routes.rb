@@ -35,7 +35,7 @@ Rails.application.routes.draw do
     sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'resgistration',
     confirmation: 'confirmation',
   }, controllers: { registrations: 'users/registrations',
-                                    sessions: 'users/sessions' }
+                                    sessions: 'users/sessions', omniauth_callbacks: 'omniauth_callbacks' }
   root 'home#index'
 
   namespace :dashboard do
