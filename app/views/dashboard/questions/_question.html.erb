@@ -1,6 +1,6 @@
 <tr id="el-question-<%= question.id %>">
   <td><%= link_to change_status_dashboard_event_question_path(question.event_id, question, question: {active: true}), method: :post,
-                  title: "Chang Status",
+                  title: I18n.t("note.change"),
                   data: {confirm: "Change?"}, remote: true do %>
       <%= active_button question %>
     <% end %></td>
@@ -12,7 +12,7 @@
 
       <%= link_to lock_answer_dashboard_event_question_path(question.event_id, question), method: :post,
                   title: "Lock answer",class: "btn btn-danger",
-                  data: {confirm: "Bạn có muốn thay đổi trạng thái không?"}, remote: true do %>
+                  data: {confirm: I18n.t("note.confirm")}, remote: true do %>
         <%= lock_answer_button question %>
       <% end %>
 

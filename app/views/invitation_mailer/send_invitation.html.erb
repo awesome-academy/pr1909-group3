@@ -1,4 +1,4 @@
-<h1>Invitation V-event</h1>
+<h1><%= I18n.t("invitations.title") %></h1>
 <p>
   Hi <%= @invitation.name %>, You have a invitation for event [<%= @event.name %>]. Please
   <%= link_to 'click', edit_invitation_confirmation_url(@invitation.invitation_token, email: @invitation.email, event_id: @invitation.event_id) %>

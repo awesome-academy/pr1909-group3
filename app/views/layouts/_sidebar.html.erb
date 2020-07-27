@@ -2,7 +2,7 @@
   <div id="sidebar-scroll">
     <div class="sidebar-content">
       <a href="index.html" class="sidebar-brand">
-        <i class="gi gi-flash"></i><span class="sidebar-nav-mini-hide"><strong>Pro</strong>UI</span>
+        <i class="gi gi-flash"></i><span class="sidebar-nav-mini-hide"><strong><%= I18n.t("layouts.pro") %></strong>UI</span>
       </a>
       <ul class="sidebar-nav">
         <li>
@@ -10,19 +10,19 @@
           <%# end %>
         </li>
         <li>
-          <a href="page_widgets_social.html"><i class="gi gi-share_alt sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Social</span></a>
+          <a href="page_widgets_social.html"><i class="gi gi-share_alt sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide"><%= I18n.t("layouts.social") %></span></a>
         </li>
         <li>
-          <a href="page_widgets_media.html"><i class="gi gi-film sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Media</span></a>
+          <a href="page_widgets_media.html"><i class="gi gi-film sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide"><%= I18n.t("layouts.media") %></span></a>
         </li>
         <li>
           <%= link_to dashboard_contacts_path do %>
-            <i class="gi gi-link sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Contacts</span>
+            <i class="gi gi-link sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide"><%= I18n.t("layouts.contact") %></span>
           <% end %>
         </li>
         <li>
           <%= link_to dashboard_events_path do %>
-            <i class="gi gi-link sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Events</span>
+            <i class="gi gi-link sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide"><%= I18n.t("layouts.event") %></span>
           <% end %>
         </li>
       </ul>

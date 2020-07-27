@@ -1,7 +1,5 @@
 <% if @action_status %>
-toast_success("Cập nhật thành công");
-$('.modal').modal('hide');
+    toast_success(<%= I18n.t("questions.status_succes") %>);
+    $('.modal').modal('hide');
 <% else %>
-
-
 <% end %>

@@ -24,7 +24,7 @@
                            id: "chatui-message",
                            disabled: @question.stop_answer,
                            class: "form-control input-lg",
-                           placeholder: @question.stop_answer ? "Câu hỏi đã bị khóa trả lời" : "Nhập câu trả lời và nhấn nút gửi"%>
+                           placeholder: @question.stop_answer ? I18n.t("questions.lock") : I18n.t("questions.unlock")%>
           <%= f.hidden_field :question_id, value: @question.id %>
           <span class="input-group-addon"><i class="fa fa-angle-right"></i></span>
         </div>

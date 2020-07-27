@@ -7,7 +7,7 @@
   </div>
 
   <div class="panel panel-default">
-    <div class="panel-heading">Options</div>
+    <div class="panel-heading"><%= I18n.t("votes.options") %></div>
     <div class="panel-body">
       <%= f.fields_for :options do |options_form| %>
         <%= render 'vote_option_fields', f: options_form %>

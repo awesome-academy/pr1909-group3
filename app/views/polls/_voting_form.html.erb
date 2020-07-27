@@ -3,12 +3,12 @@
 
   <%= render partial: 'polls/vote_option', collection: @poll.options, as: :option %>
 
-  <p><b>Total votes: <%= @poll.votes_summary %></b></p>
+  <p><b><%= I18n.t("votes.total") %>: <%= @poll.votes_summary %></b></p>
 
   <% if @is_voted %>
-    <p class="text-center">Bạn đã bầu chọn</p>
+    <p class="text-center"><%= I18n.t("votes.voted") %></p>
   <% elsif @poll.stop_vote  %>
-    <p class="text-center text-danger"> Bầu chọn đã bị khóa</p>
+    <p class="text-center text-danger"> <%= I18n.t("votes.unlock") %></p>
   <% else %>
     <div class="form-group text-center">
       <%= submit_tag 'Vote', class: 'btn btn btn-primary' %>

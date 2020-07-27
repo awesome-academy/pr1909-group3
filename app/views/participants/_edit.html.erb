@@ -1,7 +1,7 @@
 <%= form_for current_participant, remote: true,
              html: { class: "form-horizontal" } do |f| %>
   <div class="form-group">
-    <%= f.label "Tên của bạn", class:
+    <%= f.label I18n.t("participants.name"), class:
       "control-label col-md-3 col-sm-3 col-xs-12" %>
     <div class="input-group col-md-6 col-sm-6 col-xs-12">
       <%= f.text_field :name, class: "form-control" %>
@@ -10,7 +10,7 @@
 
   <div class="form-group form-actions text-center">
     <div class="col-xs-12">
-      <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Gửi</button>
+      <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> <%= I18n.t("events.send") %></button>
     </div>
   </div>
 <% end %>

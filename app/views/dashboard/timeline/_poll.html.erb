@@ -11,7 +11,7 @@
     <div class="push-bit"><%= poll.content.html_safe %></div>
     <p class="push-bit">
       <%= link_to dashboard_event_poll_path(event_id: poll.event_id, id: poll.id), class: 'btn btn-xs btn-primary', target: '_blank' do %>
-        Xem kết quả
+        <%= I18n.t("timeline.result") %>
       <% end %>
     </p>
   </div>

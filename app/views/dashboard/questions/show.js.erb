@@ -1,4 +1,4 @@
-show_modal("<%= j render "show" %>", 'Trả lời thảo luận')
+show_modal("<%= j render "show" %>", '<%= I18n.t("questions.rep") %>')
 subcription = createQuesionChannel(<%= @question.id %>, <%= '0' %>)
 $("#modal-shared").on('hidden.bs.modal', function () {
   App.cable.subscriptions.remove(subcription);
