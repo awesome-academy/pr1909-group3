@@ -5,7 +5,6 @@ Rails.application.configure do
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
-  config.web_console.whiny_requests = false
 
   # Do not eager load code on boot.
   config.eager_load = false
@@ -21,7 +20,7 @@ Rails.application.configure do
 
     config.cache_store = :memory_store
     config.public_file_server.headers = {
-      'Cache-Control' => "public, max-age=#{2.days.to_i} ",
+      'Cache-Control' => "public,max-age=#{2.days.to_i}",
     }
   else
     config.action_controller.perform_caching = false
@@ -33,8 +32,7 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  # config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.perform_caching = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
@@ -61,19 +59,15 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-
-  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-
-  ActionMailer::Base.smtp_settings = {
-    address: 'smtp.gmail.com',
-    port: 587,
-    authentication: 'plain',
-    user_name: 'nguyenthienlinhptit@gmail.com',
-    password: 'thienlinh1306',
-    domain: 'gmail.com',
-    enable_starttls_auto: true
+  # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :user_name => "nguyenthienlinhptit@gmail.com",
+    :password => "thienlinh1306",
+    :authentication => "plain",
+    :enable_starttls_auto => true,
   }
-
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end
