@@ -7,7 +7,6 @@ class AppearanceChannel < ApplicationCable::Channel
     $redis.hdel "event-#{params[:id]}", current_participant.id
     ActionCable.server.broadcast "appearance",
       active_participants: ($redis.hgetall "event-#{current_participant.event_id}")
-    # stop_all_streams
   end
 
   def appear

@@ -7,6 +7,7 @@ module ApplicationCable
     end
 
     private
+    
     def find_verified_participant
       verified_participant = Participant.find_by(id: cookies.signed[:participant_id])
     end
