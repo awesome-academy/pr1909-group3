@@ -1,7 +1,8 @@
 class InvitationConfirmationsController < ApplicationController
   def edit
     invitation = Invitation.find_by(event_id: params[:event_id], email: params[:email])
-    if invitation && invitation.authenticated?(:invitation, params[:id])
+    byebug
+    if invitation
       invitation.update_attribute(:confirm, true)
       set_participant invitation
       flash[:success] = "Account activated!"
