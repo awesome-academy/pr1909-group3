@@ -1,4 +1,3 @@
-// Su dung gem gon trong thu muc nay
 App.cable = ActionCable.createConsumer("/cable");
 App.notifications = App.cable.subscriptions.create(
   {
@@ -25,7 +24,7 @@ App.notifications = App.cable.subscriptions.create(
 function updateDataTimeline(data) {
   switch (data.action) {
     case 'create':
-      // $(`#participant-timeline`).prepend(data.timeline_html);
+      $(`#participant-timeline`).prepend(data.timeline_html);
       break;
 
     case 'update_content':

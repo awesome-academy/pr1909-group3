@@ -8,8 +8,6 @@ class Dashboard::ParticipantsController < Dashboard::DashboardController
 
   def show
     @notes = @participant.notes
-    # gon.push({ participant: @participant } )
-    # render :'participants/comming_soon' if @participant.starts_on > Time.now
   end
 
   def new
@@ -26,20 +24,18 @@ class Dashboard::ParticipantsController < Dashboard::DashboardController
   end
 
   def update
-    # respond_to do |format|
-    if @participant.update(participant_params)
-
-      # format.html { redirect_to @participant, notice: 'Participant was successfully updated.' }
-      # format.json { render :show, status: :ok, location: @participant }
-      # redirect_to root_path
-    else
-      format.html { render :edit }
-      format.json { render json: @participant.errors, status: :unprocessable_entity }
+    respond_to do |format|
+      if @participant.update(participant_params)
+        format.html { redirect_to @participant, notice: 'Participant was successfully updated.' }
+        format.json { render :show, status: :ok, location: @participant }
+        redirect_to root_path
+      else
+        format.html { render :edit }
+        format.json { render json: @participant.errors, status: :unprocessable_entity }
+      end
     end
   end
 
-  # DELETE /participants/1
-  # DELETE /participants/1.json
   def destroy
     @participant.destroy
     respond_to do |format|
